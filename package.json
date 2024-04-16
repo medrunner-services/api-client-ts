@@ -13,6 +13,7 @@
     "prettier:fix": "npm run prettier -- --write"
   },
   "publishConfig": {
+	"access": "public",
     "tag": "release-candidate"
   },
   "repository": {
