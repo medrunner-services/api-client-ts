@@ -5,8 +5,8 @@ on:
       - created
 
 jobs:
-  build:
-    name: CI Build
+  publish-npm:
+    name: Publish to npm
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -23,13 +23,6 @@ jobs:
       - name: Compile code
         run: npm run build # compile typescript
 
-  publish-npm:
-    name: Publish to npm
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-    steps:
       - name: publish
         uses: JS-DevTools/npm-publish@v3
         with:
