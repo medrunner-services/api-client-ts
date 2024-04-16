@@ -64,6 +64,7 @@ import Person from "./models/Person";
 import Team from "./models/Team";
 import TeamMember from "./models/TeamMember";
 import TokenGrant from "./models/TokenGrant";
+import WritableDbItem from "./models/WritableDbItem";
 
 export {
   ApiToken,
@@ -76,4 +77,5 @@ export {
   Team,
   TeamMember,
   TokenGrant,
+  WritableDbItem,
 };
