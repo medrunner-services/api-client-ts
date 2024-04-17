@@ -66,7 +66,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: "Released under the MIT License.",
+      message: "Released under the GPL-3.0 License.",
       copyright: "© 2954 Medrunner Services.",
     },
   },
