@@ -12,6 +12,8 @@ https://api.medrunner.space/
 
 ## TypeScript Client
 
+### Initialize the client
+
 To make it easier to interact with the Medrunner API, we provide a TypeScript client that you can use in your projects. The client is available on npm and can be installed using the following command:
 
 ```bash
@@ -31,11 +33,7 @@ const apiConfig = {
   token: "YOUR_REFRESH_TOKEN",
 };
 
-const refreshCallback = async newTokens => {
-  localStorage.setItem("refreshToken", newTokens.refreshToken);
-};
-
-const api = MedrunnerApiClient.buildClient(apiConfig, refreshCallback());
+const api = MedrunnerApiClient.buildClient(apiConfig);
 ```
 
 ::: info
@@ -50,7 +48,9 @@ const self = await api.client.get();
 console.log(self);
 ```
 
-You can find all the available methods and their associated types [here](/endpoints/).
+You can find all the available methods and their associated types [here](/reference/).
+
+### Use the built-in logger
 
 ## API Call Limits
 
@@ -72,7 +72,5 @@ API calls are limited to provide better quality of service and availability to a
 | POST    | /emergency      | 6     | per hour      |
 | POST    | /client/link    | 3     | per minute    |
 | POST    | /client/link    | 100   | per day       |
-| GET     | /block          | 15    | per minute    |
-| GET     | /block          | 100   | per hour      |
 | POST    | /auth/apiTokens | 1     | per 5 seconds |
 | POST    | /auth/apiTokens | 5     | per minute    |
