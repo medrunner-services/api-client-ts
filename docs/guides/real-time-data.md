@@ -47,11 +47,4 @@ Take a look at the [signalr documentation](https://learn.microsoft.com/en-us/asp
 
 ## List of available events
 
-Here is a list of the available events you can listen to:
-
-| Event name        | Trigger reason                                                          |
-| ----------------- | ----------------------------------------------------------------------- |
-| PersonUpdate      | When the current user is updated                                        |
-| EmergencyCreate   | When an emergency is created                                            |
-| EmergencyUpdate   | When an emergency is updated                                            |
-| ChatMessageCreate | When a chat message is added to an emergency where the user participate |
+You can find a complete list of available events in the [WebSocket events reference](/reference/websockets-events).

@@ -5,6 +5,7 @@ const pkg = require("../../package.json");
 export default defineConfig({
   title: "Medrunner Docs",
   description: "Documentation for the medrunner services",
+  head: [["link", { rel: "icon", href: "/favicon.png" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/logo.svg",
@@ -16,9 +17,9 @@ export default defineConfig({
         activeMatch: "/guides/",
       },
       {
-        text: "Endpoints",
-        link: "/endpoints/",
-        activeMatch: "/endpoints/",
+        text: "Reference",
+        link: "/reference/",
+        activeMatch: "/reference/",
       },
       {
         text: pkg.version,
@@ -42,14 +43,17 @@ export default defineConfig({
           { text: "Getting started", link: "/guides/getting-started" },
           { text: "Authentication", link: "/guides/authentication" },
           { text: "Real time data", link: "/guides/real-time-data" },
+          { text: "Error handling", link: "/guides/error-handling" },
+          { text: "Pagination", link: "/guides/pagination" },
         ],
       },
       {
-        text: "Endpoints",
+        text: "Reference",
         items: [
-          { text: "Available endpoints", link: "/endpoints/" },
-          { text: "Client", link: "/endpoints/client" },
-          { text: "Emergency", link: "/endpoints/emergency" },
+          { text: "Available endpoints", link: "/reference/" },
+          { text: "Client", link: "/reference/client" },
+          { text: "Emergency", link: "/reference/emergency" },
+          { text: "Websockets events", link: "/reference/websockets-events" },
         ],
       },
     ],
