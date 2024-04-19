@@ -18,7 +18,7 @@ export default defineConfig({
       },
       {
         text: "Reference",
-        link: "/reference/",
+        link: "/reference/websockets-events",
         activeMatch: "/reference/",
       },
       {
@@ -49,12 +49,7 @@ export default defineConfig({
       },
       {
         text: "Reference",
-        items: [
-          { text: "Available endpoints", link: "/reference/" },
-          { text: "Client", link: "/reference/client" },
-          { text: "Emergency", link: "/reference/emergency" },
-          { text: "Websockets events", link: "/reference/websockets-events" },
-        ],
+        items: [{ text: "Websockets events", link: "/reference/websockets-events" }],
       },
     ],
 

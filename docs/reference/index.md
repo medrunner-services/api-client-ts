@@ -1,1 +1,0 @@
-## Here are the endpoints available in the API
