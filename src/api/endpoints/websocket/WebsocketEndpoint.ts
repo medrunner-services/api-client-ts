@@ -19,7 +19,7 @@ export default class WebsocketEndpoint extends ApiEndpoint {
     super(baseUrl, tokenManager, log, headerProvider);
   }
 
-  private websocketManager = new WebsocketManager(this.baseUrl, this.tokenManager);
+  private websocketManager = new WebsocketManager(this.baseUrl, this.tokenManager, this.log);
 
   protected override endpoint(): string {
     return "websocket";
