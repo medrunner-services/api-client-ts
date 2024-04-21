@@ -37,7 +37,7 @@ const api = MedrunnerApiClient.buildClient(apiConfig);
 ```
 
 ::: info
-The refreshCallback is a function that will be called every time the client refreshes the access token. You can use it to store the new tokens in your application for exemple.
+You can pass a function as the second argument in the buildClient function that runs everytime the tokens are refreshed.
 :::
 
 Now that you have configured the client, you can start making API calls. Here is an example of how to get the current user:
@@ -51,6 +51,35 @@ console.log(self);
 You can find all the available methods and their associated types [here](/reference/).
 
 ### Use the built-in logger
+
+The client provides a built-in logger that you can use to log information about the API calls. The logger is disabled by default, but you can enable it by setting the `log` property in the `buildClient` function as the third parameter.
+
+```ts
+import MedrunnerApiClient from "@medrunner/api-client";
+
+const apiConfig = {
+  baseUrl: "https://api.medrunner.space",
+  token: "YOUR_REFRESH_TOKEN",
+};
+
+const api = MedrunnerApiClient.buildClient(apiConfig, undefined, {
+  trace(message?: any, ...optionalParams) {
+    console.log(`TRACE: ${message}`);
+  },
+  info(message?: any, ...optionalParams) {
+    console.log(`INFO: ${message}`);
+  },
+  warn(message?: any, ...optionalParams) {
+    console.log(`WARN: ${message}`);
+  },
+  error(message?: any, ...optionalParams) {
+    console.log(`ERROR: ${message}`);
+  },
+  debug(message?: any, ...optionalParams) {
+    console.log(`DEBUG: ${message}`);
+  },
+});
+```
 
 ## API Call Limits
 

@@ -33,10 +33,6 @@ const apiConfig = {
 const api = MedrunnerApiClient.buildClient(apiConfig);
 ```
 
-::: info
-The refreshCallback is a function that will be called every time the client refreshes the access token. You can use it to store the new tokens in your application for exemple.
-:::
-
 ### Make API calls
 
 You can now use the client to make API calls. Here is an example of how to get the current user:

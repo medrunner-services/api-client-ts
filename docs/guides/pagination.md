@@ -18,7 +18,3 @@ In a paginated response, the array of returned items is wrapped in a `data` key,
 ```
 
 The pagination token is a string that when sent to the same endpoint will allow the API to send you back the next set of items depending on the limit you've set.
-
-::: warning
-The pagination token will always be set even if there is no more data to retrieve, in this case, the data array will be empty.
-:::
