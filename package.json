@@ -58,7 +58,7 @@
     "@types/node": "^20.5.7",
     "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
-    "chai": "^4.3.8",
+    "chai": "^5.1.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "eslint": "^8.40.0",
