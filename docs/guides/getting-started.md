@@ -48,8 +48,6 @@ const self = await api.client.get();
 console.log(self);
 ```
 
-You can find all the available methods and their associated types [here](/reference/).
-
 ### Use the built-in logger
 
 The client provides a built-in logger that you can use to log information about the API calls. The logger is disabled by default, but you can enable it by setting the `log` property in the `buildClient` function as the third parameter.
