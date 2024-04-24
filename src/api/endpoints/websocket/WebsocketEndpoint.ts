@@ -10,12 +10,7 @@ import WebsocketManager from ".//WebsocketManager";
  * Endpoints for interacting with emergencies.
  * */
 export default class WebsocketEndpoint extends ApiEndpoint {
-  constructor(
-    baseUrl: string,
-    tokenManager: TokenManager,
-    log?: Logger | undefined,
-    headerProvider?: HeaderProvider | undefined,
-  ) {
+  constructor(baseUrl: string | undefined, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
     super(baseUrl, tokenManager, log, headerProvider);
   }
 

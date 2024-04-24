@@ -12,7 +12,7 @@ import TokenManager from "../auth/TokenManager";
  * Endpoints for interacting with clients.
  * */
 export default class ClientEndpoint extends ApiEndpoint {
-  constructor(baseUrl: string, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
+  constructor(baseUrl: string | undefined, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
     super(baseUrl, tokenManager, log, headerProvider);
   }
 

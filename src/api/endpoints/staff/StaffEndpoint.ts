@@ -10,7 +10,7 @@ import MedalInformation from "./response/MedalInformation";
  * Endpoints for interacting with staff.
  * */
 export default class StaffEndpoint extends ApiEndpoint {
-  constructor(baseUrl: string, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
+  constructor(baseUrl: string | undefined, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
     super(baseUrl, tokenManager, log, headerProvider);
   }
 

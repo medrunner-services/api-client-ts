@@ -12,7 +12,7 @@ import SignOutRequest from "./request/SignOutRequest";
  * Endpoints for interacting with auth.
  * */
 export default class AuthEndpoint extends ApiEndpoint {
-  constructor(baseUrl: string, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
+  constructor(baseUrl: string | undefined, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
     super(baseUrl, tokenManager, log, headerProvider);
   }
 

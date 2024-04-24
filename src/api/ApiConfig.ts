@@ -3,9 +3,9 @@
  * */
 export default interface ApiConfig {
   /**
-   * The base URL of the API
+   * The base URL of the API - defaults to https://api.medrunner.space
    * */
-  baseUrl: string;
+  baseUrl?: string;
 
   /**
    * Your API token retrieved after logging in. If none is provided, the refresh token will be used to retrieve an
