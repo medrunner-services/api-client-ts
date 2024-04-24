@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Medrunner Docs"
-  text: "for the medrunner API"
+  text: "for the Medrunner API"
   tagline: All you need to know about how to use the medrunner API
   actions:
       - theme: brand
