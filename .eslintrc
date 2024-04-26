@@ -11,6 +11,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "ignorePatterns": ["*.vue"],
   "rules": {
     "simple-import-sort/imports": "error",
     "tsdoc/syntax": "warn",
