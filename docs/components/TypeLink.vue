@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import pkg from "../../package.json";
+
 const props = defineProps<{
   name: string;
 }>();
@@ -6,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <a
-    :href="`https://tsdocs.dev/docs/@medrunner/api-client/latest/interfaces/${props.name}.html`"
+    :href="`https://tsdocs.dev/docs/@medrunner/api-client/${pkg.version}/interfaces/${props.name}.html`"
     target="_blank"
     rel="noreferrer"
     >{{ props.name }}</a
