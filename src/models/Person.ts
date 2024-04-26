@@ -36,3 +36,7 @@ export enum AccountDeactivationReason {
 export interface ClientStats {
   missions: EmergencyStats;
 }
+
+export interface BlockedStatus {
+  blocked: boolean;
+}

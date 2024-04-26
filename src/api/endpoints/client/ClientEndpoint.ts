@@ -2,7 +2,7 @@ import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
 import ClientHistory from "../../../models/ClientHistory";
-import Person from "../../../models/Person";
+import Person, { BlockedStatus } from "../../../models/Person";
 import ApiResponse from "../../ApiResponse";
 import PaginatedResponse from "../../PaginatedResponse";
 import ApiEndpoint from "../ApiEndpoint";
@@ -37,6 +37,13 @@ export default class ClientEndpoint extends ApiEndpoint {
     paginationToken?: string,
   ): Promise<ApiResponse<PaginatedResponse<ClientHistory>>> {
     return await this.getRequest<PaginatedResponse<ClientHistory>>("/history", { limit, paginationToken });
+  }
+
+  /**
+   * Gets the blocklist status of the current client.
+   * */
+  public async getBlockedStatus(): Promise<ApiResponse<BlockedStatus>> {
+    return await this.getRequest<BlockedStatus>("/blocked");
   }
 
   /**
