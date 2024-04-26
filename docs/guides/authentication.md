@@ -26,7 +26,6 @@ To use the client, you need to initialize it with your API key:
 import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
-  baseUrl: "https://api.medrunner.space",
   token: "YOUR_API_KEY",
 };
 

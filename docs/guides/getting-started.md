@@ -29,7 +29,6 @@ Here is an example of how to configure the client:
 import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
-  baseUrl: "https://api.medrunner.space",
   token: "YOUR_REFRESH_TOKEN",
 };
 
@@ -56,7 +55,6 @@ The client provides a built-in logger that you can use to log information about 
 import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
-  baseUrl: "https://api.medrunner.space",
   token: "YOUR_REFRESH_TOKEN",
 };
 

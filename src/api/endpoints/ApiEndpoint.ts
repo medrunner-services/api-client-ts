@@ -6,12 +6,16 @@ import ApiResponse from "../ApiResponse";
 import TokenManager from "./auth/TokenManager";
 
 export default abstract class ApiEndpoint {
+  public readonly baseUrl: string;
+
   protected constructor(
-    public readonly baseUrl: string,
+    baseUrl: string | undefined,
     public readonly tokenManager: TokenManager,
     protected readonly log?: Logger,
     private readonly headerProvider?: HeaderProvider,
-  ) {}
+  ) {
+    this.baseUrl = baseUrl ?? "https://api.medrunner.space";
+  }
 
   protected abstract endpoint(): string;
 
