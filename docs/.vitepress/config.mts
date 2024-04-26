@@ -49,7 +49,10 @@ export default defineConfig({
       },
       {
         text: "Reference",
-        items: [{ text: "Websockets events", link: "/reference/websockets-events" }],
+        items: [
+          { text: "Websockets events", link: "/reference/websockets-events" },
+          { text: "Types", link: "/reference/types" },
+        ],
       },
     ],
 
