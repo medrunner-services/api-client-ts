@@ -16,7 +16,7 @@ If you want to directly contribute to the project by adding or fixing some code,
 
 - Checkout a topic branch from `main` with a name like `feature/adding-types` or `bug/docs-images-error`.
 
-- Make sure to run `npm run lint` and `npm run prettier` before committing your changes. You can even enable GitHub actions in your forked repository to run these checks automatically.
+- Make sure to run `npm run lint:fix` and `npm run prettier:fix` before committing your changes. You can even enable GitHub actions in your forked repository to run these checks automatically.
 
 - Create a pull request with your changes from your feature branch against the `main` branch.
 
@@ -24,11 +24,11 @@ If you want to directly contribute to the project by adding or fixing some code,
 
   - Provide a convincing reason to add this feature. Ideally, you should open a suggestion issue first and have it approved before working on it.
 
-- If fixing bug:
+- If fixing a bug:
 
   - Provide a detailed description of the bug in the PR. Live demo preferred.
 
-- It's OK to have multiple small commits as you work on the PR - GitHub can automatically squash them before merging.
+- It's OK to have multiple small commits as you work on the PR - all PRs will be squash merged.
 
 When we receive a pull request, we will review it and provide feedback. If everything is good, we will merge it into the main branch.
 
@@ -52,7 +52,7 @@ You can now start working on the project. To test if everything works correctly,
 $ npm run build
 ```
 
-To test if your changes to the package work correctly, you can use the `npm link` feature and link the package to a test project.
+To test if your changes to the package work correctly, you can use the [npm link](https://docs.npmjs.com/cli/v10/commands/npm-link) feature and link the package to a test project.
 
 ### Working on the documentation website
 
