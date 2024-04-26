@@ -1,6 +1,6 @@
 {
   "name": "@medrunner/api-client",
-  "version": "0.0.1-rc.2",
+  "version": "0.1.0",
   "description": "Wrapper library for the Medrunner API",
   "scripts": {
     "build": "tsup",
@@ -16,7 +16,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "tag": "rc"
+    "tag": "latest"
   },
   "repository": {
     "type": "git",
