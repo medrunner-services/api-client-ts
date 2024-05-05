@@ -66,4 +66,11 @@ export default class ClientEndpoint extends ApiEndpoint {
   public async setSettings(settings: Record<string, unknown>): Promise<ApiResponse<Record<string, unknown>>> {
     return await this.patchRequest<Record<string, unknown>>("/settings/clientPortal", settings);
   }
+
+  /**
+   * Deactivate the current client.
+   * */
+  public async deactivate(): Promise<ApiResponse> {
+    return await this.deleteRequest("");
+  }
 }
