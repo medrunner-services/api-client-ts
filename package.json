@@ -47,7 +47,7 @@
     "dist"
   ],
   "dependencies": {
-    "@microsoft/signalr": "^7.0.5",
+    "@microsoft/signalr": "^8.0.0",
     "axios": "^1.4.0",
     "ts-log": "^2.2.5"
   },
