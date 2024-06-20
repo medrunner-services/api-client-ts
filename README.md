@@ -8,7 +8,7 @@ import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
   baseUrl: "https://api.medrunner.space",
-  token: () => "MY_API_TOKEN",
+  refreshToken: "YOUR_API_TOKEN",
 };
 
 const api = MedrunnerApiClient.buildClient(apiConfig);

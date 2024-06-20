@@ -26,10 +26,27 @@ To use the client, you need to initialize it with your API key:
 import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
-  token: "YOUR_API_KEY",
+  refreshToken: "YOUR_API_TOKEN",
 };
 
 const api = MedrunnerApiClient.buildClient(apiConfig);
+```
+
+### Exchange the refresh token for an access token
+
+The access token can be used to authenticate API calls when not using the TypeScript client. 
+
+```ts
+  import MedrunnerApiClient from "@medrunner/api-client";
+
+  const apiConfig = {
+    refreshToken: "YOUR_API_KEY",
+  };
+
+  const api = MedrunnerApiClient.buildClient(apiConfig);
+  const token = await api.staff.tokenManager.getAccessToken();
+
+  console.log(token); // YOUR_ACCESS_TOKEN
 ```
 
 ### Make API calls

@@ -29,7 +29,7 @@ Here is an example of how to configure the client:
 import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
-  token: "YOUR_REFRESH_TOKEN",
+  refreshToken: "YOUR_REFRESH_TOKEN",
 };
 
 const api = MedrunnerApiClient.buildClient(apiConfig);
