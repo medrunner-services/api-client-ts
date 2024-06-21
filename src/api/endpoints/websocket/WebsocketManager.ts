@@ -31,7 +31,11 @@ export default class WebsocketManager {
   private tokenManager: TokenManager;
   protected readonly logger?: Logger;
 
-  public constructor(private readonly baseUrl: string, tokenManager: TokenManager, logger?: Logger) {
+  public constructor(
+    private readonly baseUrl: string,
+    tokenManager: TokenManager,
+    logger?: Logger,
+  ) {
     this.tokenManager = tokenManager;
     this.logger = logger;
   }
