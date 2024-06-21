@@ -26,7 +26,7 @@ To use the client, you need to initialize it with your API key:
 import MedrunnerApiClient from "@medrunner/api-client";
 
 const apiConfig = {
-  token: "YOUR_API_KEY",
+  refreshToken: "YOUR_API_TOKEN",
 };
 
 const api = MedrunnerApiClient.buildClient(apiConfig);
