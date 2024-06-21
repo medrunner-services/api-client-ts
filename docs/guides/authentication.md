@@ -32,23 +32,6 @@ const apiConfig = {
 const api = MedrunnerApiClient.buildClient(apiConfig);
 ```
 
-### Exchange the refresh token for an access token
-
-The access token can be used to authenticate API calls when not using the TypeScript client. 
-
-```ts
-  import MedrunnerApiClient from "@medrunner/api-client";
-
-  const apiConfig = {
-    refreshToken: "YOUR_API_KEY",
-  };
-
-  const api = MedrunnerApiClient.buildClient(apiConfig);
-  const token = await api.staff.tokenManager.getAccessToken();
-
-  console.log(token); // YOUR_ACCESS_TOKEN
-```
-
 ### Make API calls
 
 You can now use the client to make API calls. Here is an example of how to get the current user:
