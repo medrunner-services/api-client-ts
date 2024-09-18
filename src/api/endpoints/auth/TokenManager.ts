@@ -32,7 +32,7 @@ export default class TokenManager extends ApiEndpoint {
       const exp = TokenManager.getJwtFromAccessToken(this.accessToken).exp;
 
       // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
-      if (exp > Date.now() / 1000) return this.accessToken;
+      if (exp > Date.now() / 1000 - 60 * 5) return this.accessToken;
     }
 
     // if the refresh token isn't present, nothing we can do
