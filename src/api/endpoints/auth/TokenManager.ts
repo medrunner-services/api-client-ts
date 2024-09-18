@@ -8,6 +8,7 @@ import ApiEndpoint from "../ApiEndpoint";
 export default class TokenManager extends ApiEndpoint {
   private accessToken?: string;
   private refreshToken?: string;
+  private tokenFetchPromise?: Promise<TokenGrant>;
 
   public constructor(
     config: ApiConfig,
@@ -31,23 +32,28 @@ export default class TokenManager extends ApiEndpoint {
       const exp = TokenManager.getJwtFromAccessToken(this.accessToken).exp;
 
       // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
-      if (exp > Date.now() / 1000 - 60 * 5) return this.accessToken;
+      if (exp > Date.now() / 1000) return this.accessToken;
     }
 
     // if the refresh token isn't present, nothing we can do
     if (this.refreshToken === undefined) return this.accessToken;
 
-    // token is expired (or will expire soon), so fetch a new one
-    const tokens = await this.fetchToken(this.refreshToken);
+    // token is expired (or will expire soon) and there is not already one fetching, so fetch a new one
+    if (!this.tokenFetchPromise) this.tokenFetchPromise = this.fetchToken(this.refreshToken);
 
-    if (this.refreshCallback !== undefined) {
-      await this.refreshCallback(tokens);
+    try {
+      const tokens = await this.tokenFetchPromise;
+      this.accessToken = tokens.accessToken;
+      this.refreshToken = tokens.refreshToken;
+
+      if (this.refreshCallback !== undefined) {
+        await this.refreshCallback(tokens);
+      }
+    } finally {
+      this.tokenFetchPromise = undefined;
     }
 
-    this.accessToken = tokens.accessToken;
-    this.refreshToken = tokens.refreshToken;
-
-    return tokens.accessToken;
+    return this.accessToken;
   }
 
   private async fetchToken(refreshToken: string): Promise<TokenGrant> {
