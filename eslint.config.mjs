@@ -36,5 +36,6 @@ export default [{
         "simple-import-sort/imports": "error",
         "tsdoc/syntax": "warn",
         "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
     },
 }];
