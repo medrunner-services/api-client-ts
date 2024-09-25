@@ -17,6 +17,7 @@ export default class TokenManager extends ApiEndpoint {
     headerProvider?: HeaderProvider,
   ) {
     // todo: I dunno fix this someday I guess?
+
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     super(config.baseUrl, null!, log, headerProvider);
     this.accessToken = config.accessToken;
