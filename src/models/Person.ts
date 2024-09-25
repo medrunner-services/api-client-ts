@@ -16,8 +16,8 @@ export default interface Person extends WritableDbItem {
 export enum UserRoles {
   CLIENT = 1 << 0,
   STAFF = 1 << 1,
-  DEVELOPER = 1 << 19,
-  BOT = 1 << 20,
+  DEVELOPER = 1 << 51,
+  BOT = 1 << 52,
 }
 
 export enum PersonType {
