@@ -23,6 +23,6 @@ export default class CodeEndpoint extends ApiEndpoint {
    * @param code - The code to redeem.
    * */
   public async redeem(code: string): Promise<ApiResponse> {
-    return await this.getRequest(`/redeem/${code}`);
+    return await this.postRequest(`/redeem/${code}`);
   }
 }
