@@ -18,7 +18,7 @@ export default class CodeEndpoint extends ApiEndpoint {
   }
 
   /**
-   * Gets the specified amount of chat messages for a given emergency.
+   * Redeems the specified promotional code for the current user
    *
    * @param code - The code to redeem.
    * */
