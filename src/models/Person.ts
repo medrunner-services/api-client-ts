@@ -11,6 +11,7 @@ export default interface Person extends WritableDbItem {
   clientStats: ClientStats;
   activeEmergency?: string;
   clientPortalPreferences: Record<string, unknown>;
+  redeemedCodes: RedeemedCode[];
 }
 
 export enum UserRoles {
@@ -39,4 +40,14 @@ export interface ClientStats {
 
 export interface BlockedStatus {
   blocked: boolean;
+}
+
+export interface RedeemedCode {
+  code: string;
+  type: CodeType;
+}
+
+export enum CodeType {
+  Unknown,
+  CitizenCon2954,
 }

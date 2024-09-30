@@ -14,6 +14,7 @@ import TokenManager from "./api/endpoints/auth/TokenManager";
 import ChatMessageEndpoint from "./api/endpoints/chatMessage/ChatMessageEndpoint";
 import ChatMessageRequest from "./api/endpoints/chatMessage/request/ChatMessageRequest";
 import ClientEndpoint from "./api/endpoints/client/ClientEndpoint";
+import CodeEndpoint from "./api/endpoints/code/CodeEndpoint";
 import EmergencyEndpoint from "./api/endpoints/emergency/EmergencyEndpoint";
 import CreateEmergencyRequest from "./api/endpoints/emergency/request/CreateEmergencyRequest";
 import LocationDetail from "./api/endpoints/emergency/response/LocationDetail";
@@ -34,6 +35,7 @@ export {
   EmergencyEndpoint,
   ChatMessageEndpoint,
   ChatMessageRequest,
+  CodeEndpoint,
   AuthEndpoint,
   ClientEndpoint,
   StaffEndpoint,
