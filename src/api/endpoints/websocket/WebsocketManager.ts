@@ -46,7 +46,7 @@ export default class WebsocketManager {
         nextRetryDelayInMilliseconds: retryContext => (retryContext.previousRetryCount > 5 ? null : 2000),
       })
       .withUrl(`${this.baseUrl}/hub/emergency`, {
-        accessTokenFactory: async () => (await this.tokenManager.getAccessToken()) ?? "",
+        accessTokenFactory: async () => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? "",
       })
       .configureLogging(new WSLogger(this.logger))
       .build();
