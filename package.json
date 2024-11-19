@@ -47,7 +47,7 @@
     "dist"
   ],
   "dependencies": {
-    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.15.0",
     "@microsoft/signalr": "^8.0.7",
     "axios": "^1.7.7",
