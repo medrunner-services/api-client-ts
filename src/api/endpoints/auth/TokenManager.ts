@@ -8,6 +8,8 @@ import ApiEndpoint from "../ApiEndpoint";
 export default class TokenManager extends ApiEndpoint {
   private accessToken?: string;
   private refreshToken?: string;
+  private accessTokenExpiration?: string;
+  private refreshTokenExpiration?: string;
   private tokenFetchPromise?: Promise<TokenGrant>;
 
   public constructor(
@@ -30,11 +32,12 @@ export default class TokenManager extends ApiEndpoint {
 
   public async getAccessToken(source: string = "unknown"): Promise<string | undefined> {
     this.log?.debug(`getAccessToken: New token requested from ${source}`);
-    if (this.accessToken !== undefined) {
-      const exp = TokenManager.getJwtFromAccessToken(this.accessToken).exp;
+    if (this.accessToken !== undefined && this.accessTokenExpiration !== undefined) {
+      const exp = Math.trunc(new Date(this.accessTokenExpiration).getTime() / 1000);
+      const now = Math.trunc(Date.now() / 1000);
 
       // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
-      if (exp > Date.now() / 1000 - 60 * 5) {
+      if (exp > now - 300) {
         this.log?.debug(`getAccessToken: ${source} => Token valid and simply returned`);
         return this.accessToken;
       }
@@ -59,6 +62,8 @@ export default class TokenManager extends ApiEndpoint {
       this.log?.debug(`getAccessToken: ${source} => Setting new tokens in memory`);
       this.accessToken = tokens.accessToken;
       this.refreshToken = tokens.refreshToken;
+      this.accessTokenExpiration = tokens.accessTokenExpiration;
+      if (tokens.refreshTokenExpiration) this.refreshTokenExpiration = tokens.refreshTokenExpiration;
 
       if (this.refreshCallback !== undefined) {
         this.log?.debug(`getAccessToken: ${source} => Calling refresh callback with new tokens`);
@@ -83,12 +88,4 @@ export default class TokenManager extends ApiEndpoint {
     this.log?.debug(`getAccessToken: ${source} => Successfully fetched new tokens`);
     return result.data;
   }
-
-  private static getJwtFromAccessToken(accessToken: string): Jwt {
-    return JSON.parse(atob(accessToken.split(".")[1]));
-  }
-}
-
-interface Jwt {
-  exp: number;
 }
