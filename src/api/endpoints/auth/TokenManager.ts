@@ -37,7 +37,7 @@ export default class TokenManager extends ApiEndpoint {
       const now = Math.trunc(Date.now() / 1000);
 
       // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
-      if (exp > now - 300) {
+      if (exp - 300 > now) {
         this.log?.debug(`getAccessToken: ${source} => Token valid and simply returned`);
         return this.accessToken;
       }
