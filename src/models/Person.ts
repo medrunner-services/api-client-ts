@@ -10,7 +10,11 @@ export default interface Person extends WritableDbItem {
   deactivationReason: AccountDeactivationReason;
   clientStats: ClientStats;
   activeEmergency?: string;
+  /**
+   * @deprecated Use {@link clientPortalPreferencesBlob} instead
+   */
   clientPortalPreferences: Record<string, unknown>;
+  clientPortalPreferencesBlob?: string;
   redeemedCodes: RedeemedCode[];
 }
 
