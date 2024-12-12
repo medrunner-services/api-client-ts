@@ -59,12 +59,23 @@ export default class ClientEndpoint extends ApiEndpoint {
   /**
    * Updates the settings of the current user for the Client Portal.
    *
-   * @param settings - The object settings to add or update
+   * @deprecated Use {@link setUserSettings} instead
+   * @param settings - The stringfied new object settings that will replace the old one
    * @returns The updated settings object
    *
    * */
   public async setSettings(settings: Record<string, unknown>): Promise<ApiResponse<Record<string, unknown>>> {
     return await this.patchRequest<Record<string, unknown>>("/settings/clientPortal", settings);
+  }
+
+  /**
+   * Updates the settings of the current user for the Client Portal.
+   *
+   * @param settings - The object settings to add or update
+   *
+   * */
+  public async setUserSettings(settings: string): Promise<ApiResponse> {
+    return await this.putRequest("/settings/clientPortal", settings);
   }
 
   /**
