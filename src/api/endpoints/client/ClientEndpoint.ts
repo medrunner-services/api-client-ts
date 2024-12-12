@@ -75,7 +75,7 @@ export default class ClientEndpoint extends ApiEndpoint {
    *
    * */
   public async setUserSettings(settings: string): Promise<ApiResponse> {
-    return await this.putRequest("/settings/clientPortal", settings);
+    return await this.putRequest("/settings/clientPortal", { settingsBlob: settings });
   }
 
   /**
