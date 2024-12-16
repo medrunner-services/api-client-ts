@@ -19,6 +19,7 @@ import EmergencyEndpoint from "./api/endpoints/emergency/EmergencyEndpoint";
 import CreateEmergencyRequest from "./api/endpoints/emergency/request/CreateEmergencyRequest";
 import LocationDetail from "./api/endpoints/emergency/response/LocationDetail";
 import TeamDetailsResponse from "./api/endpoints/emergency/response/TeamDetailsResponse";
+import OrgSettingsEndpoint from "./api/endpoints/orgSettings/OrgSettingsEndpoint";
 import MedalInformation from "./api/endpoints/staff/response/MedalInformation";
 import StaffEndpoint from "./api/endpoints/staff/StaffEndpoint";
 import WebsocketEndpoint from "./api/endpoints/websocket/WebsocketEndpoint";
@@ -36,6 +37,7 @@ export {
   ChatMessageEndpoint,
   ChatMessageRequest,
   CodeEndpoint,
+  OrgSettingsEndpoint,
   AuthEndpoint,
   ClientEndpoint,
   StaffEndpoint,
@@ -55,6 +57,7 @@ export * from "./models/ResponseRating";
 export * from "./models/Team";
 export * from "./models/TeamMember";
 export * from "./models/ThreatLevel";
+export * from "./models/OrgSettings";
 
 import ApiToken from "./models/ApiToken";
 import ChatMessage from "./models/ChatMessage";
@@ -62,6 +65,7 @@ import ClientHistory from "./models/ClientHistory";
 import DbItem from "./models/DbItem";
 import Emergency from "./models/Emergency";
 import EmergencyStats from "./models/EmergencyStats";
+import OrgSettings from "./models/OrgSettings";
 import Person from "./models/Person";
 import Team from "./models/Team";
 import TeamMember from "./models/TeamMember";
@@ -74,6 +78,7 @@ export {
   DbItem,
   Emergency,
   EmergencyStats,
+  OrgSettings,
   ClientHistory,
   Person,
   Team,
