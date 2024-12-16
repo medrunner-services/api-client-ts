@@ -48,7 +48,7 @@
   ],
   "dependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.16.0",
+    "@eslint/js": "^9.17.0",
     "@microsoft/signalr": "^8.0.7",
     "axios": "^1.7.9",
     "ts-log": "^2.2.7"
