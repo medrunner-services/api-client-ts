@@ -1,12 +1,12 @@
 export default interface OrgSettings {
   status: ServiceStatus;
   emergenciesEnabled: boolean;
-  messageOfTheDay: MessageOfTheDay;
+  messageOfTheDay?: MessageOfTheDay;
 }
 
 export interface MessageOfTheDay {
   message: string;
-  dateRange: DateRange;
+  dateRange?: DateRange;
 }
 
 export interface DateRange {
@@ -15,9 +15,9 @@ export interface DateRange {
 }
 
 export enum ServiceStatus {
-  HEALTHY = 0,
-  DEGRADED = 1,
-  OUTAGE = 2,
-  OFFLINE = 3,
-  UNKNOWN = 4,
+  UNKNOWN = 0,
+  HEALTHY = 1,
+  SLIGHTLY_DEGRADED = 2,
+  HEAVILY_DEGRADED = 3,
+  OFFLINE = 4,
 }
