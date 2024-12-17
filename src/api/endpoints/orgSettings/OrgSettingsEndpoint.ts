@@ -1,7 +1,7 @@
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
-import OrgSettings from "../../../models/OrgSettings";
+import PublicOrgSettings from "../../../models/PublicOrgSettings";
 import ApiResponse from "../../ApiResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
@@ -22,7 +22,7 @@ export default class OrgSettingsEndpoint extends ApiEndpoint {
    * Get the public org settings.
    *
    * */
-  public async getOrgSettings(): Promise<ApiResponse<OrgSettings>> {
-    return await this.getRequest<OrgSettings>(`/public`);
+  public async getPublicSettings(): Promise<ApiResponse<PublicOrgSettings>> {
+    return await this.getRequest<PublicOrgSettings>(`/public`);
   }
 }
