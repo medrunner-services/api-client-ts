@@ -11,9 +11,9 @@ export default interface ApiClient<
   TEmergency extends EmergencyEndpoint = EmergencyEndpoint,
   TClient extends ClientEndpoint = ClientEndpoint,
   TStaff extends StaffEndpoint = StaffEndpoint,
+  TOrgSettings extends OrgSettingsEndpoint = OrgSettingsEndpoint,
   TChatMessage extends ChatMessageEndpoint = ChatMessageEndpoint,
   TCode extends CodeEndpoint = CodeEndpoint,
-  TOrgSettings extends OrgSettingsEndpoint = OrgSettingsEndpoint,
   TAuth extends AuthEndpoint = AuthEndpoint,
   TWebsocket extends WebsocketEndpoint = WebsocketEndpoint,
 > {
@@ -23,11 +23,11 @@ export default interface ApiClient<
 
   staff: TStaff;
 
+  orgSettings: TOrgSettings;
+
   chatMessage: TChatMessage;
 
   code: TCode;
-
-  orgSettings: TOrgSettings;
 
   auth: TAuth;
 
