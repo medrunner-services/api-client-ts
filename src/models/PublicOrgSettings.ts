@@ -1,4 +1,4 @@
-export default interface PublicSettings {
+export default interface PublicOrgSettings {
   status: ServiceStatus;
   emergenciesEnabled: boolean;
   messageOfTheDay?: MessageOfTheDay;
