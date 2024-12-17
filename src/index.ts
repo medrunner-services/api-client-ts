@@ -57,7 +57,7 @@ export * from "./models/ResponseRating";
 export * from "./models/Team";
 export * from "./models/TeamMember";
 export * from "./models/ThreatLevel";
-export * from "./models/OrgSettings";
+export * from "./models/PublicSettings";
 
 import ApiToken from "./models/ApiToken";
 import ChatMessage from "./models/ChatMessage";
@@ -65,8 +65,8 @@ import ClientHistory from "./models/ClientHistory";
 import DbItem from "./models/DbItem";
 import Emergency from "./models/Emergency";
 import EmergencyStats from "./models/EmergencyStats";
-import OrgSettings from "./models/OrgSettings";
 import Person from "./models/Person";
+import PublicSettings from "./models/PublicSettings";
 import Team from "./models/Team";
 import TeamMember from "./models/TeamMember";
 import TokenGrant from "./models/TokenGrant";
@@ -78,7 +78,7 @@ export {
   DbItem,
   Emergency,
   EmergencyStats,
-  OrgSettings,
+  PublicSettings,
   ClientHistory,
   Person,
   Team,
