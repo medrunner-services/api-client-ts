@@ -10,6 +10,7 @@ import ChatMessageEndpoint from "./endpoints/chatMessage/ChatMessageEndpoint";
 import ClientEndpoint from "./endpoints/client/ClientEndpoint";
 import CodeEndpoint from "./endpoints/code/CodeEndpoint";
 import EmergencyEndpoint from "./endpoints/emergency/EmergencyEndpoint";
+import OrgSettingsEndpoint from "./endpoints/orgSettings/OrgSettingsEndpoint";
 import StaffEndpoint from "./endpoints/staff/StaffEndpoint";
 import WebsocketEndpoint from "./endpoints/websocket/WebsocketEndpoint";
 
@@ -22,9 +23,10 @@ export default class MedrunnerApiClient<
   TStaff extends StaffEndpoint = StaffEndpoint,
   TChatMessage extends ChatMessageEndpoint = ChatMessageEndpoint,
   TCode extends CodeEndpoint = CodeEndpoint,
+  TOrgSettings extends OrgSettingsEndpoint = OrgSettingsEndpoint,
   TAuth extends AuthEndpoint = AuthEndpoint,
   TWebsocket extends WebsocketEndpoint = WebsocketEndpoint,
-> implements ApiClient<TEmergency, TClient, TStaff, TChatMessage, TCode, TAuth, TWebsocket>
+> implements ApiClient<TEmergency, TClient, TStaff, TChatMessage, TCode, TOrgSettings, TAuth, TWebsocket>
 {
   protected constructor(
     public readonly emergency: TEmergency,
@@ -32,6 +34,7 @@ export default class MedrunnerApiClient<
     public readonly staff: TStaff,
     public readonly chatMessage: TChatMessage,
     public readonly code: TCode,
+    public readonly orgSettings: TOrgSettings,
     public readonly auth: TAuth,
     public readonly websocket: TWebsocket,
   ) {}
@@ -56,6 +59,7 @@ export default class MedrunnerApiClient<
       new StaffEndpoint(config.baseUrl, tokenManager, log),
       new ChatMessageEndpoint(config.baseUrl, tokenManager, log),
       new CodeEndpoint(config.baseUrl, tokenManager, log),
+      new OrgSettingsEndpoint(config.baseUrl, tokenManager, log),
       new AuthEndpoint(config.baseUrl, tokenManager, log),
       new WebsocketEndpoint(config.baseUrl, tokenManager, log),
     );
