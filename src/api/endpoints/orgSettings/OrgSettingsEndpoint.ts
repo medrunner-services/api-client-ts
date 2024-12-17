@@ -22,7 +22,7 @@ export default class OrgSettingsEndpoint extends ApiEndpoint {
    * Get the public org settings.
    *
    * */
-  public async getOrgSettings(): Promise<ApiResponse<OrgSettings>> {
+  public async getPublicSettings(): Promise<ApiResponse<OrgSettings>> {
     return await this.getRequest<OrgSettings>(`/public`);
   }
 }
