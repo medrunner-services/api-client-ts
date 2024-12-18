@@ -25,3 +25,9 @@ Returns an <TypeLink name="Emergency" /> object.
 Triggers when a chat message is added to an emergency where the user participates.
 
 Returns a <TypeLink name="ChatMessage" /> object.
+
+### OrgSettingsUpdate
+
+Triggers when a chat message is added to an emergency where the user participates.
+
+Returns a <TypeLink name="OrgSettings" /> object that has a <TypeLink name="PublicOrgSettings" /> and, if the user is a staff member, a <TypeLink name="StaffOrgSettings" /> .
