@@ -1,7 +1,7 @@
 import WritableDbItem from "./WritableDbItem";
 
 export default interface OrgSettings extends WritableDbItem {
-  public?: PublicOrgSettings;
+  public: PublicOrgSettings;
 }
 
 export interface PublicOrgSettings {
