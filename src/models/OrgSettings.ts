@@ -1,4 +1,10 @@
-export default interface PublicOrgSettings {
+import WritableDbItem from "./WritableDbItem";
+
+export default interface OrgSettings extends WritableDbItem {
+  public: PublicOrgSettings;
+}
+
+export interface PublicOrgSettings {
   status: ServiceStatus;
   emergenciesEnabled: boolean;
   messageOfTheDay?: MessageOfTheDay;

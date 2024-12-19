@@ -1,7 +1,7 @@
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
-import PublicOrgSettings from "../../../models/PublicOrgSettings";
+import { PublicOrgSettings } from "../../../models/OrgSettings";
 import ApiResponse from "../../ApiResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
