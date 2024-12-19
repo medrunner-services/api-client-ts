@@ -23,7 +23,7 @@ The easiest way to authenticate API calls is to use the TypeScript client provid
 To use the client, you need to initialize it with your API key:
 
 ```ts
-import MedrunnerApiClient from "@medrunner/api-client";
+import { MedrunnerApiClient } from "@medrunner/api-client";
 
 const apiConfig = {
   refreshToken: "YOUR_API_TOKEN",

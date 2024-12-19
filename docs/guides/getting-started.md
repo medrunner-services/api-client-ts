@@ -26,7 +26,7 @@ The client will also handle authentication for you, so you don't have to worry a
 Here is an example of how to configure the client:
 
 ```ts
-import MedrunnerApiClient from "@medrunner/api-client";
+import { MedrunnerApiClient } from "@medrunner/api-client";
 
 const apiConfig = {
   refreshToken: "YOUR_API_TOKEN",
@@ -52,7 +52,7 @@ console.log(self);
 The client provides a built-in logger that you can use to log information about the API calls. The logger is disabled by default, but you can enable it by setting the `log` property in the `buildClient` function as the third parameter.
 
 ```ts
-import MedrunnerApiClient from "@medrunner/api-client";
+import { MedrunnerApiClient } from "@medrunner/api-client";
 
 const apiConfig = {
   token: "YOUR_REFRESH_TOKEN",
