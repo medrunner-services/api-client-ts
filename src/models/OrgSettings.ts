@@ -28,12 +28,12 @@ export interface LocationSettings {
 
 export interface SpaceLocation {
   name: string;
-  type: LocationType;
+  type: SpaceLocationType;
   children: SpaceLocation[];
   enabled: boolean;
 }
 
-export enum LocationType {
+export enum SpaceLocationType {
   UNKNOWN = 0,
   SYSTEM = 1,
   PLANET = 2,
