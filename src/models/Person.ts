@@ -11,11 +11,12 @@ export default interface Person extends WritableDbItem {
   clientStats: ClientStats;
   activeEmergency?: string;
   /**
-   * @deprecated Use {@link clientPortalPreferencesBlob} instead
+   * @deprecated Use {@link Person.clientPortalPreferencesBlob} instead.
    */
   clientPortalPreferences: Record<string, unknown>;
   clientPortalPreferencesBlob?: string;
   redeemedCodes: RedeemedCode[];
+  allowAnonymousAlert: boolean;
 }
 
 export enum UserRoles {
