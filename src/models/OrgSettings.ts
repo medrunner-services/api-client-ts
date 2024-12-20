@@ -7,7 +7,9 @@ export default interface OrgSettings extends WritableDbItem {
 export interface PublicOrgSettings {
   status: ServiceStatus;
   emergenciesEnabled: boolean;
+  anonymousAlertsEnabled: boolean;
   messageOfTheDay?: MessageOfTheDay;
+  locationSettings: LocationSettings;
 }
 
 export interface MessageOfTheDay {
@@ -18,6 +20,24 @@ export interface MessageOfTheDay {
 export interface DateRange {
   startDate: string;
   endDate: string;
+}
+
+export interface LocationSettings {
+  locations: SpaceLocation[];
+}
+
+export interface SpaceLocation {
+  name: string;
+  type: LocationType;
+  children: SpaceLocation[];
+  enabled: boolean;
+}
+
+export enum LocationType {
+  UNKNOWN = 0,
+  SYSTEM = 1,
+  PLANET = 2,
+  MOON = 3,
 }
 
 export enum ServiceStatus {
