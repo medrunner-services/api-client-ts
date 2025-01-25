@@ -95,6 +95,8 @@ export default class EmergencyEndpoint extends ApiEndpoint {
 
   /**
    * Gets a tree of valid locations from which an emergency may be submitted.
+   *
+   * @deprecated Use {@link getPublicSettings} instead.
    * */
   public async emergencyLocations(): Promise<ApiResponse<LocationDetail[]>> {
     return await this.getRequest<LocationDetail[]>("/meta/locations");
