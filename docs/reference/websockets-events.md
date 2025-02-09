@@ -26,8 +26,32 @@ Triggers when a chat message is added to an emergency where the user participate
 
 Returns a <TypeLink name="ChatMessage" /> object.
 
+### TeamCreate
+
+Triggers when a team is created.
+
+Returns a <TypeLink name="MedrunnerTeam" /> object.
+
+### TeamUpdate
+
+Triggers when a team is updated.
+
+Returns an <TypeLink name="MedrunnerTeam" /> object.
+
+### TeamDelete
+
+Triggers when a team is deleted.
+
+Returns an <TypeLink name="MedrunnerTeam" /> object.
+
 ### OrgSettingsUpdate
 
-Triggers when a org settings are updated.
+Triggers when an org settings are updated.
 
 Returns a <TypeLink name="OrgSettings" /> object that has a <TypeLink name="PublicOrgSettings" /> and, if the user is a staff member, a <TypeLink name="StaffOrgSettings" /> .
+
+### DeploymentCreate
+
+Triggers when a new version of the portals is available.
+
+Returns a <TypeLink name="Deployment" /> object.
