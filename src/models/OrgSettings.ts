@@ -8,6 +8,7 @@ export interface PublicOrgSettings {
   status: ServiceStatus;
   emergenciesEnabled: boolean;
   anonymousAlertsEnabled: boolean;
+  registrationEnabled: boolean;
   messageOfTheDay?: MessageOfTheDay;
   locationSettings: LocationSettings;
 }
