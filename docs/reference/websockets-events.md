@@ -46,7 +46,7 @@ Returns an <TypeLink name="MedrunnerTeam" /> object.
 
 ### OrgSettingsUpdate
 
-Triggers when an org settings are updated.
+Triggers when org settings are updated.
 
 Returns a <TypeLink name="OrgSettings" /> object that has a <TypeLink name="PublicOrgSettings" /> and, if the user is a staff member, a <TypeLink name="StaffOrgSettings" /> .
 
