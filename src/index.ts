@@ -58,11 +58,13 @@ export * from "./models/Team";
 export * from "./models/TeamMember";
 export * from "./models/ThreatLevel";
 export * from "./models/OrgSettings";
+export * from "./models/Deployment";
 
 import ApiToken from "./models/ApiToken";
 import ChatMessage from "./models/ChatMessage";
 import ClientHistory from "./models/ClientHistory";
 import DbItem from "./models/DbItem";
+import Deployment from "./models/Deployment";
 import Emergency from "./models/Emergency";
 import EmergencyStats from "./models/EmergencyStats";
 import OrgSettings from "./models/OrgSettings";
@@ -75,6 +77,7 @@ import WritableDbItem from "./models/WritableDbItem";
 export {
   ApiToken,
   ChatMessage,
+  Deployment,
   DbItem,
   Emergency,
   EmergencyStats,
