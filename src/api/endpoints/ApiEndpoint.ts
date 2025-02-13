@@ -34,7 +34,7 @@ export default abstract class ApiEndpoint {
     if (config.headers !== undefined) {
       if (!noAuthentication) {
         const accessToken = await this.tokenManager.getAccessToken("API makeRequest");
-        if (accessToken !== undefined) {
+        if (accessToken !== undefined || !this.config.cookieAuth) {
           // only include auth header if we have a token
           config.headers.Authorization = `Bearer ${accessToken}`;
         }
