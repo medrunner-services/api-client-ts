@@ -48,7 +48,10 @@ export default class WebsocketManager {
       })
       .withUrl(`${this.config.baseUrl}/hub/emergency`, {
         withCredentials: this.config.cookieAuth,
-        accessTokenFactory: async () => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? "",
+
+        accessTokenFactory: this.config.cookieAuth
+          ? async (): Promise<string> => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? ""
+          : undefined,
       })
       .configureLogging(new WSLogger(this.logger))
       .build();
