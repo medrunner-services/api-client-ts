@@ -89,7 +89,8 @@ export default class TokenManager extends ApiEndpoint {
 
   private async fetchToken(refreshToken?: string, source: string = "unknown"): Promise<TokenGrant> {
     this.log?.debug(`getAccessToken: ${source} => Fetching new tokens`);
-    const result = await this.postRequest<TokenGrant>("/exchange", { refreshToken: refreshToken }, true);
+    const body = this.config.cookieAuth ? undefined : { refreshToken: refreshToken };
+    const result = await this.postRequest<TokenGrant>("/exchange", body, true);
 
     if (!result.success || result.data === undefined) {
       throw Error(result.statusCode?.toString());
