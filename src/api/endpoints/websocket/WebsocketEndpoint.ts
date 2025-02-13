@@ -2,9 +2,9 @@ import { HubConnection } from "@microsoft/signalr";
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
-import { DefaultApiConfig } from "../../ApiConfig";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
+import DefaultApiConfig from "../DefaultApiConfig";
 import WebsocketManager from ".//WebsocketManager";
 
 /**
@@ -15,7 +15,7 @@ export default class WebsocketEndpoint extends ApiEndpoint {
     super(config, tokenManager, log, headerProvider);
   }
 
-  private websocketManager = new WebsocketManager(this.config.baseUrl, this.tokenManager, this.log);
+  private websocketManager = new WebsocketManager(this.config, this.tokenManager, this.log);
 
   protected override endpoint(): string {
     return "websocket";

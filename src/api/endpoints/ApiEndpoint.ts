@@ -2,9 +2,9 @@ import axios, { AxiosError, AxiosRequestConfig } from "axios";
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../Func";
-import { DefaultApiConfig } from "../ApiConfig";
 import ApiResponse from "../ApiResponse";
 import TokenManager from "./auth/TokenManager";
+import DefaultApiConfig from "./DefaultApiConfig";
 
 export default abstract class ApiEndpoint {
   public readonly config: DefaultApiConfig;
@@ -34,7 +34,7 @@ export default abstract class ApiEndpoint {
     if (config.headers !== undefined) {
       if (!noAuthentication) {
         const accessToken = await this.tokenManager.getAccessToken("API makeRequest");
-        if (accessToken !== undefined || !this.config.cookieAuth) {
+        if (accessToken !== undefined) {
           // only include auth header if we have a token
           config.headers.Authorization = `Bearer ${accessToken}`;
         }

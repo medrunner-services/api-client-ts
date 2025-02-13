@@ -2,10 +2,10 @@ import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
 import ApiToken from "../../../models/ApiToken";
-import { DefaultApiConfig } from "../../ApiConfig";
 import ApiResponse from "../../ApiResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
+import DefaultApiConfig from "../DefaultApiConfig";
 import CreateApiTokenRequest from "./request/CreateApiTokenRequest";
 import SignOutRequest from "./request/SignOutRequest";
 

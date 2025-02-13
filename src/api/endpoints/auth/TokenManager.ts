@@ -2,8 +2,8 @@ import { Logger } from "ts-log";
 
 import { AsyncAction, HeaderProvider } from "../../../Func";
 import TokenGrant from "../../../models/TokenGrant";
-import { DefaultApiConfig } from "../../ApiConfig";
 import ApiEndpoint from "../ApiEndpoint";
+import DefaultApiConfig from "../DefaultApiConfig";
 
 export default class TokenManager extends ApiEndpoint {
   private accessToken?: string;
@@ -39,8 +39,11 @@ export default class TokenManager extends ApiEndpoint {
       // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
       if (exp - 300 > now) {
         this.log?.debug(`getAccessToken: ${source} => Token valid and simply returned`);
-        if (!this.config.cookieAuth) return this.accessToken;
-        else return;
+        if (!this.config.cookieAuth) {
+          return this.accessToken;
+        } else {
+          return undefined;
+        }
       }
     }
 
@@ -77,7 +80,11 @@ export default class TokenManager extends ApiEndpoint {
     }
 
     this.log?.debug(`getAccessToken: ${source} => Returning new access token`);
-    return this.accessToken;
+    if (!this.config.cookieAuth) {
+      return this.accessToken;
+    } else {
+      return undefined;
+    }
   }
 
   private async fetchToken(refreshToken?: string, source: string = "unknown"): Promise<TokenGrant> {

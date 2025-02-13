@@ -2,10 +2,10 @@ import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
 import { PublicOrgSettings } from "../../../models/OrgSettings";
-import { DefaultApiConfig } from "../../ApiConfig";
 import ApiResponse from "../../ApiResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
+import DefaultApiConfig from "../DefaultApiConfig";
 
 /**
  * Endpoints for interacting with the public org settings.

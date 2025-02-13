@@ -3,11 +3,11 @@ import { Logger } from "ts-log";
 import { HeaderProvider } from "../../../Func";
 import ClientHistory from "../../../models/ClientHistory";
 import Person, { BlockedStatus } from "../../../models/Person";
-import { DefaultApiConfig } from "../../ApiConfig";
 import ApiResponse from "../../ApiResponse";
 import PaginatedResponse from "../../PaginatedResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
+import DefaultApiConfig from "../DefaultApiConfig";
 
 /**
  * Endpoints for interacting with clients.
