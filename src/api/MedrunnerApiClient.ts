@@ -3,7 +3,7 @@ import { Logger } from "ts-log";
 import { AsyncAction } from "../Func";
 import TokenGrant from "../models/TokenGrant";
 import ApiClient from "./ApiClient";
-import ApiConfig from "./ApiConfig";
+import ApiConfig, { DefaultApiConfig } from "./ApiConfig";
 import AuthEndpoint from "./endpoints/auth/AuthEndpoint";
 import TokenManager from "./endpoints/auth/TokenManager";
 import ChatMessageEndpoint from "./endpoints/chatMessage/ChatMessageEndpoint";
@@ -51,17 +51,23 @@ export default class MedrunnerApiClient<
     refreshCallback?: AsyncAction<TokenGrant>,
     log?: Logger,
   ): MedrunnerApiClient {
-    const tokenManager = new TokenManager(config, refreshCallback, log);
+    const configWithDefaults: DefaultApiConfig = {
+      baseUrl: "https://api.medrunner.space",
+      cookieAuth: false,
+      ...config,
+    };
+
+    const tokenManager = new TokenManager(configWithDefaults, refreshCallback, log);
 
     return new MedrunnerApiClient(
-      new EmergencyEndpoint(config.baseUrl, tokenManager, log),
-      new ClientEndpoint(config.baseUrl, tokenManager, log),
-      new StaffEndpoint(config.baseUrl, tokenManager, log),
-      new OrgSettingsEndpoint(config.baseUrl, tokenManager, log),
-      new ChatMessageEndpoint(config.baseUrl, tokenManager, log),
-      new CodeEndpoint(config.baseUrl, tokenManager, log),
-      new AuthEndpoint(config.baseUrl, tokenManager, log),
-      new WebsocketEndpoint(config.baseUrl, tokenManager, log),
+      new EmergencyEndpoint(configWithDefaults, tokenManager, log),
+      new ClientEndpoint(configWithDefaults, tokenManager, log),
+      new StaffEndpoint(configWithDefaults, tokenManager, log),
+      new OrgSettingsEndpoint(configWithDefaults, tokenManager, log),
+      new ChatMessageEndpoint(configWithDefaults, tokenManager, log),
+      new CodeEndpoint(configWithDefaults, tokenManager, log),
+      new AuthEndpoint(configWithDefaults, tokenManager, log),
+      new WebsocketEndpoint(configWithDefaults, tokenManager, log),
     );
   }
 }

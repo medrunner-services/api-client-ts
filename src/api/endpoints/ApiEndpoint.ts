@@ -2,31 +2,33 @@ import axios, { AxiosError, AxiosRequestConfig } from "axios";
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../Func";
+import { DefaultApiConfig } from "../ApiConfig";
 import ApiResponse from "../ApiResponse";
 import TokenManager from "./auth/TokenManager";
 
 export default abstract class ApiEndpoint {
-  public readonly baseUrl: string;
+  public readonly config: DefaultApiConfig;
 
   protected constructor(
-    baseUrl: string | undefined,
+    config: DefaultApiConfig,
     public readonly tokenManager: TokenManager,
     protected readonly log?: Logger,
     private readonly headerProvider?: HeaderProvider,
   ) {
-    this.baseUrl = baseUrl ?? "https://api.medrunner.space";
+    this.config = config;
   }
 
   protected abstract endpoint(): string;
 
   protected endpointUrl(): string {
-    return `${this.baseUrl}/${this.endpoint()}`;
+    return `${this.config.baseUrl}/${this.endpoint()}`;
   }
 
   private async headersForRequest(noAuthentication: boolean): Promise<AxiosRequestConfig> {
     const config: AxiosRequestConfig = {
-      baseURL: this.baseUrl,
+      baseURL: this.config.baseUrl,
       headers: {},
+      withCredentials: this.config.cookieAuth,
     };
 
     if (config.headers !== undefined) {

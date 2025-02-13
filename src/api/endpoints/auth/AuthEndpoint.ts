@@ -2,6 +2,7 @@ import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
 import ApiToken from "../../../models/ApiToken";
+import { DefaultApiConfig } from "../../ApiConfig";
 import ApiResponse from "../../ApiResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
@@ -12,8 +13,8 @@ import SignOutRequest from "./request/SignOutRequest";
  * Endpoints for interacting with auth.
  * */
 export default class AuthEndpoint extends ApiEndpoint {
-  constructor(baseUrl: string | undefined, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
-    super(baseUrl, tokenManager, log, headerProvider);
+  constructor(config: DefaultApiConfig, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
+    super(config, tokenManager, log, headerProvider);
   }
 
   protected override endpoint(): string {
