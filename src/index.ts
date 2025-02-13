@@ -1,10 +1,11 @@
 import ApiClient from "./api/ApiClient";
 import ApiConfig from "./api/ApiConfig";
 import ApiResponse from "./api/ApiResponse";
+import DefaultApiConfig from "./api/endpoints/DefaultApiConfig";
 import MedrunnerApiClient from "./api/MedrunnerApiClient";
 import PaginatedResponse from "./api/PaginatedResponse";
 
-export { MedrunnerApiClient, ApiClient, ApiResponse, PaginatedResponse, ApiConfig };
+export { MedrunnerApiClient, ApiClient, ApiResponse, PaginatedResponse, ApiConfig, DefaultApiConfig };
 
 export * from "./Func";
 
