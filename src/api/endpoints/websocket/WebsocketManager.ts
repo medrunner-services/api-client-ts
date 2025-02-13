@@ -2,6 +2,7 @@ import { type HubConnection, HubConnectionBuilder, ILogger, LogLevel } from "@mi
 import { Logger } from "ts-log";
 
 import TokenManager from "../auth/TokenManager";
+import DefaultApiConfig from "../DefaultApiConfig";
 
 class WSLogger implements ILogger {
   constructor(private logger?: Logger) {}
@@ -32,7 +33,7 @@ export default class WebsocketManager {
   protected readonly logger?: Logger;
 
   public constructor(
-    private readonly baseUrl: string,
+    private readonly config: DefaultApiConfig,
     tokenManager: TokenManager,
     logger?: Logger,
   ) {
@@ -45,8 +46,12 @@ export default class WebsocketManager {
       .withAutomaticReconnect({
         nextRetryDelayInMilliseconds: retryContext => (retryContext.previousRetryCount > 5 ? null : 2000),
       })
-      .withUrl(`${this.baseUrl}/hub/emergency`, {
-        accessTokenFactory: async () => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? "",
+      .withUrl(`${this.config.baseUrl}/hub/emergency`, {
+        withCredentials: this.config.cookieAuth,
+
+        accessTokenFactory: this.config.cookieAuth
+          ? async (): Promise<string> => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? ""
+          : undefined,
       })
       .configureLogging(new WSLogger(this.logger))
       .build();

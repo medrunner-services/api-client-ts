@@ -19,4 +19,9 @@ export default interface ApiConfig {
    * possible.
    * */
   refreshToken?: string;
+
+  /**
+   * Use cookie base auth instead of tokens - defaults to false
+   * */
+  cookieAuth?: boolean;
 }

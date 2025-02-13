@@ -2,8 +2,8 @@ import { Logger } from "ts-log";
 
 import { AsyncAction, HeaderProvider } from "../../../Func";
 import TokenGrant from "../../../models/TokenGrant";
-import ApiConfig from "../../ApiConfig";
 import ApiEndpoint from "../ApiEndpoint";
+import DefaultApiConfig from "../DefaultApiConfig";
 
 export default class TokenManager extends ApiEndpoint {
   private accessToken?: string;
@@ -13,7 +13,7 @@ export default class TokenManager extends ApiEndpoint {
   private tokenFetchPromise?: Promise<TokenGrant>;
 
   public constructor(
-    config: ApiConfig,
+    config: DefaultApiConfig,
     private readonly refreshCallback?: AsyncAction<TokenGrant>,
     log?: Logger,
     headerProvider?: HeaderProvider,
@@ -21,7 +21,7 @@ export default class TokenManager extends ApiEndpoint {
     // todo: I dunno fix this someday I guess?
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    super(config.baseUrl, null!, log, headerProvider);
+    super(config, null!, log, headerProvider);
     this.accessToken = config.accessToken;
     this.refreshToken = config.refreshToken;
   }
@@ -32,19 +32,23 @@ export default class TokenManager extends ApiEndpoint {
 
   public async getAccessToken(source: string = "unknown"): Promise<string | undefined> {
     this.log?.debug(`getAccessToken: New token requested from ${source}`);
-    if (this.accessToken !== undefined && this.accessTokenExpiration !== undefined) {
+    if ((this.accessToken !== undefined || this.config.cookieAuth) && this.accessTokenExpiration !== undefined) {
       const exp = Math.trunc(new Date(this.accessTokenExpiration).getTime() / 1000);
       const now = Math.trunc(Date.now() / 1000);
 
       // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
       if (exp - 300 > now) {
         this.log?.debug(`getAccessToken: ${source} => Token valid and simply returned`);
-        return this.accessToken;
+        if (!this.config.cookieAuth) {
+          return this.accessToken;
+        } else {
+          return undefined;
+        }
       }
     }
 
     // if the refresh token isn't present, nothing we can do
-    if (this.refreshToken === undefined) {
+    if (this.refreshToken === undefined && !this.config.cookieAuth) {
       this.log?.debug(`getAccessToken: ${source} => Missing refresh token, returning stored access token`);
       return this.accessToken;
     }
@@ -59,9 +63,11 @@ export default class TokenManager extends ApiEndpoint {
       this.log?.debug(`getAccessToken: ${source} => Waiting for token fetch to complete`);
       const tokens = await this.tokenFetchPromise;
 
-      this.log?.debug(`getAccessToken: ${source} => Setting new tokens in memory`);
-      this.accessToken = tokens.accessToken;
-      this.refreshToken = tokens.refreshToken;
+      this.log?.debug(`getAccessToken: ${source} => Setting new tokens in memory if no cookieAuth`);
+      if (!this.config.cookieAuth) {
+        this.accessToken = tokens.accessToken;
+        this.refreshToken = tokens.refreshToken;
+      }
       this.accessTokenExpiration = tokens.accessTokenExpiration;
       if (tokens.refreshTokenExpiration) this.refreshTokenExpiration = tokens.refreshTokenExpiration;
 
@@ -74,12 +80,17 @@ export default class TokenManager extends ApiEndpoint {
     }
 
     this.log?.debug(`getAccessToken: ${source} => Returning new access token`);
-    return this.accessToken;
+    if (!this.config.cookieAuth) {
+      return this.accessToken;
+    } else {
+      return undefined;
+    }
   }
 
-  private async fetchToken(refreshToken: string, source: string = "unknown"): Promise<TokenGrant> {
+  private async fetchToken(refreshToken?: string, source: string = "unknown"): Promise<TokenGrant> {
     this.log?.debug(`getAccessToken: ${source} => Fetching new tokens`);
-    const result = await this.postRequest<TokenGrant>("/exchange", { refreshToken: refreshToken }, true);
+    const body = this.config.cookieAuth ? undefined : { refreshToken: refreshToken };
+    const result = await this.postRequest<TokenGrant>("/exchange", body, true);
 
     if (!result.success || result.data === undefined) {
       throw Error(result.statusCode?.toString());

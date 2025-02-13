@@ -32,6 +32,12 @@ const apiConfig = {
 const api = MedrunnerApiClient.buildClient(apiConfig);
 ```
 
+::: warning
+Using the API config option `cookieAuth` will not work for 3rd party applications, as the cookies sent from the API uses the `SameSite=Lax` policy.
+
+Only apps using the official medrunner.space domain will be able to use those cookies in the browser.
+:::
+
 ### Make API calls
 
 You can now use the client to make API calls. Here is an example of how to get the current user:

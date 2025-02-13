@@ -7,13 +7,14 @@ import ApiResponse from "../../ApiResponse";
 import PaginatedResponse from "../../PaginatedResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
+import DefaultApiConfig from "../DefaultApiConfig";
 
 /**
  * Endpoints for interacting with clients.
  * */
 export default class ClientEndpoint extends ApiEndpoint {
-  constructor(baseUrl: string | undefined, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
-    super(baseUrl, tokenManager, log, headerProvider);
+  constructor(config: DefaultApiConfig, tokenManager: TokenManager, log?: Logger, headerProvider?: HeaderProvider) {
+    super(config, tokenManager, log, headerProvider);
   }
 
   protected override endpoint(): string {
