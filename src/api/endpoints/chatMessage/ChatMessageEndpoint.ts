@@ -33,7 +33,7 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
     limit: number,
     paginationToken?: string,
   ): Promise<ApiResponse<PaginatedResponse<ChatMessage>>> {
-    return await this.getRequest<PaginatedResponse<ChatMessage>>(`/${emergencyId}`, { limit, paginationToken });
+    return await this.getRequest<PaginatedResponse<ChatMessage>>(emergencyId, { limit, paginationToken });
   }
 
   /**
@@ -45,5 +45,17 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
    * */
   public async sendMessage(message: ChatMessageRequest): Promise<ApiResponse<ChatMessage>> {
     return await this.postRequest<ChatMessage>("", message);
+  }
+
+  /**
+   * Update a chat message
+   *
+   * @param id - The id of the message to update
+   * @param contents - The new content of the message
+   * @returns The updated chat message
+   *
+   * */
+  public async updateMessage(id: string, contents: string): Promise<ApiResponse<ChatMessage>> {
+    return await this.putRequest<ChatMessage>(id, { contents });
   }
 }
