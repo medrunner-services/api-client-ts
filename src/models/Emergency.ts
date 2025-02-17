@@ -20,6 +20,9 @@ export default interface Emergency extends WritableDbItem {
   clientMessage?: MessageCache;
   coordinationThread?: MessageCache;
   afterActionReportMessage?: MessageCache;
+  /**
+   * @deprecated Will be removed in a future update.
+   */
   interactionMessageId?: string;
   respondingTeam: Team;
   respondingTeams: RespondingTeam[];
