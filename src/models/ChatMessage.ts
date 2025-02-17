@@ -20,4 +20,9 @@ export default interface ChatMessage extends DbItem {
    * The contents of the message
    * */
   contents: string;
+
+  /**
+   * Whether the message has been edited
+   * */
+  edited: boolean;
 }
