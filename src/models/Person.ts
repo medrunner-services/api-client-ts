@@ -17,6 +17,7 @@ export default interface Person extends WritableDbItem {
   clientPortalPreferencesBlob?: string;
   redeemedCodes: RedeemedCode[];
   allowAnonymousAlert: boolean;
+  initialJoinDate?: string;
 }
 
 export enum UserRoles {
