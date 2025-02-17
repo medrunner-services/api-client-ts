@@ -26,6 +26,12 @@ Triggers when a chat message is added to an emergency where the user participate
 
 Returns a <TypeLink name="ChatMessage" /> object.
 
+### ChatMessageUpdate
+
+Triggers when a chat message is updated.
+
+Returns a <TypeLink name="ChatMessage" /> object.
+
 ### TeamCreate
 
 Triggers when a team is created.
