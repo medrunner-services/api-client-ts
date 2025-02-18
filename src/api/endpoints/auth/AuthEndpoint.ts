@@ -28,8 +28,8 @@ export default class AuthEndpoint extends ApiEndpoint {
    *
    * @virtual
    * */
-  public async signOut(oldToken: SignOutRequest): Promise<ApiResponse> {
-    return await this.postRequest<string>("/signOut", oldToken);
+  public async signOut(oldToken?: SignOutRequest): Promise<ApiResponse> {
+    return await this.postRequest<string>("/signOut", oldToken ?? null);
   }
 
   /**
