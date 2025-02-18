@@ -49,7 +49,7 @@ export default class WebsocketManager {
       .withUrl(`${this.config.baseUrl}/hub/emergency`, {
         withCredentials: this.config.cookieAuth,
 
-        accessTokenFactory: this.config.cookieAuth
+        accessTokenFactory: !this.config.cookieAuth
           ? async (): Promise<string> => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? ""
           : undefined,
       })
