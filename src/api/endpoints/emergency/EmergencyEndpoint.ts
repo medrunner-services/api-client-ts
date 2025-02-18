@@ -48,7 +48,6 @@ export default class EmergencyEndpoint extends ApiEndpoint {
    * @param newEmergency - Emergency details for the new emergency
    * @returns The newly-created emergency
    *
-   * @virtual
    * */
   public async createEmergency(newEmergency: CreateEmergencyRequest): Promise<ApiResponse<Emergency>> {
     return await this.postRequest<Emergency>("", newEmergency);
