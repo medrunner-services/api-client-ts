@@ -26,7 +26,6 @@ export default class AuthEndpoint extends ApiEndpoint {
    *
    * @param oldToken - Token to be invalidated
    *
-   * @virtual
    * */
   public async signOut(oldToken?: SignOutRequest): Promise<ApiResponse> {
     return await this.postRequest<string>("/signOut", oldToken ?? null);
@@ -46,7 +45,6 @@ export default class AuthEndpoint extends ApiEndpoint {
    * @param newToken - Emergency details for the new emergency
    * @returns The newly-created api token
    *
-   * @virtual
    * */
   public async createApiToken(newToken: CreateApiTokenRequest): Promise<ApiResponse<string>> {
     return await this.postRequest<string>("/apiTokens", {
