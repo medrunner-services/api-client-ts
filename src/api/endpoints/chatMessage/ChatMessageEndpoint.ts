@@ -24,6 +24,8 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
   /**
    * Gets the specified amount of chat messages for a given emergency.
    *
+   * @deprecated Use {@link getMessageHistory} instead
+   *
    * @param emergencyId - The emergency for which to fetch the chat history
    * @param limit - The number of emergencies to get
    * @param paginationToken - The number to use for pagination
@@ -34,6 +36,24 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
     paginationToken?: string,
   ): Promise<ApiResponse<PaginatedResponse<ChatMessage>>> {
     return await this.getRequest<PaginatedResponse<ChatMessage>>(emergencyId, { limit, paginationToken });
+  }
+
+  /**
+   * Gets the specified amount of chat messages for a given emergency.
+   *
+   * @param emergencyId - The emergency for which to fetch the chat history
+   * @param limit - The number of emergencies to get
+   * @param paginationToken - The number to use for pagination
+   * */
+  public async getMessageHistory(
+    emergencyId: string,
+    limit: number,
+    paginationToken?: string,
+  ): Promise<ApiResponse<PaginatedResponse<ChatMessage>>> {
+    return await this.getRequest<PaginatedResponse<ChatMessage>>(`/conversation/${emergencyId}`, {
+      limit,
+      paginationToken,
+    });
   }
 
   /**
