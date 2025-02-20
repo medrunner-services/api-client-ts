@@ -44,14 +44,16 @@ export default class WebsocketManager {
   public async establishConnection(): Promise<HubConnection> {
     return new HubConnectionBuilder()
       .withAutomaticReconnect({
-        nextRetryDelayInMilliseconds: retryContext => (retryContext.previousRetryCount > 5 ? null : 2000),
+        nextRetryDelayInMilliseconds: retryContext => {
+          if (retryContext.previousRetryCount >= 10) return null;
+          return Math.min(500 * Math.pow(2, retryContext.previousRetryCount), 5000);
+        },
       })
       .withUrl(`${this.config.baseUrl}/hub/emergency`, {
         withCredentials: this.config.cookieAuth,
 
-        accessTokenFactory: !this.config.cookieAuth
-          ? async (): Promise<string> => (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? ""
-          : undefined,
+        accessTokenFactory: async (): Promise<string> =>
+          (await this.tokenManager.getAccessToken("WS accessTokenFactory")) ?? "",
       })
       .configureLogging(new WSLogger(this.logger))
       .build();
