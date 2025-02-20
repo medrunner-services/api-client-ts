@@ -1,6 +1,6 @@
 {
   "name": "@medrunner/api-client",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Wrapper library for the Medrunner API",
   "scripts": {
     "build": "tsup",
