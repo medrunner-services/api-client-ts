@@ -31,11 +31,13 @@ export default class TokenManager extends ApiEndpoint {
   }
 
   public async getAccessToken(source: string = "unknown"): Promise<string | undefined> {
+    this.log?.debug(`getAccessToken: New token requested from ${source}`);
+
     if (this.config.cookieAuth) {
       this.accessTokenExpiration = localStorage.getItem("accessTokenExpiration") ?? undefined;
+      this.refreshTokenExpiration = localStorage.getItem("refreshTokenExpiration") ?? undefined;
     }
 
-    this.log?.debug(`getAccessToken: New token requested from ${source}`);
     if ((this.accessToken !== undefined || this.config.cookieAuth) && this.accessTokenExpiration) {
       const exp = Math.trunc(new Date(this.accessTokenExpiration).getTime() / 1000);
       const now = Math.trunc(Date.now() / 1000);
