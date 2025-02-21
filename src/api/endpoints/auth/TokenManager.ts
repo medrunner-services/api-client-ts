@@ -32,12 +32,17 @@ export default class TokenManager extends ApiEndpoint {
 
   public async getAccessToken(source: string = "unknown"): Promise<string | undefined> {
     this.log?.debug(`getAccessToken: New token requested from ${source}`);
-    if ((this.accessToken !== undefined || this.config.cookieAuth) && this.accessTokenExpiration !== undefined) {
+
+    if (this.config.cookieAuth) {
+      this.accessTokenExpiration = localStorage.getItem("accessTokenExpiration") ?? undefined;
+      this.refreshTokenExpiration = localStorage.getItem("refreshTokenExpiration") ?? undefined;
+    }
+
+    if ((this.accessToken !== undefined || this.config.cookieAuth) && this.accessTokenExpiration) {
       const exp = Math.trunc(new Date(this.accessTokenExpiration).getTime() / 1000);
       const now = Math.trunc(Date.now() / 1000);
 
-      // check expiration minus 5 minutes to guard against race condition or timing issues creating unnecessary 403s
-      if (exp - 300 > now) {
+      if (exp > now) {
         this.log?.debug(`getAccessToken: ${source} => Token valid and simply returned`);
         if (!this.config.cookieAuth) {
           return this.accessToken;
@@ -67,7 +72,13 @@ export default class TokenManager extends ApiEndpoint {
       if (!this.config.cookieAuth) {
         this.accessToken = tokens.accessToken;
         this.refreshToken = tokens.refreshToken;
+      } else {
+        this.log?.debug(`getAccessToken: ${source} => Setting new token expirations in local storage`);
+        localStorage.setItem("accessTokenExpiration", tokens.accessTokenExpiration);
+        if (tokens.refreshTokenExpiration)
+          localStorage.setItem("refreshTokenExpiration", tokens.refreshTokenExpiration);
       }
+
       this.accessTokenExpiration = tokens.accessTokenExpiration;
       if (tokens.refreshTokenExpiration) this.refreshTokenExpiration = tokens.refreshTokenExpiration;
 
