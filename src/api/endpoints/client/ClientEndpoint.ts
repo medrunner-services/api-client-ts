@@ -51,10 +51,11 @@ export default class ClientEndpoint extends ApiEndpoint {
    * Links the current user to a rsiHandle.
    *
    * @param rsiHandle - The RSI handle of the client
+   * @returns The updated Person object of the client
    *
    * */
-  public async linkClient(rsiHandle: string): Promise<ApiResponse> {
-    return await this.postRequest("/link", { rsiHandle });
+  public async linkClient(rsiHandle: string): Promise<ApiResponse<Person>> {
+    return await this.postRequest<Person>("/link", { rsiHandle });
   }
 
   /**
