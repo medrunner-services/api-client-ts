@@ -78,4 +78,14 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
   public async updateMessage(id: string, contents: string): Promise<ApiResponse<ChatMessage>> {
     return await this.putRequest<ChatMessage>(id, { contents });
   }
+
+  /**
+   * Delete a chat message
+   *
+   * @param id - The id of the message to delete
+   *
+   * */
+  public async deleteMessage(id: string): Promise<ApiResponse> {
+    return await this.deleteRequest(id);
+  }
 }
