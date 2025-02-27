@@ -9,7 +9,6 @@ import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
 import DefaultApiConfig from "../DefaultApiConfig";
 import CreateEmergencyRequest from "./request/CreateEmergencyRequest";
-import LocationDetail from "./response/LocationDetail";
 import TeamDetailsResponse from "./response/TeamDetailsResponse";
 
 /**
