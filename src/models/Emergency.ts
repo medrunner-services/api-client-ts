@@ -10,7 +10,6 @@ export default interface Emergency extends WritableDbItem {
   subsystem: string;
   tertiaryLocation?: string;
   threatLevel: ThreatLevel;
-  remarks?: string;
   clientRsiHandle: string;
   clientDiscordId?: string;
   clientId?: string;

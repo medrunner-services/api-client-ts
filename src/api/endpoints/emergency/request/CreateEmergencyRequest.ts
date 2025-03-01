@@ -5,11 +5,6 @@ import { ThreatLevel } from "../../../../models/ThreatLevel";
  * */
 export default interface CreateEmergencyRequest {
   /**
-   * Additional details or remarks to include
-   * */
-  remarks?: string;
-
-  /**
    * The location of the emergency
    * */
   location: Location;
