@@ -1,6 +1,6 @@
 {
   "name": "@medrunner/api-client",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Wrapper library for the Medrunner API",
   "scripts": {
     "build": "tsup",
@@ -54,17 +54,17 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.21.0",
-    "@types/node": "^22.13.7",
-    "@typescript-eslint/eslint-plugin": "^8.25.0",
-    "@typescript-eslint/parser": "^8.25.0",
+    "@types/node": "^22.13.9",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
     "eslint": "^9.21.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-tsdoc": "^0.4.0",
-    "prettier": "^3.5.2",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "tsup": "^8.4.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "vitepress": "^1.6.3"
   }
 }
