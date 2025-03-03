@@ -5,3 +5,5 @@ updates:
     schedule:
       interval: "weekly"
     versioning-strategy: increase
+    reviewers:
+      - "ElliotThiebaut"
