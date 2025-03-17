@@ -48,7 +48,7 @@
   ],
   "dependencies": {
     "@microsoft/signalr": "^8.0.7",
-    "axios": "^1.8.2",
+    "axios": "^1.8.3",
     "ts-log": "^2.2.7"
   },
   "devDependencies": {
