@@ -9,6 +9,7 @@ import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
 import DefaultApiConfig from "../DefaultApiConfig";
 import CreateEmergencyRequest from "./request/CreateEmergencyRequest";
+import { ClientDetailsResponse } from "./response/ClientDetailsResponse";
 import TeamDetailsResponse from "./response/TeamDetailsResponse";
 
 /**
@@ -90,5 +91,14 @@ export default class EmergencyEndpoint extends ApiEndpoint {
    * */
   public async teamDetails(id: string): Promise<ApiResponse<TeamDetailsResponse>> {
     return await this.getRequest<TeamDetailsResponse>(`/${id}/teamDetails`);
+  }
+
+  /**
+   * Fetches additional details about the client for an alert.
+   *
+   * @param id - The id of the emergency to get client details about
+   * */
+  public async clientDetails(id: string): Promise<ApiResponse<ClientDetailsResponse>> {
+    return await this.getRequest<ClientDetailsResponse>(`/${id}/client`);
   }
 }
