@@ -1,6 +1,6 @@
 import { PersonType } from "../../../../models/Person";
 
-export interface ClientDetailsResponse {
+export default interface ClientDetailsResponse {
   totalEmergencies: number;
   emergencySuccessRate: number;
   joinDate: string;
