@@ -1,6 +1,6 @@
 {
   "name": "@medrunner/api-client",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Wrapper library for the Medrunner API",
   "scripts": {
     "build": "tsup",
@@ -48,16 +48,16 @@
   ],
   "dependencies": {
     "@microsoft/signalr": "^8.0.7",
-    "axios": "^1.8.2",
+    "axios": "^1.8.4",
     "ts-log": "^2.2.7"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.22.0",
-    "@types/node": "^22.13.10",
-    "@typescript-eslint/eslint-plugin": "^8.26.1",
-    "@typescript-eslint/parser": "^8.26.1",
-    "eslint": "^9.22.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.23.0",
+    "@types/node": "^22.13.11",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "eslint": "^9.23.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-tsdoc": "^0.4.0",
     "prettier": "^3.5.3",
