@@ -15,7 +15,6 @@ export default interface Person extends WritableDbItem {
    */
   clientPortalPreferences: Record<string, unknown>;
   clientPortalPreferencesBlob?: string;
-  redeemedCodes: RedeemedCode[];
   allowAnonymousAlert: boolean;
   initialJoinDate?: string;
 }
