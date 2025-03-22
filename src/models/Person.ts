@@ -49,8 +49,8 @@ export interface BlockedStatus {
   blocked: boolean;
 }
 
-export interface RedeemedCode {
-  code: string;
+export interface RedeemedCode extends WritableDbItem {
+  redeemerId: string;
   type: CodeType;
 }
 
