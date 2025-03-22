@@ -1,6 +1,7 @@
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
+import { RedeemedCode } from "../../../models/Person";
 import ApiResponse from "../../ApiResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
@@ -16,6 +17,13 @@ export default class CodeEndpoint extends ApiEndpoint {
 
   protected override endpoint(): string {
     return "code";
+  }
+
+  /**
+   * Gets the redeemed codes for the current user.
+   * */
+  public async getRedeemedCodes(): Promise<ApiResponse<RedeemedCode[]>> {
+    return await this.getRequest<RedeemedCode[]>("/redeemed");
   }
 
   /**
