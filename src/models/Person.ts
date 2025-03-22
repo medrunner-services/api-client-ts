@@ -14,6 +14,10 @@ export default interface Person extends WritableDbItem {
    * @deprecated Use {@link Person.clientPortalPreferencesBlob} instead.
    */
   clientPortalPreferences: Record<string, unknown>;
+  /**
+   * @deprecated Fetch this information via {@link client.getRedeemedCodes} instead.
+   */
+  redeemedCodes: RedeemedCode[];
   clientPortalPreferencesBlob?: string;
   allowAnonymousAlert: boolean;
   initialJoinDate?: string;
