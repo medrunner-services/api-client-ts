@@ -1,4 +1,5 @@
 import EmergencyStats from "./EmergencyStats";
+import { CodeType } from "./PromotionalCode";
 import WritableDbItem from "./WritableDbItem";
 
 export default interface Person extends WritableDbItem {
@@ -53,12 +54,7 @@ export interface BlockedStatus {
   blocked: boolean;
 }
 
-export interface RedeemedCode extends WritableDbItem {
-  redeemerId: string;
+export interface RedeemedCode {
+  code: string;
   type: CodeType;
-}
-
-export enum CodeType {
-  Unknown,
-  CitizenCon2954,
 }
