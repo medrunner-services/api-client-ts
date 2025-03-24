@@ -60,6 +60,7 @@ export * from "./models/TeamMember";
 export * from "./models/ThreatLevel";
 export * from "./models/OrgSettings";
 export * from "./models/Deployment";
+export * from "./models/PromotionalCode";
 
 import ApiToken from "./models/ApiToken";
 import ChatMessage from "./models/ChatMessage";
@@ -70,6 +71,7 @@ import Emergency from "./models/Emergency";
 import EmergencyStats from "./models/EmergencyStats";
 import OrgSettings from "./models/OrgSettings";
 import Person from "./models/Person";
+import PromotionalCode from "./models/PromotionalCode";
 import Team from "./models/Team";
 import TeamMember from "./models/TeamMember";
 import TokenGrant from "./models/TokenGrant";
@@ -85,6 +87,7 @@ export {
   OrgSettings,
   ClientHistory,
   Person,
+  PromotionalCode,
   Team,
   TeamMember,
   TokenGrant,

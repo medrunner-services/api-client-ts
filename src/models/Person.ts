@@ -1,4 +1,5 @@
 import EmergencyStats from "./EmergencyStats";
+import { CodeType } from "./PromotionalCode";
 import WritableDbItem from "./WritableDbItem";
 
 export default interface Person extends WritableDbItem {
@@ -14,6 +15,10 @@ export default interface Person extends WritableDbItem {
    * @deprecated Use {@link Person.clientPortalPreferencesBlob} instead.
    */
   clientPortalPreferences: Record<string, unknown>;
+  /**
+   * @deprecated Fetch this information via {@link client.getRedeemedCodes} instead.
+   */
+  redeemedCodes: RedeemedCode[];
   clientPortalPreferencesBlob?: string;
   allowAnonymousAlert: boolean;
   initialJoinDate?: string;
@@ -52,9 +57,4 @@ export interface BlockedStatus {
 export interface RedeemedCode {
   code: string;
   type: CodeType;
-}
-
-export enum CodeType {
-  Unknown,
-  CitizenCon2954,
 }
