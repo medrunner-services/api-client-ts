@@ -57,7 +57,7 @@
     "@types/node": "^22.13.11",
     "@typescript-eslint/eslint-plugin": "^8.27.0",
     "@typescript-eslint/parser": "^8.27.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.25.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-tsdoc": "^0.4.0",
     "prettier": "^3.5.3",
