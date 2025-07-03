@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.ChatMessage.Request
-{
+namespace MedrunnerApiClient.Api.Endpoints.ChatMessage.Request;
+
     /// <summary>
     /// Request body for creating a new chat message.
     /// </summary>
@@ -15,4 +15,4 @@ namespace MedrunnerApiClient.Api.Endpoints.ChatMessage.Request
         /// </summary>
         public string Contents { get; set; }
     }
-}
+    

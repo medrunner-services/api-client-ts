@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
-namespace MedrunnerApiClient.Api.Endpoints.Emergency.Response
-{
+namespace MedrunnerApiClient.Api.Endpoints.Emergency.Response;
+
     /// <summary>
     /// A supported location from which an emergency may be submitted.
     /// </summary>
@@ -45,4 +45,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Emergency.Response
         /// </summary>
         MOON
     }
-}
+    

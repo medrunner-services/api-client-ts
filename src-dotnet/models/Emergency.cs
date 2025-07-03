@@ -1,62 +1,70 @@
+namespace MedrunnerApiClient.Models;
 using System;
 using System.Collections.Generic;
-
-namespace MedrunnerApiClient.Models
+/// <summary>
+/// Represents an emergency mission in the Medrunner system.
+/// </summary>
+/// <summary>
+/// Represents an emergency mission in the Medrunner system.
+/// </summary>
+public class Emergency : WritableDbItem
 {
-    /// <summary>
-    /// Represents an emergency mission in the Medrunner system.
-    /// </summary>
-    public class Emergency : WritableDbItem
-    {
-        public string System { get; set; }
-        public string Subsystem { get; set; }
-        public string? TertiaryLocation { get; set; }
-        public ThreatLevel ThreatLevel { get; set; }
-        public string ClientRsiHandle { get; set; }
-        public string? ClientDiscordId { get; set; }
-        public string? ClientId { get; set; }
-        public string SubscriptionTier { get; set; }
-        public MissionStatus Status { get; set; }
-        public MessageCache? AlertMessage { get; set; }
-        public MessageCache? ClientMessage { get; set; }
-        public MessageCache? CoordinationThread { get; set; }
-        public MessageCache? AfterActionReportMessage { get; set; }
-        public Team RespondingTeam { get; set; }
-        public List<RespondingTeam> RespondingTeams { get; set; }
-        public long CreationTimestamp { get; set; }
-        public long? AcceptedTimestamp { get; set; }
-        public long? CompletionTimestamp { get; set; }
-        public ResponseRating Rating { get; set; }
-        public string? RatingRemarks { get; set; }
-        public bool Test { get; set; }
-        public CancellationReason CancellationReason { get; set; }
-        public string? RefusalReason { get; set; }
-        public Origin Origin { get; set; }
-        public ClientData? ClientData { get; set; }
-        public bool IsComplete { get; set; }
-        public string? MissionName { get; set; }
-        public AfterActionReport? AfterActionReport { get; set; }
-        public SubmissionSource SubmissionSource { get; set; }
-    }
-
-    /// <summary>
-    /// Represents a cached message reference.
-    /// </summary>
-    public class MessageCache
-    {
-        public string Id { get; set; }
-        public string ChannelId { get; set; }
-    }
-
-    /// <summary>
-    /// Represents client data for an emergency.
-    /// </summary>
-    public class ClientData
-    {
-        public string RsiHandle { get; set; }
-        public string RsiProfileLink { get; set; }
-        public bool GotClientData { get; set; }
-        public bool RedactedOrgOnProfile { get; set; }
-        public bool Reported { get; set; }
-    }
+    /// <summary>System where the emergency occurred.</summary>
+    public string System { get; set; }
+    /// <summary>Subsystem where the emergency occurred.</summary>
+    public string Subsystem { get; set; }
+    /// <summary>Tertiary location, if any.</summary>
+    public string? TertiaryLocation { get; set; }
+    /// <summary>The threat level of the emergency.</summary>
+    public ThreatLevel ThreatLevel { get; set; }
+    /// <summary>The RSI handle of the client.</summary>
+    public string ClientRsiHandle { get; set; }
+    /// <summary>The Discord ID of the client.</summary>
+    public string? ClientDiscordId { get; set; }
+    /// <summary>The client ID.</summary>
+    public string? ClientId { get; set; }
+    /// <summary>The subscription tier of the client.</summary>
+    public string SubscriptionTier { get; set; }
+    /// <summary>The status of the emergency mission.</summary>
+    public MissionStatus Status { get; set; }
+    /// <summary>Alert message cache.</summary>
+    public MessageCache? AlertMessage { get; set; }
+    /// <summary>Client message cache.</summary>
+    public MessageCache? ClientMessage { get; set; }
+    /// <summary>Coordination thread message cache.</summary>
+    public MessageCache? CoordinationThread { get; set; }
+    /// <summary>After action report message cache.</summary>
+    public MessageCache? AfterActionReportMessage { get; set; }
+    /// <summary>The primary responding team.</summary>
+    public Team RespondingTeam { get; set; }
+    /// <summary>All responding teams.</summary>
+    public List<RespondingTeam> RespondingTeams { get; set; }
+    /// <summary>Timestamp when the emergency was created.</summary>
+    public long CreationTimestamp { get; set; }
+    /// <summary>Timestamp when the emergency was accepted.</summary>
+    public long? AcceptedTimestamp { get; set; }
+    /// <summary>Timestamp when the emergency was completed.</summary>
+    public long? CompletionTimestamp { get; set; }
+    /// <summary>The rating for the emergency response.</summary>
+    public ResponseRating Rating { get; set; }
+    /// <summary>Remarks for the rating.</summary>
+    public string? RatingRemarks { get; set; }
+    /// <summary>Whether this is a test emergency.</summary>
+    public bool Test { get; set; }
+    /// <summary>The cancellation reason, if any.</summary>
+    public CancellationReason CancellationReason { get; set; }
+    /// <summary>The refusal reason, if any.</summary>
+    public string? RefusalReason { get; set; }
+    /// <summary>The origin of the emergency.</summary>
+    public Origin Origin { get; set; }
+    /// <summary>Client data for the emergency.</summary>
+    public ClientData? ClientData { get; set; }
+    /// <summary>Whether the emergency is complete.</summary>
+    public bool IsComplete { get; set; }
+    /// <summary>The mission name, if any.</summary>
+    public string? MissionName { get; set; }
+    /// <summary>The after action report, if any.</summary>
+    public AfterActionReport? AfterActionReport { get; set; }
+    /// <summary>The submission source.</summary>
+    public SubmissionSource SubmissionSource { get; set; }
 }

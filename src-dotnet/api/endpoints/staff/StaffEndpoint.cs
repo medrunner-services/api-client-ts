@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Staff
-{
+namespace MedrunnerApiClient.Api.Endpoints.Staff;
+
     /// <summary>
     /// Endpoints for interacting with staff.
     /// </summary>
@@ -20,4 +20,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Staff
             return await GetRequestAsync<List<Api.Endpoints.Staff.Response.MedalInformation>>("/meta/medals");
         }
     }
-}
+    

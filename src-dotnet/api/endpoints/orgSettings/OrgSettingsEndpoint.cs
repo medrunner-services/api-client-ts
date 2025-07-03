@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.OrgSettings
-{
+namespace MedrunnerApiClient.Api.Endpoints.OrgSettings;
+
     /// <summary>
     /// Endpoints for interacting with the public org settings.
     /// </summary>
@@ -20,4 +20,4 @@ namespace MedrunnerApiClient.Api.Endpoints.OrgSettings
             return await GetRequestAsync<Models.OrgSettings>("/public");
         }
     }
-}
+    

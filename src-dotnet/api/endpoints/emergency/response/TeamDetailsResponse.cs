@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using MedrunnerApiClient.Models;
 
-namespace MedrunnerApiClient.Api.Endpoints.Emergency.Response
-{
+namespace MedrunnerApiClient.Api.Endpoints.Emergency.Response;
+
     /// <summary>
     /// Details about a team responding to an alert.
     /// </summary>
@@ -44,4 +44,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Emergency.Response
         /// </summary>
         public double DispatchSuccessRate { get; set; }
     }
-}
+    

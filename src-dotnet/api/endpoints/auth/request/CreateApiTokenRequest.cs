@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Auth.Request
-{
+namespace MedrunnerApiClient.Api.Endpoints.Auth.Request;
+
     /// <summary>
     /// Request body for creating an API token.
     /// </summary>
@@ -15,4 +15,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Auth.Request
         /// </summary>
         public DateTime? ExpirationDate { get; set; }
     }
-}
+    

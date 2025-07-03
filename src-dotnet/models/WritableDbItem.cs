@@ -1,8 +1,12 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+/// <summary>
+/// Base class for DB items that can be written to.
+/// </summary>
+public class WritableDbItem : DbItem
 {
-    // Base class for DB items that can be written to
-    public class WritableDbItem : DbItem
-    {
-        // Add properties specific to writable items if needed
-    }
+    /// <summary>
+    /// The last updated timestamp.
+    /// </summary>
+    public string Updated { get; set; }
 }

@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Auth
-{
+namespace MedrunnerApiClient.Api.Endpoints.Auth;
+
     /// <summary>
     /// Represents the authentication endpoint.
     /// </summary>
@@ -53,4 +53,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Auth
             return await DeleteRequestAsync<string>($"/apiTokens/{id}");
         }
     }
-}
+    

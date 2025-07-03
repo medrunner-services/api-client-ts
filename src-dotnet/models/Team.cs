@@ -1,17 +1,11 @@
+namespace MedrunnerApiClient.Models;
 using System.Collections.Generic;
-
-namespace MedrunnerApiClient.Models
+/// <summary>
+/// Represents a team responding to an emergency.
+/// </summary>
+public class Team
 {
-    // Represents a team responding to an emergency
-    public class Team
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        // Add other properties as needed
-    }
+    public string Id { get; set; }
 
-    public class RespondingTeam : Team
-    {
-        // Add properties specific to responding teams if needed
-    }
+    public string Name { get; set; }
 }

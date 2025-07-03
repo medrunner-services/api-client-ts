@@ -1,11 +1,11 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+/// <summary>
+/// Enum for submission source.
+/// </summary>
+public enum SubmissionSource
 {
-    // Enum for submission source
-    public enum SubmissionSource
-    {
-        Unknown,
-        Web,
-        Discord,
-        MobileApp
-    }
+    UNKNOWN,
+    API,
+    BOT
 }

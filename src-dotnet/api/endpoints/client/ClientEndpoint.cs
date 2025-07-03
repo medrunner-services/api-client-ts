@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Client
-{
+namespace MedrunnerApiClient.Api.Endpoints.Client;
+
     /// <summary>
     /// Endpoints for interacting with clients.
     /// </summary>
@@ -65,4 +65,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Client
             return await DeleteRequestAsync<string>("");
         }
     }
-}
+    

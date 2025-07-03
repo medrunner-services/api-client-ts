@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Emergency
-{
+namespace MedrunnerApiClient.Api.Endpoints.Emergency;
+
     /// <summary>
     /// Endpoints for interacting with emergencies.
     /// </summary>
@@ -63,4 +63,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Emergency
             return await GetRequestAsync<Api.Endpoints.Emergency.Response.TeamDetailsResponse>($"/{id}/teamDetails");
         }
     }
-}
+    

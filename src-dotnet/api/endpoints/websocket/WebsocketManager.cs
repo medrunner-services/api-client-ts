@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 
-namespace MedrunnerApiClient.Api.Endpoints.Websocket
-{
+namespace MedrunnerApiClient.Api.Endpoints.Websocket;
+
     /// <summary>
     /// Manages websocket connections for real-time updates.
     /// </summary>
@@ -26,4 +26,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Websocket
             return new object();
         }
     }
-}
+    

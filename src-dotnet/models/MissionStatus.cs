@@ -1,11 +1,10 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+// Enum for mission status
+public enum MissionStatus
 {
-    // Enum for mission status
-    public enum MissionStatus
-    {
-        Pending,
-        Accepted,
-        Completed,
-        Cancelled
-    }
+    Pending,
+    Accepted,
+    Completed,
+    Cancelled
 }

@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints
-{
+namespace MedrunnerApiClient.Api.Endpoints;
+
     /// <summary>
     /// Base class for API endpoints.
     /// </summary>
@@ -149,4 +149,4 @@ namespace MedrunnerApiClient.Api.Endpoints
             }
         }
     }
-}
+    

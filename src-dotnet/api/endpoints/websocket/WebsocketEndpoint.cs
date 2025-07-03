@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Websocket
-{
+namespace MedrunnerApiClient.Api.Endpoints.Websocket;
+
     /// <summary>
     /// Endpoints for interacting with websocket/realtime updates.
     /// </summary>
@@ -24,4 +24,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Websocket
             return await _websocketManager.EstablishConnectionAsync();
         }
     }
-}
+    

@@ -1,8 +1,8 @@
 using System;
 using MedrunnerApiClient.Models;
 
-namespace MedrunnerApiClient.Api.Endpoints.Auth
-{
+namespace MedrunnerApiClient.Api.Endpoints.Auth;
+
     /// <summary>
     /// Manages API tokens.
     /// </summary>
@@ -86,4 +86,3 @@ namespace MedrunnerApiClient.Api.Endpoints.Auth
             throw new NotImplementedException("Token exchange endpoint not implemented in TokenManager");
         }
     }
-}

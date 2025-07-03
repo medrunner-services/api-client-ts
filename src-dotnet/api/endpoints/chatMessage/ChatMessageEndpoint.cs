@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.ChatMessage
-{
+namespace MedrunnerApiClient.Api.Endpoints.ChatMessage;
+
     /// <summary>
     /// Endpoints for interacting with chat messages.
     /// </summary>
@@ -56,4 +56,4 @@ namespace MedrunnerApiClient.Api.Endpoints.ChatMessage
             return await DeleteRequestAsync<string>(id);
         }
     }
-}
+    

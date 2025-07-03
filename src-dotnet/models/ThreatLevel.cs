@@ -1,11 +1,12 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+/// <summary>
+/// Enum for threat levels.
+/// </summary>
+public enum ThreatLevel
 {
-    // Enum for threat levels
-    public enum ThreatLevel
-    {
-        Low,
-        Medium,
-        High,
-        Critical
-    }
+    UNKNOWN,
+    LOW,
+    MEDIUM,
+    HIGH
 }

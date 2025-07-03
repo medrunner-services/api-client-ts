@@ -1,12 +1,11 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+/// <summary>
+/// Enum for response rating.
+/// </summary>
+public enum ResponseRating
 {
-    // Enum for response rating
-    public enum ResponseRating
-    {
-        None,
-        Poor,
-        Fair,
-        Good,
-        Excellent
-    }
+    NONE,
+    GOOD,
+    BAD
 }

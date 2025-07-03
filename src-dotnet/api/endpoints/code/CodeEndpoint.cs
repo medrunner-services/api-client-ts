@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Code
-{
+namespace MedrunnerApiClient.Api.Endpoints.Code;
+
     /// <summary>
     /// Endpoints for interacting with promotional codes.
     /// </summary>
@@ -28,4 +28,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Code
             return await PostRequestAsync<string>($"/redeem/{code}");
         }
     }
-}
+    

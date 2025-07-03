@@ -1,11 +1,42 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+/// <summary>
+/// Represents emergency statistics.
+/// </summary>
+public class EmergencyStats
 {
-    // Represents emergency statistics
-    public class EmergencyStats
-    {
-        public int TotalEmergencies { get; set; }
-        public int CompletedEmergencies { get; set; }
-        public int CancelledEmergencies { get; set; }
-        // Add other properties as needed
-    }
+    /// <summary>
+    /// The number of successful emergencies.
+    /// </summary>
+    public int Success { get; set; }
+
+    /// <summary>
+    /// The number of failed emergencies.
+    /// </summary>
+    public int Failed { get; set; }
+
+    /// <summary>
+    /// The number of no-contact emergencies.
+    /// </summary>
+    public int NoContact { get; set; }
+
+    /// <summary>
+    /// The number of refused emergencies.
+    /// </summary>
+    public int Refused { get; set; }
+
+    /// <summary>
+    /// The number of aborted emergencies.
+    /// </summary>
+    public int Aborted { get; set; }
+
+    /// <summary>
+    /// The number of server error emergencies.
+    /// </summary>
+    public int ServerError { get; set; }
+
+    /// <summary>
+    /// The number of canceled emergencies.
+    /// </summary>
+    public int Canceled { get; set; }
 }

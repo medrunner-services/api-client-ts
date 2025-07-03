@@ -1,11 +1,13 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+/// <summary>
+/// Enum for cancellation reasons.
+/// </summary>
+public enum CancellationReason
 {
-    // Enum for cancellation reasons
-    public enum CancellationReason
-    {
-        None,
-        ClientRequest,
-        NoResponse,
-        Other
-    }
+    NONE,
+    OTHER,
+    SUCCUMBED_TO_WOUNDS,
+    SERVER_ERROR,
+    RESPAWNED,
+    RESCUED
 }

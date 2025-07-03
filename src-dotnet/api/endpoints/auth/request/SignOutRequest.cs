@@ -1,5 +1,5 @@
-namespace MedrunnerApiClient.Api.Endpoints.Auth.Request
-{
+namespace MedrunnerApiClient.Api.Endpoints.Auth.Request;
+
     /// <summary>
     /// Request body for sign-out.
     /// </summary>
@@ -10,4 +10,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Auth.Request
         /// </summary>
         public string RefreshToken { get; set; }
     }
-}
+    

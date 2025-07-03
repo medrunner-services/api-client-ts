@@ -1,10 +1,9 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+
+// Enum for origin of the emergency
+public enum Origin
 {
-    // Enum for origin of the emergency
-    public enum Origin
-    {
-        Unknown,
-        User,
-        System
-    }
+    Unknown,
+    User,
+    System
 }

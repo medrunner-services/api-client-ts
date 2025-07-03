@@ -1,10 +1,18 @@
-namespace MedrunnerApiClient.Models
+namespace MedrunnerApiClient.Models;
+/// <summary>
+/// Enum for user/staff classes.
+/// </summary>
+public enum Class
 {
-    // Represents a class (e.g., user class, ship class, etc.)
-    public class Class
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        // Add other properties as needed
-    }
+    NONE,
+    MEDIC,
+    SECURITY,
+    PILOT,
+    LEAD,
+    DISPATCH,
+    DISPATCH_LEAD,
+    DISPATCH_TRAINEE,
+    DISPATCH_OBSERVER,
+    QRF,
+    LOGISTICS
 }

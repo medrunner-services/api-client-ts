@@ -1,7 +1,7 @@
 using MedrunnerApiClient.Models;
 
-namespace MedrunnerApiClient.Api.Endpoints.Emergency.Request
-{
+namespace MedrunnerApiClient.Api.Endpoints.Emergency.Request;
+
     /// <summary>
     /// Request body for creating a new emergency.
     /// </summary>
@@ -43,4 +43,4 @@ namespace MedrunnerApiClient.Api.Endpoints.Emergency.Request
         /// </summary>
         public string? TertiaryLocation { get; set; }
     }
-}
+    
