@@ -30,7 +30,7 @@ export interface LocationSettings {
 export interface SpaceLocation {
   name: string;
   type: SpaceLocationType;
-  characteristics: LocationCharacteristic;
+  characteristics: LocationCharacteristic[];
   children: SpaceLocation[];
   enabled: boolean;
 }
