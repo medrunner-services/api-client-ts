@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
-const pkg = require("../../package.json");
+
+import pkg from "../../package.json";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,6 +10,10 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/logo.svg",
+
+    search: {
+      provider: "local",
+    },
 
     nav: [
       {
@@ -51,7 +56,15 @@ export default defineConfig({
         text: "Reference",
         items: [
           { text: "Websockets events", link: "/reference/websockets-events" },
-          { text: "Types", link: "/reference/types" },
+          {
+            text: "Types",
+            link: "/reference/types",
+            items: [
+              { text: "Enumerations", link: "/reference/types/#enumerations" },
+              { text: "Classes", link: "/reference/types/#classes" },
+              { text: "Interfaces", link: "/reference/types/#interfaces" },
+            ],
+          },
         ],
       },
     ],
