@@ -162,3 +162,4 @@ version.ts
 # docs
 docs/.vitepress/dist
 docs/.vitepress/cache
+docs/reference/types

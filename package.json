@@ -12,7 +12,8 @@
     "prettier:fix": "npm run prettier -- --write",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "docs:generate-types-docs": "typedoc --options typedoc/typedoc.json"
   },
   "publishConfig": {
     "access": "public",
@@ -64,6 +65,8 @@
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "tsup": "^8.5.0",
+    "typedoc": "^0.28.7",
+    "typedoc-plugin-markdown": "^4.7.1",
     "typescript": "^5.8.3",
     "vitepress": "^1.6.3"
   }
