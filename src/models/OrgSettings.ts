@@ -30,6 +30,7 @@ export interface LocationSettings {
 export interface SpaceLocation {
   name: string;
   type: SpaceLocationType;
+  characteristics: LocationCharacteristic;
   children: SpaceLocation[];
   enabled: boolean;
 }
@@ -47,4 +48,11 @@ export enum ServiceStatus {
   SLIGHTLY_DEGRADED = 2,
   HEAVILY_DEGRADED = 3,
   OFFLINE = 4,
+}
+
+export enum LocationCharacteristic {
+  UNKNOWN = 0,
+  HIGH_TEMPERATURE = 1,
+  LOW_TEMPERATURE = 2,
+  HOSTILE_ATMOSPHERE = 3,
 }

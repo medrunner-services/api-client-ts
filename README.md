@@ -2,6 +2,8 @@
 
 This typescript library acts as a client for the Medrunner API.
 
+Learn more at [medrunner.dev](https://medrunner.dev)!
+
 ## Getting Started
 
 ```ts

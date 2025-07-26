@@ -1,6 +1,6 @@
 {
   "name": "@medrunner/api-client",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Wrapper library for the Medrunner API",
   "scripts": {
     "build": "tsup",
@@ -10,9 +10,10 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:dev": "npm run docs:generate-types-files && vitepress dev docs",
+    "docs:build": "npm run docs:generate-types-files && vitepress build docs",
+    "docs:preview": "npm run docs:generate-types-files && vitepress preview docs",
+    "docs:generate-types-files": "typedoc --options typedoc/typedoc.json"
   },
   "publishConfig": {
     "access": "public",
@@ -48,22 +49,24 @@
   ],
   "dependencies": {
     "@microsoft/signalr": "^8.0.7",
-    "axios": "^1.9.0",
+    "axios": "^1.11.0",
     "ts-log": "^2.2.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.27.0",
-    "@types/node": "^22.15.21",
-    "@typescript-eslint/eslint-plugin": "^8.32.1",
-    "@typescript-eslint/parser": "^8.32.1",
-    "eslint": "^9.27.0",
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "eslint": "^9.32.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-tsdoc": "^0.4.0",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "tsup": "^8.5.0",
+    "typedoc": "^0.28.7",
+    "typedoc-plugin-markdown": "^4.7.1",
     "typescript": "^5.8.3",
     "vitepress": "^1.6.3"
   }

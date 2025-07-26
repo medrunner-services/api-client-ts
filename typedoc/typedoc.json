@@ -1,0 +1,9 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"plugin": ["typedoc-plugin-markdown", "./vitpress-refactor-plugin.mjs"],
+	"out": "../docs/reference/types",
+	"entryPoints": ["../src/index.ts"],
+	"entryFileName": "index",
+	"readme": "none",
+	"exclude": ["../src/Func.ts"]
+}
