@@ -65,7 +65,7 @@
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "tsup": "^8.5.0",
-    "typedoc": "^0.28.7",
+    "typedoc": "^0.28.8",
     "typedoc-plugin-markdown": "^4.7.1",
     "typescript": "^5.8.3",
     "vitepress": "^1.6.3"
