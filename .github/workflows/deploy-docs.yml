@@ -1,9 +1,11 @@
 name: Deploy docs to Pages
 
 on:
-    push:
-        branches: [main]
-
+  release:
+    types:
+      - published
+    branches:
+      - main
     workflow_dispatch:
 
 permissions:
@@ -17,6 +19,7 @@ concurrency:
 
 jobs:
     build:
+        if: github.event.release.prerelease == false
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -40,6 +43,7 @@ jobs:
                   path: docs/.vitepress/dist
 
     deploy:
+        if: github.event.release.prerelease == false
         environment:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}

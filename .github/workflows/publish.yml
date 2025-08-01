@@ -2,7 +2,9 @@ name: Publish Package
 on:
   release:
     types:
-      - created
+      - published
+    branches:
+      - main
 
 jobs:
   publish-npm:
@@ -20,14 +22,56 @@ jobs:
         with:
           node-version: 22
 
+      - name: Set version variable
+        run: |
+          TAG_VERSION="${{ github.event.release.tag_name }}"
+          VERSION=${TAG_VERSION#v}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Validate version
+        run: |
+          IS_PRERELEASE="${{ github.event.release.prerelease }}"
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          BASE_PACKAGE_VERSION=${PACKAGE_VERSION%%-*}
+          BASE_RELEASE_VERSION=${VERSION%%-*}
+          
+          if [[ "$BASE_PACKAGE_VERSION" != "$BASE_RELEASE_VERSION" ]]; then
+           echo "❌ ERROR: Package version ($BASE_PACKAGE_VERSION) does not match release tag version ($BASE_RELEASE_VERSION)"
+           exit 1
+          elif [[ "$VERSION" == *"beta"* ]] && [[ "$IS_PRERELEASE" == "false" ]]; then
+           echo "❌ ERROR: Package name contains 'beta' but this is not marked as a prerelease!"
+           exit 1
+          elif [[ "$IS_PRERELEASE" == "true" ]] && [[ "$VERSION" != *"beta"* ]]; then
+           echo "❌ ERROR: Package name does not contain 'beta' but this is marked as a prerelease!"
+           exit 1
+          else
+           echo "✅ Release version validation passed"
+          fi
+
+      - name: Set package version from tag
+        run: |
+          npm version $VERSION --no-git-tag-version
+          echo "Set package version to: $VERSION"    
+      
+
       - name: Install dependencies
         run: npm ci
 
       - name: Compile code
         run: npm run build # compile typescript
 
-      - name: publish
+      - name: Publish package (beta)
+        if: github.event.release.prerelease == true
         uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
           provenance: true
+          tag: beta
+
+      - name: Publish package (latest)
+        if: github.event.release.prerelease == false
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          provenance: true
+          tag: latest

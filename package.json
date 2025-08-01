@@ -5,7 +5,6 @@
   "scripts": {
     "build": "tsup",
     "build:docs": "tsc -p tsconfig.docs.json",
-    "prepare": "npm run build",
     "lint": "npx eslint src",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
