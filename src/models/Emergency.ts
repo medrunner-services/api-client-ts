@@ -34,8 +34,6 @@ export default interface Emergency extends WritableDbItem {
   missionName?: string;
   isComplete: boolean;
   afterActionReport?: AfterActionReport;
-  // TODO: Check if the API still sends it, we do use it
-  submissionSource: SubmissionSource;
 }
 
 export interface DiscordMessage {
