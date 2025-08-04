@@ -30,11 +30,11 @@ export default class ClientEndpoint extends ApiEndpoint {
 
   /**
    * Gets the specified amount of emergencies the client has created.
-   * @param limit - The number of emergencies to get
+   * @param limit - The number of emergencies to get, defaults to 10
    * @param paginationToken - The number to use for pagination
    * */
   public async getHistory(
-    limit: number,
+    limit?: number,
     paginationToken?: string,
   ): Promise<ApiResponse<PaginatedResponse<ClientHistory>>> {
     return await this.getRequest<PaginatedResponse<ClientHistory>>("/history", { limit, paginationToken });
@@ -61,7 +61,7 @@ export default class ClientEndpoint extends ApiEndpoint {
   /**
    * Updates the settings of the current user for the Client Portal.
    *
-   * @param settings - The object settings to add or update
+   * @param settings - The stringified object settings to add or update
    *
    * */
   public async setUserSettings(settings: string): Promise<ApiResponse> {
