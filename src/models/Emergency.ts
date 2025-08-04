@@ -15,10 +15,12 @@ export default interface Emergency extends WritableDbItem {
   clientId?: string;
   subscriptionTier: string;
   status: MissionStatus;
-  alertMessage?: MessageCache;
-  clientMessage?: MessageCache;
-  coordinationThread?: MessageCache;
-  afterActionReportMessage?: MessageCache;
+  cancellationReason: CancellationReason;
+  refusalReason?: string;
+  alertMessage?: DiscordMessage;
+  clientMessage?: DiscordMessage;
+  coordinationThread?: DiscordMessage;
+  afterActionReportMessage?: DiscordMessage;
   respondingTeam: Team;
   respondingTeams: RespondingTeam[];
   creationTimestamp: number;
@@ -27,17 +29,16 @@ export default interface Emergency extends WritableDbItem {
   rating: ResponseRating;
   ratingRemarks?: string;
   test: boolean;
-  cancellationReason: CancellationReason;
-  refusalReason?: string;
   origin: Origin;
   clientData?: ClientData;
-  isComplete: boolean;
   missionName?: string;
+  isComplete: boolean;
   afterActionReport?: AfterActionReport;
+  // TODO: Check if the API still sends it, we do use it
   submissionSource: SubmissionSource;
 }
 
-export interface MessageCache {
+export interface DiscordMessage {
   id: string;
   channelId: string;
 }
@@ -46,23 +47,23 @@ export interface ClientData {
   rsiHandle: string;
   rsiProfileLink: string;
   gotClientData: boolean;
-  redactedOrgOnProfile: boolean;
   reported: boolean;
+  userSid?: string;
 }
 
 export interface AfterActionReport {
-  remarks?: string;
-  submitterStaffId: string;
   servicesProvided: MissionServices;
   suspectedTrap: boolean;
-  hasBeenEdited: boolean;
-  submittedOn: number;
+  remarks?: string;
+  submitterStaffId: string;
+  submittedOn?: string;
   editHistory: AfterActionReportEdit[];
+  hasBeenEdited: boolean;
 }
 
 export interface AfterActionReportEdit {
   editorStaffId: string;
-  editTime: number;
+  editTime: string;
 }
 
 export enum MissionServices {
