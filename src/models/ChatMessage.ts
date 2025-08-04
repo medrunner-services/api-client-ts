@@ -1,6 +1,6 @@
-import DbItem from "./DbItem";
+import WritableDbItem from "./WritableDbItem";
 
-export default interface ChatMessage extends DbItem {
+export default interface ChatMessage extends WritableDbItem {
   /**
    * The emergency associated with the chat message
    * */
