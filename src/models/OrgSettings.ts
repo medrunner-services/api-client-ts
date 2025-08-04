@@ -8,9 +8,9 @@ export interface PublicOrgSettings {
   status: ServiceStatus;
   emergenciesEnabled: boolean;
   anonymousAlertsEnabled: boolean;
-  registrationEnabled: boolean;
   messageOfTheDay?: MessageOfTheDay;
   locationSettings: LocationSettings;
+  registrationEnabled: boolean;
 }
 
 export interface MessageOfTheDay {
@@ -30,9 +30,9 @@ export interface LocationSettings {
 export interface SpaceLocation {
   name: string;
   type: SpaceLocationType;
-  characteristics: LocationCharacteristic[];
   children: SpaceLocation[];
   enabled: boolean;
+  characteristics: LocationCharacteristic[];
 }
 
 export enum SpaceLocationType {
@@ -44,7 +44,7 @@ export enum SpaceLocationType {
 
 export enum ServiceStatus {
   UNKNOWN = 0,
-  HEALTHY = 1,
+  OPERATIONAL = 1,
   SLIGHTLY_DEGRADED = 2,
   HEAVILY_DEGRADED = 3,
   OFFLINE = 4,
