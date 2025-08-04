@@ -41,7 +41,7 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
    * */
   public async getMessageHistory(
     emergencyId: string,
-    limit?: number,
+    limit: number,
     paginationToken?: string,
   ): Promise<ApiResponse<PaginatedResponse<ChatMessage>>> {
     return await this.getRequest<PaginatedResponse<ChatMessage>>(`/conversation/${emergencyId}`, {
