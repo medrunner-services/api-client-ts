@@ -28,7 +28,6 @@ export default interface Emergency extends WritableDbItem {
   completionTimestamp?: number;
   rating: ResponseRating;
   ratingRemarks?: string;
-  test: boolean;
   origin: Origin;
   clientData?: ClientData;
   missionName?: string;
