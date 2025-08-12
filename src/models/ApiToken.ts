@@ -12,9 +12,9 @@ export default interface ApiToken extends DbItem {
   name: string;
 
   /**
-   * The timestamp at which the token will expire in Unix seconds
+   * The date at which the token will expire
    * */
-  expirationDate?: number;
+  expirationDate?: string;
 
   /**
    *  When the token was last used to generate a new access token, iso-8601 timestamp

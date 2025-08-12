@@ -12,11 +12,6 @@ export default interface ChatMessage extends WritableDbItem {
   senderId: string;
 
   /**
-   * The timestamp at which the message was sent in Unix seconds
-   * */
-  messageSentTimestamp: number;
-
-  /**
    * The contents of the message
    * */
   contents: string;

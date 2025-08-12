@@ -23,9 +23,8 @@ export default interface Emergency extends WritableDbItem {
   afterActionReportMessage?: DiscordMessage;
   respondingTeam: Team;
   respondingTeams: RespondingTeam[];
-  creationTimestamp: number;
-  acceptedTimestamp?: number;
-  completionTimestamp?: number;
+  acceptedOn?: string;
+  completedOn?: string;
   rating: ResponseRating;
   ratingRemarks?: string;
   origin: Origin;
