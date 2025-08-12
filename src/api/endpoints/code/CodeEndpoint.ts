@@ -24,7 +24,7 @@ export default class CodeEndpoint extends ApiEndpoint {
    * Gets the redeemed codes for the current user.
    *
    * @param limit - The number of codes to get, max 100
-   * @param paginationToken - The number to use for pagination
+   * @param paginationToken - The string to use for pagination
    * */
   public async getRedeemedCodes(
     limit: number,
