@@ -61,6 +61,7 @@ export * from "./models/ThreatLevel";
 export * from "./models/OrgSettings";
 export * from "./models/Deployment";
 export * from "./models/PromotionalCode";
+export * from "./models/ApiToken";
 
 import ApiToken from "./models/ApiToken";
 import ChatMessage from "./models/ChatMessage";
