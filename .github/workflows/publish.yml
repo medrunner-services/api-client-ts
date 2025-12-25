@@ -67,16 +67,14 @@ jobs:
 
       - name: Publish package (beta)
         if: github.event.release.prerelease == true
-        uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v4
         with:
-          token: ${{ secrets.NPM_TOKEN }}
           provenance: true
           tag: beta
 
       - name: Publish package (latest)
         if: github.event.release.prerelease == false
-        uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v4
         with:
-          token: ${{ secrets.NPM_TOKEN }}
           provenance: true
           tag: latest
