@@ -27,8 +27,7 @@ export default class MedrunnerApiClient<
   TCode extends CodeEndpoint = CodeEndpoint,
   TAuth extends AuthEndpoint = AuthEndpoint,
   TWebsocket extends WebsocketEndpoint = WebsocketEndpoint,
-> implements ApiClient<TEmergency, TClient, TStaff, TOrgSettings, TChatMessage, TCode, TAuth, TWebsocket>
-{
+> implements ApiClient<TEmergency, TClient, TStaff, TOrgSettings, TChatMessage, TCode, TAuth, TWebsocket> {
   protected constructor(
     public readonly emergency: TEmergency,
     public readonly client: TClient,
