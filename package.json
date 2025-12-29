@@ -63,7 +63,7 @@
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
-    "tsup": "^8.5.0",
+    "tsup": "^8.5.1",
     "typedoc": "^0.28.9",
     "typedoc-plugin-markdown": "^4.8.0",
     "typescript": "^5.9.2",
