@@ -11,4 +11,9 @@ export default interface PaginatedResponse<T = unknown> {
    * The pagination token to get the next page of data in a subsequent request
    * */
   paginationToken?: string;
+
+  /**
+   * The total number of items for the request across all pages
+   * */
+  totalCount: number;
 }
