@@ -2,7 +2,6 @@ import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../../Func";
 import { CancellationReason } from "../../../models/CancellationReason";
-import { Class } from "../../../models/Class";
 import Emergency from "../../../models/Emergency";
 import { MissionStatus } from "../../../models/MissionStatus";
 import { ResponseRating } from "../../../models/ResponseRating";
