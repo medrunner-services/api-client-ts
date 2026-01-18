@@ -63,7 +63,7 @@ jobs:
         run: npm ci
 
       - name: Compile code
-        run: npm run build # compile typescript
+        run: npm run build
 
       - name: Publish package (beta)
         if: github.event.release.prerelease == true
