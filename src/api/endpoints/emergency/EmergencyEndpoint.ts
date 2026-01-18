@@ -110,7 +110,7 @@ export default class EmergencyEndpoint extends ApiEndpoint {
     limit?: number,
     paginationToken?: string,
   ): Promise<ApiResponse<PaginatedResponse<Emergency>>> {
-    return await this.getRequest<PaginatedResponse<Emergency>>("/complete", {
+    return await this.getRequest<PaginatedResponse<Emergency>>("/client", {
       status: status ? status.join(",") : undefined,
       after,
       before,
