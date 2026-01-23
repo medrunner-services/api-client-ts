@@ -1,8 +1,8 @@
-import TeamMember from "./TeamMember";
+import Responder from "./Responder";
 
 export default interface Team {
   maxMembers: number;
-  staff: TeamMember[];
-  dispatchers: TeamMember[];
-  allMembers: TeamMember[];
+  staff: Responder[];
+  dispatchers: Responder[];
+  allMembers: Responder[];
 }

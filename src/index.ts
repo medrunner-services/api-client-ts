@@ -56,7 +56,7 @@ export * from "./models/Person";
 export * from "./models/Level";
 export * from "./models/ResponseRating";
 export * from "./models/Team";
-export * from "./models/TeamMember";
+export * from "./models/Responder";
 export * from "./models/ThreatLevel";
 export * from "./models/OrgSettings";
 export * from "./models/Deployment";
@@ -73,8 +73,8 @@ import EmergencyStats from "./models/EmergencyStats";
 import OrgSettings from "./models/OrgSettings";
 import Person from "./models/Person";
 import PromotionalCode from "./models/PromotionalCode";
+import Responder from "./models/Responder";
 import Team from "./models/Team";
-import TeamMember from "./models/TeamMember";
 import TokenGrant from "./models/TokenGrant";
 import WritableDbItem from "./models/WritableDbItem";
 
@@ -90,7 +90,7 @@ export {
   Person,
   PromotionalCode,
   Team,
-  TeamMember,
+  Responder,
   TokenGrant,
   WritableDbItem,
 };
