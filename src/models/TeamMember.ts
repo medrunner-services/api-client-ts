@@ -5,5 +5,5 @@ export default interface TeamMember {
   id: string;
   rsiHandle: string;
   class: Class;
-  updated: string;
+  joinTime: string;
 }
