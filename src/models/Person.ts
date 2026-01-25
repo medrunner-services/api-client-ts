@@ -13,6 +13,7 @@ export default interface Person extends WritableDbItem {
   clientPortalPreferencesBlob?: string;
   allowAnonymousAlert: boolean;
   initialJoinDate?: string;
+  hasCitizenId: boolean;
 }
 
 export enum UserRoles {
