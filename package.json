@@ -2,14 +2,16 @@
   "name": "@medrunner/api-client",
   "version": "0.7.0",
   "description": "Wrapper library for the Medrunner API",
+	"packageManager": "pnpm@10.28.1",
   "scripts": {
     "build": "tsup",
     "build:docs": "tsc -p tsconfig.docs.json",
-    "lint": "npx eslint src",
-    "lint:fix": "npm run lint -- --fix",
-    "prettier": "npx prettier src --check",
-    "prettier:fix": "npm run prettier -- --write"
-  },
+    "lint": "pnpx eslint src",
+    "lint:fix": "pnpm run lint --fix",
+    "prettier": "pnpx prettier src --check",
+    "prettier:fix": "pnpm run prettier --write",
+		"check": "pnpm run '/(lint|prettier)/'"
+	},
   "publishConfig": {
     "access": "public",
     "tag": "latest"
@@ -43,22 +45,22 @@
     "dist"
   ],
   "dependencies": {
-    "@microsoft/signalr": "^8.0.17",
-    "axios": "^1.13.2",
-    "ts-log": "^2.2.7"
+    "@microsoft/signalr": "8.0.17",
+    "axios": "1.13.2",
+    "ts-log": "2.2.7"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.2",
-    "@types/node": "^24.10.4",
-    "@typescript-eslint/eslint-plugin": "^8.53.0",
-    "@typescript-eslint/parser": "^8.53.0",
-    "eslint": "^9.39.2",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-tsdoc": "^0.5.0",
-    "prettier": "^3.8.0",
-    "tslib": "^2.8.1",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "@eslint/eslintrc": "3.3.3",
+    "@eslint/js": "9.39.2",
+    "@types/node": "24.10.4",
+    "@typescript-eslint/eslint-plugin": "8.53.0",
+    "@typescript-eslint/parser": "8.53.0",
+    "eslint": "9.39.2",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-tsdoc": "0.5.0",
+    "prettier": "3.8.0",
+    "tslib": "2.8.1",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
   }
 }
