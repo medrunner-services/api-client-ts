@@ -40,7 +40,13 @@ export default [{
 }, {
 	files: ["*.config.js", ".ncurc.js"],
 	languageOptions: {
-		env: { node: true },
+		globals: {
+			module: "readonly",
+			require: "readonly",
+			process: "readonly",
+			__dirname: "readonly",
+			__filename: "readonly",
+		},
 	},
 	rules: {
 		"tsdoc/syntax": "off",
