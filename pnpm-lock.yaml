@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@microsoft/signalr':
-        specifier: 8.0.17
-        version: 8.0.17
+        specifier: 10.0.0
+        version: 10.0.0
       axios:
         specifier: 1.13.2
         version: 1.13.2
@@ -280,8 +280,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@microsoft/signalr@8.0.17':
-    resolution: {integrity: sha512-5pM6xPtKZNJLO0Tq5nQasVyPFwi/WBY3QB5uc/v3dIPTpS1JXQbaXAQAPxFoQ5rTBFE094w8bbqkp17F9ReQvA==}
+  '@microsoft/signalr@10.0.0':
+    resolution: {integrity: sha512-0BRqz/uCx3JdrOqiqgFhih/+hfTERaUfCZXFB52uMaZJrKaPRzHzMuqVsJC/V3pt7NozcNXGspjKiQEK+X7P2w==}
 
   '@microsoft/tsdoc-config@0.18.0':
     resolution: {integrity: sha512-8N/vClYyfOH+l4fLkkr9+myAoR6M7akc8ntBJ4DJdWH2b09uVfr71+LTMpNyG19fNqWDg8KEDZhx5wxuqHyGjw==}
@@ -1431,7 +1431,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@microsoft/signalr@8.0.17':
+  '@microsoft/signalr@10.0.0':
     dependencies:
       abort-controller: 3.0.0
       eventsource: 2.0.2
