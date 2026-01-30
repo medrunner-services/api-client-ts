@@ -2,7 +2,7 @@
   "name": "@medrunner/api-client",
   "version": "0.7.0",
   "description": "Wrapper library for the Medrunner API",
-	"packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.28.2",
   "scripts": {
     "build": "tsup",
     "build:docs": "tsc -p tsconfig.docs.json",
@@ -10,9 +10,9 @@
     "lint:fix": "pnpm run lint --fix",
     "prettier": "pnpx prettier src --check",
     "prettier:fix": "pnpm run prettier --write",
-		"check": "pnpm run '/(lint|prettier)/'",
-		"update-packages": "pnpm ncu"
-	},
+    "check": "pnpm run '/(lint|prettier)/'",
+    "update-packages": "pnpm ncu"
+  },
   "publishConfig": {
     "access": "public",
     "tag": "latest"
@@ -48,12 +48,14 @@
   "dependencies": {
     "@microsoft/signalr": "10.0.0",
     "axios": "1.13.4",
+    "qs": "^6.14.1",
     "ts-log": "2.2.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.3",
     "@eslint/js": "9.39.2",
     "@types/node": "24.10.9",
+    "@types/qs": "^6.14.0",
     "@typescript-eslint/eslint-plugin": "8.54.0",
     "@typescript-eslint/parser": "8.54.0",
     "eslint": "9.39.2",

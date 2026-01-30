@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import qs from "qs";
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../Func";
@@ -144,6 +145,9 @@ export default abstract class ApiEndpoint {
       const config = await this.headersForRequest(noAuthentication);
       if (queryParams !== undefined) {
         config.params = queryParams;
+        config.paramsSerializer = (params): string => {
+          return qs.stringify(params, { arrayFormat: "repeat" });
+        };
       }
 
       const result = await request(requestUrl, config);
