@@ -6,11 +6,11 @@
   "scripts": {
     "build": "tsup",
     "build:docs": "tsc -p tsconfig.docs.json",
-    "lint": "pnpx eslint src",
+    "lint": "eslint src",
     "lint:fix": "pnpm run lint --fix",
-    "prettier": "pnpx prettier src --check",
+    "prettier": "prettier src --check",
     "prettier:fix": "pnpm run prettier --write",
-    "check": "pnpm run '/(lint|prettier)/'",
+    "check": "pnpm run '/^(lint|prettier)$/'",
     "update-packages": "pnpm ncu"
   },
   "publishConfig": {
@@ -47,14 +47,14 @@
   ],
   "dependencies": {
     "@microsoft/signalr": "10.0.0",
-    "axios": "1.13.4",
+    "axios": "1.13.5",
     "qs": "^6.14.1",
     "ts-log": "2.2.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.3",
     "@eslint/js": "9.39.2",
-    "@types/node": "24.10.9",
+    "@types/node": "24.10.12",
     "@types/qs": "^6.14.0",
     "@typescript-eslint/eslint-plugin": "8.54.0",
     "@typescript-eslint/parser": "8.54.0",
