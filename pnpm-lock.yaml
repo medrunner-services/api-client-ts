@@ -15,7 +15,7 @@ importers:
         specifier: 1.13.5
         version: 1.13.5
       qs:
-        specifier: ^6.14.1
+        specifier: 6.14.1
         version: 6.14.1
       ts-log:
         specifier: 2.2.7
@@ -31,7 +31,7 @@ importers:
         specifier: 24.10.12
         version: 24.10.12
       '@types/qs':
-        specifier: ^6.14.0
+        specifier: 6.14.0
         version: 6.14.0
       '@typescript-eslint/eslint-plugin':
         specifier: 8.54.0
