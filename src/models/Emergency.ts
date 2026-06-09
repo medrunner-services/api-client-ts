@@ -9,6 +9,7 @@ export default interface Emergency extends WritableDbItem {
   system: string;
   subsystem: string;
   tertiaryLocation?: string;
+  locationId: string;
   threatLevel: ThreatLevel;
   clientRsiHandle: string;
   clientDiscordId?: string;
@@ -55,11 +56,24 @@ export interface AfterActionReport {
   submittedOn?: string;
   editHistory: AfterActionReportEdit[];
   hasBeenEdited: boolean;
+  resources: AfterActionResource[];
 }
 
 export interface AfterActionReportEdit {
   editorStaffId: string;
   editTime: string;
+}
+
+export interface AfterActionResource {
+  id: string;
+  submitterStaffId: string;
+  type: AfterActionResourceType;
+  url: string;
+}
+
+export enum AfterActionResourceType {
+  UNKNOWN = 0,
+  VIDEO = 1,
 }
 
 export enum MissionServices {

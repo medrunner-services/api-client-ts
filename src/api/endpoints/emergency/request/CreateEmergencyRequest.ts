@@ -5,9 +5,9 @@ import { ThreatLevel } from "../../../../models/ThreatLevel";
  * */
 export default interface CreateEmergencyRequest {
   /**
-   * The location of the emergency
+   * The location id of the SpaceLocation of the emergency
    * */
-  location: Location;
+  locationId: string;
 
   /**
    * The threat level of the emergency
@@ -24,24 +24,4 @@ export default interface CreateEmergencyRequest {
    * This is optional, if the client already has an RSI handle set on his profile, this will be ignored.
    * */
   rsiHandle?: string;
-}
-
-/**
- * Only real matching locations will be accepted (see /emergency/meta/locations).
- * */
-export interface Location {
-  /**
-   * The star system the emergency is located in
-   * */
-  system: string;
-
-  /**
-   * The nearest planetary body to the emergency
-   * */
-  subsystem: string;
-
-  /**
-   * The nearest moon to the emergency, if applicable
-   * */
-  tertiaryLocation?: string;
 }
