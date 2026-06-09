@@ -28,11 +28,14 @@ export interface LocationSettings {
 }
 
 export interface SpaceLocation {
+  id: string;
   name: string;
   type: SpaceLocationType;
   children: SpaceLocation[];
   enabled: boolean;
   characteristics: LocationCharacteristic[];
+  visibleForAlertSubmissions: boolean;
+  alertLocation: boolean;
 }
 
 export enum SpaceLocationType {
@@ -40,6 +43,8 @@ export enum SpaceLocationType {
   SYSTEM = 1,
   PLANET = 2,
   MOON = 3,
+  STATION = 4,
+  OUTER_SPACE = 5,
 }
 
 export enum ServiceStatus {
