@@ -1,2 +1,7 @@
-onlyBuiltDependencies:
-  - esbuild
+savePrefix: ""
+confirmModulesPurge: false
+allowBuilds:
+  esbuild: true
+  wrangler: true
+  workerd: true
+  sharp: true
