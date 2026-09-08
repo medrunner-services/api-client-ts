@@ -1,11 +1,24 @@
 import ApiClient from "./api/ApiClient";
 import ApiConfig from "./api/ApiConfig";
 import ApiResponse from "./api/ApiResponse";
+import AccessTokenProvider from "./api/auth/AccessTokenProvider";
+import OidcClientCredentialsTokenProvider from "./api/auth/OidcClientCredentialsTokenProvider";
 import DefaultApiConfig from "./api/endpoints/DefaultApiConfig";
 import MedrunnerApiClient from "./api/MedrunnerApiClient";
 import PaginatedResponse from "./api/PaginatedResponse";
 
-export { MedrunnerApiClient, ApiClient, ApiResponse, PaginatedResponse, ApiConfig, DefaultApiConfig };
+export {
+  MedrunnerApiClient,
+  ApiClient,
+  ApiResponse,
+  PaginatedResponse,
+  ApiConfig,
+  AccessTokenProvider,
+  OidcClientCredentialsTokenProvider,
+  DefaultApiConfig,
+};
+
+export type { OidcClientCredentialsTokenProviderOptions } from "./api/auth/OidcClientCredentialsTokenProvider";
 
 export * from "./Func";
 

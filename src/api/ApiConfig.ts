@@ -1,3 +1,5 @@
+import type AccessTokenProvider from "./auth/AccessTokenProvider";
+
 /**
  * Configuration for the Medrunner API.
  * */
@@ -24,4 +26,11 @@ export default interface ApiConfig {
    * Use cookie base auth instead of tokens - defaults to false
    * */
   cookieAuth?: boolean;
+
+  /**
+   * Supplies bearer tokens through a caller-selected authentication flow.
+   *
+   * This cannot be combined with {@link accessToken}, {@link refreshToken}, or cookie authentication.
+   */
+  accessTokenProvider?: AccessTokenProvider;
 }
