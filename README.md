@@ -20,6 +20,38 @@ const self = await api.client.get();
 console.log(self);
 ```
 
+## OIDC client credentials
+
+Use `OidcClientCredentialsTokenProvider` when a service obtains bearer tokens through the OAuth 2.0 client-credentials grant.
+The provider caches tokens and supports a deliberately scoped `openidClient` boundary for discovery and token-grant interoperability.
+
+```ts
+import { OidcClientCredentialsTokenProvider } from "@medrunner/api-client";
+
+const accessTokenProvider = new OidcClientCredentialsTokenProvider({
+  issuer: new URL("https://identity.example.test/application/o/medrunner/"),
+  clientId: "service-client",
+  clientSecret: process.env.OIDC_CLIENT_SECRET,
+  scopes: ["client:read"],
+  openidClient: {
+    discoveryAlgorithm: "oidc",
+    timeoutSeconds: 10,
+    additionalTokenParameters: {
+      resource: "https://api.example.test",
+    },
+  },
+});
+```
+
+`openidClient.allowInsecureRequests` permits HTTP for both discovery and token requests.
+Use it only for local development or tests because it disables the normal HTTPS-only protection.
+
+`customFetch`, `useMtlsEndpointAliases`, and `clientAuthentication` support advanced proxy, mutual-TLS, and non-Basic client-authentication deployments.
+When supplying `clientAuthentication`, `clientSecret` is optional.
+
+Additional token parameters may contain standard settings such as `resource` and provider extensions such as `audience`.
+The provider rejects `scope`, `grant_type`, and client-authentication parameters because it owns those values.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for release notes and breaking changes.

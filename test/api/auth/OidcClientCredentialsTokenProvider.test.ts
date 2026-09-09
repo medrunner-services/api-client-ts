@@ -137,4 +137,52 @@ describe("OidcClientCredentialsTokenProvider", () => {
         }),
     ).toThrow("issuer");
   });
+
+  it("rejects a non-positive OpenID Client timeout before any token request", () => {
+    expect(
+      () =>
+        new OidcClientCredentialsTokenProvider({
+          issuer: new URL("https://identity.example.test/application/o/medrunner/"),
+          clientId: "bot-client",
+          clientSecret: "test-secret",
+          scopes: ["client:read"],
+          openidClient: { timeoutSeconds: 0 },
+          grantClient: { grant: vi.fn() },
+        }),
+    ).toThrow("timeoutSeconds");
+  });
+
+  it.each(["scope", "grant_type", "client_id", "client_secret", "client_assertion", "client_assertion_type"])(
+    "rejects an additional token parameter that controls %s",
+    parameter => {
+      expect(
+        () =>
+          new OidcClientCredentialsTokenProvider({
+            issuer: new URL("https://identity.example.test/application/o/medrunner/"),
+            clientId: "bot-client",
+            clientSecret: "test-secret",
+            scopes: ["client:read"],
+            openidClient: { additionalTokenParameters: { [parameter]: "untrusted-value" } },
+            grantClient: { grant: vi.fn() },
+          }),
+      ).toThrow(parameter);
+    },
+  );
+
+  it.each([
+    { additionalTokenParameters: { "": "value" }, message: "name" },
+    { additionalTokenParameters: { audience: "" }, message: "value" },
+  ])("rejects an additional token parameter with an invalid $message", ({ additionalTokenParameters, message }) => {
+    expect(
+      () =>
+        new OidcClientCredentialsTokenProvider({
+          issuer: new URL("https://identity.example.test/application/o/medrunner/"),
+          clientId: "bot-client",
+          clientSecret: "test-secret",
+          scopes: ["client:read"],
+          openidClient: { additionalTokenParameters },
+          grantClient: { grant: vi.fn() },
+        }),
+    ).toThrow(message);
+  });
 });

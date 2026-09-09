@@ -18,7 +18,10 @@ export {
   DefaultApiConfig,
 };
 
-export type { OidcClientCredentialsTokenProviderOptions } from "./api/auth/OidcClientCredentialsTokenProvider";
+export type {
+  OidcClientCredentialsOpenIdClientOptions,
+  OidcClientCredentialsTokenProviderOptions,
+} from "./api/auth/OidcClientCredentialsTokenProvider";
 
 export * from "./Func";
 

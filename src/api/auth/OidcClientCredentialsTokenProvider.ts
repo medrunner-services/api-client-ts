@@ -1,8 +1,16 @@
-import type { Configuration } from "openid-client";
+import type { ClientAuth, Configuration, CustomFetch, DiscoveryRequestOptions } from "openid-client";
 
 import AccessTokenProvider from "./AccessTokenProvider";
 
 const EXPIRY_SKEW_MILLISECONDS = 60_000;
+const PROTOCOL_CONTROLLED_TOKEN_PARAMETER_NAMES = new Set([
+  "scope",
+  "grant_type",
+  "client_id",
+  "client_secret",
+  "client_assertion",
+  "client_assertion_type",
+]);
 
 /**
  * Time source used to calculate client-credentials cache validity.
@@ -30,13 +38,68 @@ export interface ClientCredentialsGrantClient {
 }
 
 /**
+ * Interoperability controls applied to openid-client discovery and token grants.
+ *
+ * The exposed settings are limited to controls used by the client-credentials
+ * flow so consumers cannot configure unrelated interactive authorization flows.
+ */
+export interface OidcClientCredentialsOpenIdClientOptions {
+  /**
+   * Allows HTTP discovery and token requests.
+   *
+   * This is intended only for local development or testing against a non-TLS
+   * identity provider and defaults to false.
+   */
+  allowInsecureRequests?: boolean;
+
+  /**
+   * Additional parameters sent with the client-credentials token request.
+   *
+   * The provider reserves scope, grant type, and client-authentication
+   * parameters to preserve its authentication contract.
+   */
+  additionalTokenParameters?: Readonly<Record<string, string>>;
+
+  /**
+   * Overrides the token endpoint authentication strategy.
+   *
+   * When omitted, the provider preserves its client_secret_basic default.
+   */
+  clientAuthentication?: ClientAuth;
+
+  /**
+   * Fetch implementation used for both discovery and token requests.
+   */
+  customFetch?: CustomFetch;
+
+  /**
+   * Selects the authorization-server metadata discovery convention.
+   */
+  discoveryAlgorithm?: "oidc" | "oauth2";
+
+  /**
+   * Maximum duration, in seconds, for discovery and token requests.
+   */
+  timeoutSeconds?: number;
+
+  /**
+   * Uses mutual-TLS endpoint aliases published by the authorization server.
+   *
+   * A custom Fetch implementation must provide the client certificate when the
+   * selected endpoint requires mutual TLS.
+   */
+  useMtlsEndpointAliases?: boolean;
+}
+
+/**
  * Configuration for OIDC client-credentials authentication.
  */
 export interface OidcClientCredentialsTokenProviderOptions {
   issuer: URL;
   clientId: string;
-  clientSecret: string;
+  clientSecret?: string;
   scopes: readonly string[];
+  openidClient?: OidcClientCredentialsOpenIdClientOptions;
   expirySkewSeconds?: number;
   clock?: Clock;
   grantClient?: ClientCredentialsGrantClient;
@@ -129,13 +192,20 @@ class OpenIdClientCredentialsGrantClient implements ClientCredentialsGrantClient
 
   public async grant(): Promise<ClientCredentialsGrantResult> {
     const client = await import("openid-client");
+    const openidClientOptions = this.options.openidClient;
+    const clientSecret = this.options.clientSecret;
     const configurationPromise =
       this.configuration ??
       (this.configuration = client.discovery(
         this.options.issuer,
         this.options.clientId,
-        this.options.clientSecret,
-        client.ClientSecretBasic(this.options.clientSecret),
+        {
+          client_secret: clientSecret,
+          use_mtls_endpoint_aliases: openidClientOptions?.useMtlsEndpointAliases,
+        },
+        openidClientOptions?.clientAuthentication ??
+          (clientSecret === undefined ? undefined : client.ClientSecretBasic(clientSecret)),
+        discoveryOptions(client, openidClientOptions),
       ));
     let configuration: Configuration;
 
@@ -150,6 +220,7 @@ class OpenIdClientCredentialsGrantClient implements ClientCredentialsGrantClient
     }
 
     const tokens = await client.clientCredentialsGrant(configuration, {
+      ...openidClientOptions?.additionalTokenParameters,
       scope: this.options.scopes.join(" "),
     });
 
@@ -158,6 +229,23 @@ class OpenIdClientCredentialsGrantClient implements ClientCredentialsGrantClient
       expiresIn: tokens.expires_in,
     };
   }
+}
+
+function discoveryOptions(
+  client: typeof import("openid-client"),
+  options: OidcClientCredentialsOpenIdClientOptions | undefined,
+): DiscoveryRequestOptions {
+  const result: DiscoveryRequestOptions = {
+    algorithm: options?.discoveryAlgorithm,
+    execute: options?.allowInsecureRequests === true ? [client.allowInsecureRequests] : undefined,
+    timeout: options?.timeoutSeconds,
+  };
+
+  if (options?.customFetch !== undefined) {
+    result[client.customFetch] = options.customFetch;
+  }
+
+  return result;
 }
 
 function validateOptions(options: OidcClientCredentialsTokenProviderOptions): void {
@@ -169,8 +257,12 @@ function validateOptions(options: OidcClientCredentialsTokenProviderOptions): vo
     throw new Error("OIDC clientId must not be empty.");
   }
 
-  if (options.clientSecret.trim().length === 0) {
+  if (options.clientSecret !== undefined && options.clientSecret.trim().length === 0) {
     throw new Error("OIDC clientSecret must not be empty.");
+  }
+
+  if (options.clientSecret === undefined && options.openidClient?.clientAuthentication === undefined) {
+    throw new Error("OIDC clientSecret is required unless an OpenID client authentication strategy is configured.");
   }
 
   if (options.scopes.length === 0 || options.scopes.some(scope => scope.trim().length === 0)) {
@@ -182,5 +274,26 @@ function validateOptions(options: OidcClientCredentialsTokenProviderOptions): vo
     (!Number.isFinite(options.expirySkewSeconds) || options.expirySkewSeconds < 0)
   ) {
     throw new Error("OIDC expirySkewSeconds must be a non-negative finite number.");
+  }
+
+  if (
+    options.openidClient?.timeoutSeconds !== undefined &&
+    (!Number.isFinite(options.openidClient.timeoutSeconds) || options.openidClient.timeoutSeconds <= 0)
+  ) {
+    throw new Error("OIDC OpenID client timeoutSeconds must be a positive finite number.");
+  }
+
+  for (const [name, value] of Object.entries(options.openidClient?.additionalTokenParameters ?? {})) {
+    if (name.trim().length === 0) {
+      throw new Error("OIDC additional token parameter name must not be empty.");
+    }
+
+    if (value.trim().length === 0) {
+      throw new Error(`OIDC additional token parameter "${name}" value must not be empty.`);
+    }
+
+    if (PROTOCOL_CONTROLLED_TOKEN_PARAMETER_NAMES.has(name)) {
+      throw new Error(`OIDC additional token parameter "${name}" is controlled by the provider.`);
+    }
   }
 }
