@@ -15,7 +15,7 @@ export default interface ChatMessage extends WritableDbItem {
   /**
    * The rsiHandle of the message sender
    * */
-  senderRsiHandle: string;
+  senderRsiHandle: string | null;
 
   /**
    * The contents of the message

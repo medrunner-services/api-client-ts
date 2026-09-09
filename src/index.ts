@@ -31,7 +31,6 @@ import ClientEndpoint from "./api/endpoints/client/ClientEndpoint";
 import CodeEndpoint from "./api/endpoints/code/CodeEndpoint";
 import EmergencyEndpoint from "./api/endpoints/emergency/EmergencyEndpoint";
 import CreateEmergencyRequest from "./api/endpoints/emergency/request/CreateEmergencyRequest";
-import LocationDetail from "./api/endpoints/emergency/response/LocationDetail";
 import TeamDetailsResponse from "./api/endpoints/emergency/response/TeamDetailsResponse";
 import OrgSettingsEndpoint from "./api/endpoints/orgSettings/OrgSettingsEndpoint";
 import MedalInformation from "./api/endpoints/staff/response/MedalInformation";
@@ -40,13 +39,11 @@ import WebsocketEndpoint from "./api/endpoints/websocket/WebsocketEndpoint";
 
 export * from "./api/endpoints/emergency/request/CreateEmergencyRequest";
 export * from "./api/endpoints/emergency/response/TeamDetailsResponse";
-export * from "./api/endpoints/emergency/response/LocationDetail";
 
 export {
   ApiEndpoint,
   CreateEmergencyRequest,
   TeamDetailsResponse,
-  LocationDetail,
   EmergencyEndpoint,
   ChatMessageEndpoint,
   ChatMessageRequest,

@@ -1,27 +1,13 @@
 import { ThreatLevel } from "../../../../models/ThreatLevel";
 
-/**
- * Request body for creating a new emergency.
- * */
+/** Request body for creating a new emergency. */
 export default interface CreateEmergencyRequest {
-  /**
-   * The location id of the SpaceLocation of the emergency
-   * */
+  /** The location id of the emergency. */
   locationId: string;
 
-  /**
-   * The threat level of the emergency
-   *
-   * @remarks
-   * This will be removed in the future.
-   * */
+  /** The threat level of the emergency. */
   threatLevel: ThreatLevel;
 
-  /**
-   * The rsiHandle of the client
-   *
-   * @remarks
-   * This is optional, if the client already has an RSI handle set on his profile, this will be ignored.
-   * */
-  rsiHandle?: string;
+  /** The RSI handle of the client, or `null` when it is not supplied. */
+  rsiHandle: string | null;
 }

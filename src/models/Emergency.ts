@@ -7,34 +7,32 @@ import WritableDbItem from "./WritableDbItem";
 
 export default interface Emergency extends WritableDbItem {
   system: string;
-  subsystem: string;
-  tertiaryLocation?: string;
-  locationId: string;
+  locationId: string | null;
   threatLevel: ThreatLevel;
-  clientRsiHandle: string;
-  clientDiscordId?: string;
-  clientId?: string;
-  subscriptionTier: string;
+  clientRsiHandle: string | null;
+  clientDiscordId: string | null;
+  clientId: string | null;
   status: MissionStatus;
   cancellationReason: CancellationReason;
-  refusalReason?: string;
-  alertMessage?: DiscordMessage;
-  clientMessage?: DiscordMessage;
-  coordinationThread?: DiscordMessage;
-  afterActionReportMessage?: DiscordMessage;
+  refusalReason: string | null;
+  alertMessage: DiscordMessage | null;
+  clientMessage: DiscordMessage | null;
+  coordinationThread: DiscordMessage | null;
+  afterActionReportMessage: DiscordMessage | null;
   respondingTeam: Team;
   respondingTeams: RespondingTeam[];
-  acceptedOn?: string;
-  completedOn?: string;
+  acceptedOn: string | null;
+  completedOn: string | null;
   rating: ResponseRating;
-  ratingRemarks?: string;
+  ratingRemarks: string | null;
   origin: Origin;
-  clientData?: ClientData;
-  missionName?: string;
+  clientData: ClientData | null;
+  missionName: string | null;
   isComplete: boolean;
-  afterActionReport?: AfterActionReport;
+  afterActionReport: AfterActionReport | null;
 }
 
+/** A cached Discord message reference. */
 export interface DiscordMessage {
   id: string;
   channelId: string;
@@ -45,15 +43,15 @@ export interface ClientData {
   rsiProfileLink: string;
   gotClientData: boolean;
   reported: boolean;
-  userSid?: string;
+  userSid: string | null;
 }
 
 export interface AfterActionReport {
   servicesProvided: MissionServices;
   suspectedTrap: boolean;
-  remarks?: string;
+  remarks: string | null;
   submitterStaffId: string;
-  submittedOn?: string;
+  submittedOn: string | null;
   editHistory: AfterActionReportEdit[];
   hasBeenEdited: boolean;
   resources: AfterActionResource[];

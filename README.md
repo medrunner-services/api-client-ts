@@ -1,6 +1,6 @@
 # Medrunner API Client
 
-This typescript library acts as a client for the Medrunner API.
+This TypeScript library acts as an official client for the Medrunner API.
 
 Learn more at [medrunner.dev](https://medrunner.dev)!
 
@@ -19,6 +19,10 @@ const self = await api.client.get();
 
 console.log(self);
 ```
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes and breaking changes.
 
 ## Creating a new package version
 

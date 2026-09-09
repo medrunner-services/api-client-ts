@@ -76,8 +76,8 @@ export default class EmergencyEndpoint extends ApiEndpoint {
    * @param rating - The rating to give the services provided
    * @param remarks - Additional remarks provided by the client
    * */
-  public async rateServices(id: string, rating: ResponseRating, remarks?: string): Promise<ApiResponse> {
-    return await this.postRequest(`/${id}/rate/`, {
+  public async rateServices(id: string, rating: ResponseRating, remarks?: string | null): Promise<ApiResponse> {
+    return await this.postRequest(`/${id}/rate`, {
       rating: rating,
       remarks: remarks,
     });
