@@ -1,8 +1,9 @@
-import TeamMember from "./TeamMember";
+import Responder from "./Responder";
 
+/** The responders assigned to an emergency. */
 export default interface Team {
-  maxMembers: number;
-  staff: TeamMember[];
-  dispatchers: TeamMember[];
-  allMembers: TeamMember[];
+  maxMembers: number | string;
+  staff: Responder[];
+  dispatchers: Responder[];
+  allMembers: Responder[];
 }

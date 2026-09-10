@@ -1,4 +1,5 @@
-import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import axios, { AxiosRequestConfig } from "axios";
+import qs from "qs";
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../Func";
@@ -141,25 +142,66 @@ export default abstract class ApiEndpoint {
 
     this.log?.debug(`sending ${requestType} request to ${requestUrl}`);
     try {
-      const config = await this.headersForRequest(noAuthentication);
-      if (queryParams !== undefined) {
-        config.params = queryParams;
-      }
-
-      const result = await request(requestUrl, config);
+      const result = await request(requestUrl, await this.requestConfig(noAuthentication, queryParams));
 
       return {
         success: true,
         data: result.data,
       };
-    } catch (e) {
-      this.log?.warn(`Error for ${requestType} request to ${requestUrl}: ${e}`);
-      return {
-        success: false,
-        errorMessage: e instanceof AxiosError ? e.response?.data : undefined,
-        statusCode: e instanceof AxiosError ? e.response?.status : undefined,
+    } catch (error) {
+      if (this.shouldRetryAuthenticationFailure(error, noAuthentication)) {
+        this.tokenManager.invalidateAccessToken();
+
+        try {
+          const result = await request(requestUrl, await this.requestConfig(noAuthentication, queryParams));
+          return {
+            success: true,
+            data: result.data,
+          };
+        } catch (retryError) {
+          this.log?.warn(`Error for retried ${requestType} request to ${requestUrl}: ${retryError}`);
+          return this.errorResponse<T>(retryError);
+        }
+      }
+
+      this.log?.warn(`Error for ${requestType} request to ${requestUrl}: ${error}`);
+      return this.errorResponse<T>(error);
+    }
+  }
+
+  private async requestConfig(
+    noAuthentication: boolean,
+    queryParams?: { [key: string]: unknown },
+  ): Promise<AxiosRequestConfig> {
+    const config = await this.headersForRequest(noAuthentication);
+    if (queryParams !== undefined) {
+      config.params = queryParams;
+      config.paramsSerializer = (params): string => {
+        return qs.stringify(params, { arrayFormat: "repeat" });
       };
     }
+
+    return config;
+  }
+
+  private shouldRetryAuthenticationFailure(error: unknown, noAuthentication: boolean): boolean {
+    return (
+      !noAuthentication &&
+      axios.isAxiosError(error) &&
+      error.response?.status === 401 &&
+      (this.config.accessTokenProvider !== undefined ||
+        this.config.cookieAuth ||
+        this.config.accessToken !== undefined ||
+        this.config.refreshToken !== undefined)
+    );
+  }
+
+  private errorResponse<T>(error: unknown): ApiResponse<T> {
+    return {
+      success: false,
+      errorMessage: axios.isAxiosError(error) ? error.response?.data : undefined,
+      statusCode: axios.isAxiosError(error) ? error.response?.status : undefined,
+    };
   }
 }
 

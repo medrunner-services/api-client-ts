@@ -37,7 +37,7 @@ export default class ChatMessageEndpoint extends ApiEndpoint {
    *
    * @param emergencyId - The emergency for which to fetch the chat history
    * @param limit - The number of emergencies to get, max 100
-   * @param paginationToken - The number to use for pagination
+   * @param paginationToken - The string to use for pagination
    * */
   public async getMessageHistory(
     emergencyId: string,

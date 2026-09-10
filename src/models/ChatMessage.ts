@@ -1,6 +1,7 @@
-import DbItem from "./DbItem";
+import { Class } from "./Class";
+import WritableDbItem from "./WritableDbItem";
 
-export default interface ChatMessage extends DbItem {
+export default interface ChatMessage extends WritableDbItem {
   /**
    * The emergency associated with the chat message
    * */
@@ -12,9 +13,9 @@ export default interface ChatMessage extends DbItem {
   senderId: string;
 
   /**
-   * The timestamp at which the message was sent in Unix seconds
+   * The rsiHandle of the message sender
    * */
-  messageSentTimestamp: number;
+  senderRsiHandle: string | null;
 
   /**
    * The contents of the message
@@ -30,4 +31,9 @@ export default interface ChatMessage extends DbItem {
    * Whether the message has been deleted
    * */
   deleted: boolean;
+
+  /**
+   * The Medrunner Class of the message sender at the time of sending
+   * */
+  senderClass: Class;
 }

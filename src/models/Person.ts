@@ -3,16 +3,17 @@ import WritableDbItem from "./WritableDbItem";
 
 export default interface Person extends WritableDbItem {
   discordId: string;
-  rsiHandle?: string;
+  rsiHandle: string | null;
   roles: UserRoles;
   personType: PersonType;
   active: boolean;
   deactivationReason: AccountDeactivationReason;
   clientStats: ClientStats;
-  activeEmergency?: string;
-  clientPortalPreferencesBlob?: string;
+  activeEmergency: string | null;
+  clientPortalPreferencesBlob: string | null;
   allowAnonymousAlert: boolean;
-  initialJoinDate?: string;
+  initialJoinDate: string | null;
+  hasCitizenId: boolean;
 }
 
 export enum UserRoles {

@@ -31,7 +31,7 @@ export default class ClientEndpoint extends ApiEndpoint {
   /**
    * Gets the specified amount of emergencies the client has created.
    * @param limit - The number of emergencies to get, defaults to 10
-   * @param paginationToken - The number to use for pagination
+   * @param paginationToken - The string to use for pagination
    * */
   public async getHistory(
     limit?: number,

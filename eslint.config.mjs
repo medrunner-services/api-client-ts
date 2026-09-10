@@ -16,7 +16,6 @@ const compat = new FlatCompat({
 });
 
 export default [{
-    ignores: ["**/*.vue"],
 }, ...compat.extends(
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -38,4 +37,18 @@ export default [{
         "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
     },
+}, {
+	files: ["*.config.js", ".ncurc.js"],
+	languageOptions: {
+		globals: {
+			module: "readonly",
+			require: "readonly",
+			process: "readonly",
+			__dirname: "readonly",
+			__filename: "readonly",
+		},
+	},
+	rules: {
+		"tsdoc/syntax": "off",
+	},
 }];

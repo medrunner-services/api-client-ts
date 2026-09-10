@@ -1,0 +1,5 @@
+savePrefix: ""
+confirmModulesPurge: false
+allowBuilds:
+  esbuild: true
+  sharp: true
