@@ -73,6 +73,16 @@ export interface OidcClientCredentialsOpenIdClientOptions {
   customFetch?: CustomFetch;
 
   /**
+   * Explicit URL of the authorization server's discovery document.
+   *
+   * This supports providers such as Authentik in global issuer mode, where the
+   * issuer URL does not derive the provider-specific discovery document URL.
+   * The provider verifies the discovered issuer against {@link issuer} before
+   * it requests a token.
+   */
+  discoveryDocumentUrl?: URL;
+
+  /**
    * Selects the authorization-server metadata discovery convention.
    */
   discoveryAlgorithm?: "oidc" | "oauth2";
@@ -194,10 +204,12 @@ class OpenIdClientCredentialsGrantClient implements ClientCredentialsGrantClient
     const client = await import("openid-client");
     const openidClientOptions = this.options.openidClient;
     const clientSecret = this.options.clientSecret;
-    const configurationPromise =
-      this.configuration ??
-      (this.configuration = client.discovery(
-        this.options.issuer,
+    const discoveryDocumentUrl = openidClientOptions?.discoveryDocumentUrl;
+    let configurationPromise = this.configuration;
+
+    if (configurationPromise === undefined) {
+      const discoveredConfiguration = client.discovery(
+        discoveryDocumentUrl ?? this.options.issuer,
         this.options.clientId,
         {
           client_secret: clientSecret,
@@ -206,7 +218,13 @@ class OpenIdClientCredentialsGrantClient implements ClientCredentialsGrantClient
         openidClientOptions?.clientAuthentication ??
           (clientSecret === undefined ? undefined : client.ClientSecretBasic(clientSecret)),
         discoveryOptions(client, openidClientOptions),
-      ));
+      );
+      configurationPromise =
+        discoveryDocumentUrl === undefined
+          ? discoveredConfiguration
+          : discoveredConfiguration.then(configuration => validateDiscoveredIssuer(configuration, this.options.issuer));
+      this.configuration = configurationPromise;
+    }
     let configuration: Configuration;
 
     try {
@@ -229,6 +247,14 @@ class OpenIdClientCredentialsGrantClient implements ClientCredentialsGrantClient
       expiresIn: tokens.expires_in,
     };
   }
+}
+
+function validateDiscoveredIssuer(configuration: Configuration, expectedIssuer: URL): Configuration {
+  if (configuration.serverMetadata().issuer !== expectedIssuer.href) {
+    throw new Error("OIDC discovery document issuer must match the configured issuer.");
+  }
+
+  return configuration;
 }
 
 function discoveryOptions(
@@ -263,6 +289,15 @@ function validateOptions(options: OidcClientCredentialsTokenProviderOptions): vo
 
   if (options.clientSecret === undefined && options.openidClient?.clientAuthentication === undefined) {
     throw new Error("OIDC clientSecret is required unless an OpenID client authentication strategy is configured.");
+  }
+
+  const discoveryDocumentUrl = options.openidClient?.discoveryDocumentUrl;
+  if (discoveryDocumentUrl !== undefined && !(discoveryDocumentUrl instanceof URL)) {
+    throw new Error("OIDC OpenID client discoveryDocumentUrl must be a URL.");
+  }
+
+  if (discoveryDocumentUrl !== undefined && options.openidClient?.discoveryAlgorithm !== undefined) {
+    throw new Error("OIDC OpenID client discoveryAlgorithm cannot be combined with discoveryDocumentUrl.");
   }
 
   if (options.scopes.length === 0 || options.scopes.some(scope => scope.trim().length === 0)) {

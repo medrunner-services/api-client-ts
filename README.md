@@ -4,6 +4,10 @@ This TypeScript library acts as an official client for the Medrunner API.
 
 Learn more at [medrunner.dev](https://medrunner.dev)!
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes and breaking changes.
+
 ## Getting Started
 
 ```ts
@@ -52,9 +56,26 @@ When supplying `clientAuthentication`, `clientSecret` is optional.
 Additional token parameters may contain standard settings such as `resource` and provider extensions such as `audience`.
 The provider rejects `scope`, `grant_type`, and client-authentication parameters because it owns those values.
 
-## Changelog
+### Authentik global issuer mode
 
-See [CHANGELOG.md](CHANGELOG.md) for release notes and breaking changes.
+Authentik normally derives a provider-specific issuer, which the default OIDC discovery convention handles automatically.
+In global issuer mode, its issuer is the instance root while its discovery document remains provider-specific.
+Configure both values explicitly in that case.
+
+```ts
+const accessTokenProvider = new OidcClientCredentialsTokenProvider({
+  issuer: new URL("https://auth.example.test/"),
+  clientId: "bot-med",
+  clientSecret: process.env.OIDC_CLIENT_SECRET,
+  scopes: ["client:read"],
+  openidClient: {
+    discoveryDocumentUrl: new URL("https://auth.example.test/application/o/bot-med/.well-known/openid-configuration"),
+  },
+});
+```
+
+The provider verifies that the discovery document advertises the configured issuer before requesting a token.
+Do not combine `discoveryDocumentUrl` with `discoveryAlgorithm` because an explicit document URL does not require derivation.
 
 ## Creating a new package version
 

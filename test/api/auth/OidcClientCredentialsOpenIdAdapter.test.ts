@@ -96,4 +96,47 @@ describe("openid-client adapter", () => {
     await expect(provider.getAccessToken("test")).resolves.toBe("oidc-token");
     expect(oidc.ClientSecretBasic).not.toHaveBeenCalled();
   });
+
+  it("uses a provider-specific discovery document while retaining the configured issuer", async () => {
+    const issuer = new URL("https://auth.example.test/");
+    const discoveryDocumentUrl = new URL(
+      "https://auth.example.test/application/o/bot-med/.well-known/openid-configuration",
+    );
+    oidc.discovery.mockResolvedValue({ serverMetadata: () => ({ issuer: issuer.href }) });
+
+    const provider = new OidcClientCredentialsTokenProvider({
+      issuer,
+      clientId: "bot-client",
+      clientSecret: "test-secret",
+      scopes: ["client:read"],
+      openidClient: { discoveryDocumentUrl },
+    });
+
+    await expect(provider.getAccessToken("test")).resolves.toBe("oidc-token");
+    expect(oidc.discovery).toHaveBeenCalledWith(
+      discoveryDocumentUrl,
+      "bot-client",
+      { client_secret: "test-secret", use_mtls_endpoint_aliases: undefined },
+      expect.anything(),
+      { algorithm: undefined, execute: undefined, timeout: undefined },
+    );
+  });
+
+  it("rejects a direct discovery document that advertises a different issuer", async () => {
+    oidc.discovery.mockResolvedValue({ serverMetadata: () => ({ issuer: "https://untrusted.example.test/" }) });
+    const provider = new OidcClientCredentialsTokenProvider({
+      issuer: new URL("https://auth.example.test/"),
+      clientId: "bot-client",
+      clientSecret: "test-secret",
+      scopes: ["client:read"],
+      openidClient: {
+        discoveryDocumentUrl: new URL(
+          "https://auth.example.test/application/o/bot-med/.well-known/openid-configuration",
+        ),
+      },
+    });
+
+    await expect(provider.getAccessToken("test")).rejects.toThrow("issuer");
+    expect(oidc.clientCredentialsGrant).not.toHaveBeenCalled();
+  });
 });

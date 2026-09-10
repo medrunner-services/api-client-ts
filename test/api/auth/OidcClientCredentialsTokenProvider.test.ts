@@ -185,4 +185,35 @@ describe("OidcClientCredentialsTokenProvider", () => {
         }),
     ).toThrow(message);
   });
+
+  it("rejects a non-URL OpenID Client discovery document", () => {
+    expect(
+      () =>
+        new OidcClientCredentialsTokenProvider({
+          issuer: new URL("https://identity.example.test/application/o/medrunner/"),
+          clientId: "bot-client",
+          clientSecret: "test-secret",
+          scopes: ["client:read"],
+          openidClient: { discoveryDocumentUrl: "https://identity.example.test/config" as unknown as URL },
+          grantClient: { grant: vi.fn() },
+        }),
+    ).toThrow("discoveryDocumentUrl");
+  });
+
+  it("rejects a discovery algorithm when an explicit discovery document is configured", () => {
+    expect(
+      () =>
+        new OidcClientCredentialsTokenProvider({
+          issuer: new URL("https://identity.example.test/application/o/medrunner/"),
+          clientId: "bot-client",
+          clientSecret: "test-secret",
+          scopes: ["client:read"],
+          openidClient: {
+            discoveryAlgorithm: "oauth2",
+            discoveryDocumentUrl: new URL("https://identity.example.test/custom-discovery-document"),
+          },
+          grantClient: { grant: vi.fn() },
+        }),
+    ).toThrow("discoveryAlgorithm");
+  });
 });
