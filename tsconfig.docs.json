@@ -4,5 +4,7 @@
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "declaration": true
-  }
+  },
+  // This declaration-only build emits the package's public source, not its test suite.
+  "include": ["src/**/*.ts"]
 }
