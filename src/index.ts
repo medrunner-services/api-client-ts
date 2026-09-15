@@ -85,6 +85,7 @@ import Emergency from "./models/Emergency";
 import EmergencyStats from "./models/EmergencyStats";
 import OrgSettings from "./models/OrgSettings";
 import Person from "./models/Person";
+import ProblemDetails from "./models/ProblemDetails";
 import PromotionalCode from "./models/PromotionalCode";
 import Responder from "./models/Responder";
 import Team from "./models/Team";
@@ -101,6 +102,7 @@ export {
   OrgSettings,
   ClientHistory,
   Person,
+  ProblemDetails,
   PromotionalCode,
   Team,
   Responder,

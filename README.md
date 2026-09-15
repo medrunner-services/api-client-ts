@@ -24,6 +24,21 @@ const self = await api.client.get();
 console.log(self);
 ```
 
+## Error responses
+
+API calls resolve to `ApiResponse` when the server returns an HTTP error.
+When the response body follows the API's Problem Details schema, it is exposed as `problemDetails`.
+
+```ts
+const response = await api.client.get();
+
+if (!response.success) {
+  console.error(response.problemDetails?.title ?? response.errorMessage);
+}
+```
+
+`ProblemDetails` is also exported for consumers that need to type their own error-handling helpers.
+
 ## OIDC client credentials
 
 Use `OidcClientCredentialsTokenProvider` when a service obtains bearer tokens through the OAuth 2.0 client-credentials grant.

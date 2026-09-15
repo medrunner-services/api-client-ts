@@ -99,6 +99,35 @@ describe("ApiEndpoint authenticated recovery", () => {
     expect(provider.invalidate).not.toHaveBeenCalled();
     expect(mock.history.get).toHaveLength(1);
   });
+
+  it("exposes a Problem Details body returned from API errors", async () => {
+    const provider = {
+      getAccessToken: vi.fn().mockResolvedValue("unused-token"),
+      invalidate: vi.fn(),
+    };
+    const endpoint = createEndpoint(provider);
+    const url = "https://api.test/test/public";
+
+    mock.onGet(url).reply(400, {
+      type: "https://www.rfc-editor.org/rfc/rfc9110#name-400-bad-request",
+      title: "One or more validation errors occurred.",
+      status: 400,
+      detail: "The supplied resource is invalid.",
+      instance: "/test/public",
+    });
+
+    await expect(endpoint.getPublic()).resolves.toMatchObject({
+      success: false,
+      statusCode: 400,
+      problemDetails: {
+        type: "https://www.rfc-editor.org/rfc/rfc9110#name-400-bad-request",
+        title: "One or more validation errors occurred.",
+        status: 400,
+        detail: "The supplied resource is invalid.",
+        instance: "/test/public",
+      },
+    });
+  });
 });
 
 function createEndpoint(

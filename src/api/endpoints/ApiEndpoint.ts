@@ -3,6 +3,7 @@ import qs from "qs";
 import { Logger } from "ts-log";
 
 import { HeaderProvider } from "../../Func";
+import ProblemDetails from "../../models/ProblemDetails";
 import ApiResponse from "../ApiResponse";
 import TokenManager from "./auth/TokenManager";
 import DefaultApiConfig from "./DefaultApiConfig";
@@ -197,12 +198,49 @@ export default abstract class ApiEndpoint {
   }
 
   private errorResponse<T>(error: unknown): ApiResponse<T> {
+    const errorData = axios.isAxiosError(error) ? error.response?.data : undefined;
+
     return {
       success: false,
-      errorMessage: axios.isAxiosError(error) ? error.response?.data : undefined,
+      errorMessage: errorData,
       statusCode: axios.isAxiosError(error) ? error.response?.status : undefined,
+      problemDetails: isProblemDetails(errorData) ? errorData : undefined,
     };
   }
+}
+
+/** Identifies error bodies which can safely be exposed through the typed Problem Details contract. */
+function isProblemDetails(value: unknown): value is ProblemDetails {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    return false;
+  }
+
+  const details = value as Record<string, unknown>;
+  const hasProblemDetailsField = ["type", "title", "status", "detail", "instance"].some(field => field in details);
+
+  return (
+    hasProblemDetailsField &&
+    isNullableString(details.type) &&
+    isNullableString(details.title) &&
+    isProblemDetailsStatus(details.status) &&
+    isNullableString(details.detail) &&
+    isNullableString(details.instance)
+  );
+}
+
+/** Validates optional fields whose OpenAPI schema permits either a string or null. */
+function isNullableString(value: unknown): boolean {
+  return value === undefined || value === null || typeof value === "string";
+}
+
+/** Validates the API schema's optional integer-or-string status value. */
+function isProblemDetailsStatus(value: unknown): boolean {
+  return (
+    value === undefined ||
+    value === null ||
+    (typeof value === "number" && Number.isInteger(value)) ||
+    (typeof value === "string" && /^-?(?:0|[1-9]\d*)$/.test(value))
+  );
 }
 
 type AxiosWrapper<T = unknown> = (url: string, config: AxiosRequestConfig) => Promise<ApiResponse<T>>;
