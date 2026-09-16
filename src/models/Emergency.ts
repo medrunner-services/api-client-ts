@@ -7,6 +7,10 @@ import WritableDbItem from "./WritableDbItem";
 
 export default interface Emergency extends WritableDbItem {
   system: string;
+
+  /** Ordered hierarchy of location names, from system to the reported location. */
+  locationTreeNames: string[];
+
   locationId: string | null;
   threatLevel: ThreatLevel;
   clientRsiHandle: string | null;
