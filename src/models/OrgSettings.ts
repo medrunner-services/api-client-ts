@@ -127,9 +127,10 @@ export interface Unit {
   musterPointId: string;
 }
 
-/** A named Star Citizen system. */
+/** A Star Citizen system identified by its configured location. */
 export interface System {
-  name: string;
+  locationId: string;
+  displayName: string;
 }
 
 /** A staff certification type. */

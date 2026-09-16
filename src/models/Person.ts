@@ -19,12 +19,9 @@ export default interface Person extends WritableDbItem {
 export enum UserRoles {
   CLIENT = 1 << 0,
   STAFF = 1 << 1,
-  //@ts-expect-error - valid range
-  CEO = 1 << 50,
-  //@ts-expect-error - valid range
-  DEVELOPER = 1 << 51,
-  //@ts-expect-error - valid range
-  BOT = 1 << 52,
+  CEO = 2 ** 50,
+  DEVELOPER = 2 ** 51,
+  BOT = 2 ** 52,
 }
 
 export enum PersonType {
