@@ -1,12 +1,18 @@
 import { CancellationReason } from "./CancellationReason";
 import { MissionStatus } from "./MissionStatus";
+import type { LocationBase } from "./OrgSettings";
 import { ResponseRating } from "./ResponseRating";
 import Team from "./Team";
 import { ThreatLevel } from "./ThreatLevel";
 import WritableDbItem from "./WritableDbItem";
 
 export default interface Emergency extends WritableDbItem {
-  system: string;
+  /**
+   * The system in which the emergency was reported, or null when the API redacts it.
+   *
+   * The API supplies only the base location fields, not the public location-tree settings.
+   */
+  system: LocationBase | null;
 
   /** Ordered hierarchy of location names, from system to the reported location. */
   locationTreeNames: string[];

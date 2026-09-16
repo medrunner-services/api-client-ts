@@ -74,6 +74,17 @@ export interface LocationSettings {
   locations: SpaceLocation[];
 }
 
+/**
+ * The minimal representation of an existing location.
+ *
+ * Emergency payloads include this base form rather than the complete location tree.
+ */
+export interface LocationBase {
+  id?: string;
+  name?: string;
+  type?: SpaceLocationType;
+}
+
 /** A location at which an emergency may be submitted. */
 export interface SpaceLocation {
   id: string;
@@ -135,6 +146,7 @@ export enum SpaceLocationType {
   MOON = 3,
   STATION = 4,
   OUTER_SPACE = 5,
+  POINT_OF_INTEREST = 6,
 }
 
 /** The availability of Medrunner services. */
