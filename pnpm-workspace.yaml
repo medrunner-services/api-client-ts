@@ -3,3 +3,29 @@ confirmModulesPurge: false
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - rollup@4.59.0
+  - flatted@3.4.0
+  - flatted@3.4.2
+  - brace-expansion@1.1.13
+  - picomatch@4.0.4
+  - form-data@4.0.6
+  - js-yaml@4.1.2
+  - ws@7.5.11
+  - brace-expansion@1.1.16
+  - brace-expansion@5.0.7
+  - js-yaml@4.3.0
+  - fast-uri@3.1.4
+  - brace-expansion@1.1.17
+  - brace-expansion@5.0.8
+  - fast-uri@3.1.5
+  - brace-expansion@5.0.9
+  - brace-expansion@1.1.18
+  - js-yaml@4.3.1
+  - axios@1.18.0
+  - '@humanfs/node@0.16.8'
+  - qs@6.15.4
+  - qs@6.16.0
+  - fast-uri@3.1.6
+  - js-yaml@4.3.2
+  - fast-uri@3.1.3
