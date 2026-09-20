@@ -3,12 +3,17 @@
  * */
 export default interface PaginatedResponse<T = unknown> {
   /**
-   * The page of data returned by the request
+   * The page of data returned by the request.
    * */
   data: T[];
 
   /**
-   * The pagination token to get the next page of data in a subsequent request
+   * The pagination token to get the next page of data in a subsequent request.
    * */
-  paginationToken?: string;
+  paginationToken: string | null;
+
+  /**
+   * The total number of items for the request across all pages.
+   * */
+  totalCount: number | string;
 }

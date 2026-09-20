@@ -50,6 +50,7 @@ export default class AuthEndpoint extends ApiEndpoint {
     return await this.postRequest<string>("/apiTokens", {
       name: newToken.name,
       expirationDate: newToken.expirationDate?.toISOString(),
+      scopes: newToken.scopes,
     });
   }
 

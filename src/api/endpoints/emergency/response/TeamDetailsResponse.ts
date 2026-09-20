@@ -1,41 +1,25 @@
 import { Level } from "../../../../models/Level";
 
-/**
- * Details about a team responding to an alert.
- * */
+/** Details about the responders assigned to an alert. */
 export default interface TeamDetailsResponse {
-  /**
-   * Details about each individual responder.
-   * */
+  /** Statistics for each responder. */
   stats: ResponderDetails[];
 
-  /**
-   * The aggregated mission success rate from all responders, appropriately weighted by number of missions.
-   * */
+  /** The success rate across all responders. */
   aggregatedSuccessRate: number;
 }
 
-/**
- * Details about an alert responder.
- * */
+/** Details about an alert responder. */
 export interface ResponderDetails {
-  /**
-   * The responder's id.
-   * */
+  /** The responder's id. */
   id: string;
 
-  /**
-   * The responder's level.
-   * */
+  /** The responder's level. */
   level: Level;
 
-  /**
-   * The success rate of all prior missions this staff member has responded to.
-   * */
+  /** The success rate for missions to which this staff member responded. */
   missionSuccessRate: number;
 
-  /**
-   * The success rate of all prior missions this staff member has acted as a dispatcher for.
-   * */
+  /** The success rate for missions this staff member dispatched. */
   dispatchSuccessRate: number;
 }

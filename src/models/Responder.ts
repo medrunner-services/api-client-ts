@@ -1,6 +1,6 @@
 import { Class } from "./Class";
 
-export default interface TeamMember {
+export default interface Responder {
   discordId: string;
   id: string;
   rsiHandle: string;
