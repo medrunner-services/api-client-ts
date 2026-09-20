@@ -24,6 +24,7 @@ export type {
 } from "./api/auth/OidcClientCredentialsTokenProvider";
 
 export * from "./Func";
+export * from "./api/ApiRequestFailureLogger";
 
 import ApiEndpoint from "./api/endpoints/ApiEndpoint";
 import AuthEndpoint from "./api/endpoints/auth/AuthEndpoint";

@@ -11,6 +11,9 @@ importers:
       '@microsoft/signalr':
         specifier: 10.0.0
         version: 10.0.0
+      '@opentelemetry/api':
+        specifier: 1.9.0
+        version: 1.9.0
       axios:
         specifier: 1.20.0
         version: 1.20.0
@@ -68,7 +71,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 4.1.11
-        version: 4.1.11(@types/node@24.13.1)(vite@8.2.2(@types/node@24.13.1)(esbuild@0.27.2))
+        version: 4.1.11(@opentelemetry/api@1.9.0)(@types/node@24.13.1)(vite@8.2.2(@types/node@24.13.1)(esbuild@0.27.2))
 
 packages:
 
@@ -319,6 +322,10 @@ packages:
     cpu: [x64]
     os: [linux]
     libc: [glibc]
+
+  '@opentelemetry/api@1.9.0':
+    resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
+    engines: {node: '>=8.0.0'}
 
   '@oxc-project/types@0.149.0':
     resolution: {integrity: sha512-Efcc+iF0j3Bf67YjEqIqWXbX5XddXoK/Mw4K1/JuXwRCZ8N16VR7iT23nlCc9XrveFVh/E5Rqs2StT0V8v9LdA==}
@@ -1875,6 +1882,8 @@ snapshots:
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
 
+  '@opentelemetry/api@1.9.0': {}
+
   '@oxc-project/types@0.149.0': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.8':
@@ -3062,7 +3071,7 @@ snapshots:
       esbuild: 0.27.2
       fsevents: 2.3.3
 
-  vitest@4.1.11(@types/node@24.13.1)(vite@8.2.2(@types/node@24.13.1)(esbuild@0.27.2)):
+  vitest@4.1.11(@opentelemetry/api@1.9.0)(@types/node@24.13.1)(vite@8.2.2(@types/node@24.13.1)(esbuild@0.27.2)):
     dependencies:
       '@vitest/expect': 4.1.11
       '@vitest/mocker': 4.1.11(vite@8.2.2(@types/node@24.13.1)(esbuild@0.27.2))
@@ -3085,6 +3094,7 @@ snapshots:
       vite: 8.2.2(@types/node@24.13.1)(esbuild@0.27.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@opentelemetry/api': 1.9.0
       '@types/node': 24.13.1
     transitivePeerDependencies:
       - msw
