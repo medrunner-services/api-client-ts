@@ -3,8 +3,10 @@ import { Logger } from "ts-log";
 import { HeaderProvider } from "../../../Func";
 import { CancellationReason } from "../../../models/CancellationReason";
 import Emergency from "../../../models/Emergency";
+import { MissionStatus } from "../../../models/MissionStatus";
 import { ResponseRating } from "../../../models/ResponseRating";
 import ApiResponse from "../../ApiResponse";
+import PaginatedResponse from "../../PaginatedResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
 import DefaultApiConfig from "../DefaultApiConfig";
@@ -74,8 +76,8 @@ export default class EmergencyEndpoint extends ApiEndpoint {
    * @param rating - The rating to give the services provided
    * @param remarks - Additional remarks provided by the client
    * */
-  public async rateServices(id: string, rating: ResponseRating, remarks?: string): Promise<ApiResponse> {
-    return await this.postRequest(`/${id}/rate/`, {
+  public async rateServices(id: string, rating: ResponseRating, remarks?: string | null): Promise<ApiResponse> {
+    return await this.postRequest(`/${id}/rate`, {
       rating: rating,
       remarks: remarks,
     });
@@ -88,5 +90,33 @@ export default class EmergencyEndpoint extends ApiEndpoint {
    * */
   public async teamDetails(id: string): Promise<ApiResponse<TeamDetailsResponse>> {
     return await this.getRequest<TeamDetailsResponse>(`/${id}/teamDetails`);
+  }
+
+  /**
+   * Paginates through all emergencies the user submitted that matches the filters.
+   *
+   * @param status - Only return emergencies matching these statuses
+   * @param after - Only return emergencies created after this date
+   * @param before - Only return emergencies created before this date
+   * @param ascending - Whether to return the results in ascending order by created date
+   * @param limit - the maximum number of emergencies to fetch - max 100, default 10
+   * @param paginationToken - the pagination token with which to continue paging through items
+   * */
+  public async getClientEmergencies(
+    status?: MissionStatus[],
+    after?: string,
+    before?: string,
+    ascending?: boolean,
+    limit?: number,
+    paginationToken?: string,
+  ): Promise<ApiResponse<PaginatedResponse<Emergency>>> {
+    return await this.getRequest<PaginatedResponse<Emergency>>("/client", {
+      status: status ?? undefined,
+      after,
+      before,
+      ascending,
+      limit,
+      paginationToken,
+    });
   }
 }

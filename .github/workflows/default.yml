@@ -20,9 +20,10 @@ jobs:
       packages: read
     with:
       node-version: 24.x
-      package-manager: npm
+      package-manager: pnpm
       private-packages: false
       test-if-present: true
+      additional-check-script: contracts:check
 
   release:
     if: ${{ github.event_name == 'push' }}
@@ -53,7 +54,7 @@ jobs:
     with:
       environment-name: publish-npm
       registry-url: https://registry.npmjs.org
-      package-manager: npm
+      package-manager: pnpm
       private-packages: false
       version: ${{ needs.release.outputs.new-version }}
       release-tag: ${{ needs.release.outputs.new-tag }}

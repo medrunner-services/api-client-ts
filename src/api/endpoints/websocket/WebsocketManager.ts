@@ -1,6 +1,7 @@
 import { type HubConnection, HubConnectionBuilder, ILogger, LogLevel } from "@microsoft/signalr";
 import { Logger } from "ts-log";
 
+import { parseEvent } from "../../../contracts/ApiContract";
 import TokenManager from "../auth/TokenManager";
 import DefaultApiConfig from "../DefaultApiConfig";
 
@@ -42,7 +43,7 @@ export default class WebsocketManager {
   }
 
   public async establishConnection(): Promise<HubConnection> {
-    return new HubConnectionBuilder()
+    const connection = new HubConnectionBuilder()
       .withAutomaticReconnect({
         nextRetryDelayInMilliseconds: retryContext => {
           if (retryContext.previousRetryCount >= 10) return null;
@@ -57,5 +58,47 @@ export default class WebsocketManager {
       })
       .configureLogging(new WSLogger(this.logger))
       .build();
+    const originalOn = connection.on.bind(connection);
+    const originalOff = connection.off.bind(connection);
+    const wrappers = new Map<string, Map<(...args: unknown[]) => void, (...args: unknown[]) => void>>();
+    connection.on = (methodName, handler): void => {
+      const name = methodName.toLowerCase();
+      const known =
+        /^(emergency|team|person|chatmessage|orgsettings)(create|update|delete)$/.test(name) ||
+        name === "deploymentcreate";
+      if (!known) {
+        originalOn(methodName, handler);
+        return;
+      }
+      let handlers = wrappers.get(name);
+      if (handlers === undefined) {
+        handlers = new Map();
+        wrappers.set(name, handlers);
+      }
+      if (handlers.has(handler)) return;
+      const wrapper = (...args: unknown[]): void => {
+        try {
+          parseEvent(name === "deploymentcreate" ? "Deployment" : "FannedContent", args[0]);
+        } catch (error) {
+          this.logger?.error(error instanceof Error ? error.message : "Invalid SignalR event");
+          return;
+        }
+        handler(...args);
+      };
+      handlers.set(handler, wrapper);
+      originalOn(methodName, wrapper);
+    };
+    connection.off = (methodName, handler?): void => {
+      const name = methodName.toLowerCase();
+      if (handler === undefined) {
+        wrappers.delete(name);
+        originalOff(methodName);
+        return;
+      }
+      const wrapper = wrappers.get(name)?.get(handler);
+      wrappers.get(name)?.delete(handler);
+      originalOff(methodName, wrapper ?? handler);
+    };
+    return connection;
   }
 }
