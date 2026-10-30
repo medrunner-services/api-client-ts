@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import qs from "qs";
 import { Logger } from "ts-log";
 
+import { ApiContractError, assertHttpRequest, assertHttpResponse } from "../../contracts/ApiContract";
 import { HeaderProvider } from "../../Func";
 import ProblemDetails from "../../models/ProblemDetails";
 import { ApiRequestFailure, ApiRequestFailureLogger, ApiRequestMethod } from "../ApiRequestFailureLogger";
@@ -104,6 +105,7 @@ export default abstract class ApiEndpoint {
     data?: unknown,
     noAuthentication?: boolean,
   ): Promise<ApiResponse<T>> {
+    assertHttpRequest(requestType, `/${this.endpoint()}${endpoint}`, data);
     const wrappedRequest: AxiosWrapper<T> = async (requestUrl, config) => await axiosRequest(requestUrl, data, config);
     return await this.makeRequest<T>(endpoint, requestType, wrappedRequest, undefined, noAuthentication);
   }
@@ -145,6 +147,7 @@ export default abstract class ApiEndpoint {
     noAuthentication = false,
   ): Promise<ApiResponse<T>> {
     const requestUrl = this.buildUrl(endpoint);
+    const contractPath = `/${this.endpoint()}${endpoint}`;
     const target = requestTarget(requestUrl);
     const telemetry = new ApiRequestTelemetry({
       endpoint: this.constructor.name,
@@ -156,6 +159,7 @@ export default abstract class ApiEndpoint {
       this.log?.debug(`sending ${requestType} request to ${requestUrl}`);
       try {
         const result = await request(requestUrl, await this.requestConfig(noAuthentication, queryParams));
+        assertHttpResponse(requestType, contractPath, result.status, result.data);
         telemetry.recordSuccess(result.status);
 
         return {
@@ -169,6 +173,7 @@ export default abstract class ApiEndpoint {
 
           try {
             const result = await request(requestUrl, await this.requestConfig(noAuthentication, queryParams));
+            assertHttpResponse(requestType, contractPath, result.status, result.data);
             telemetry.recordSuccess(result.status);
             return {
               success: true,
@@ -249,6 +254,7 @@ export default abstract class ApiEndpoint {
   }
 
   private errorResponse<T>(error: unknown): ApiResponse<T> {
+    if (error instanceof ApiContractError) return { success: false, errorMessage: error.message };
     const errorData = axios.isAxiosError(error) ? error.response?.data : undefined;
 
     return {

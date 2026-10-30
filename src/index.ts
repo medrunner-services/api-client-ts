@@ -110,3 +110,7 @@ export {
   TokenGrant,
   WritableDbItem,
 };
+
+export * from "./contracts/ApiContract";
+
+export type { AttachMessageRequest } from "./api/endpoints/emergency/request/AttachMessageRequest";

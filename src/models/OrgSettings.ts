@@ -1,137 +1,62 @@
+import type { WireComponents } from "../contracts/ApiContract";
 /** All organization settings returned by the API. */
-export default interface OrgSettings {
-  public: PublicOrgSettings;
-  staff: StaffSettings;
-}
+type OrgSettings = WireComponents["schemas"]["OrgSettings"];
+export default OrgSettings;
 
 /** Settings that may be consumed by public and client-facing applications. */
-export interface PublicOrgSettings {
-  status: ServiceStatus;
-  emergenciesEnabled: boolean;
-  anonymousAlertsEnabled: boolean;
-  messageOfTheDay: MessageOfTheDay | null;
-  locationSettings: LocationSettings;
-  locationCategorySettings: LocationCategorySettings;
-  registrationEnabled: boolean;
-}
+export type PublicOrgSettings = WireComponents["schemas"]["PublicSettings"];
 
 /** Settings that govern staff-only features. */
-export interface StaffSettings {
-  messageOfTheDay: MessageOfTheDay | null;
-  beaconsEnabled: boolean;
-  certifications: CertificationSettings;
-  shipSettings: ShipSettings;
-  unitSettings: UnitSettings;
-  training: TrainingSettings;
-  team: TeamSettings;
-}
+export type StaffSettings = WireComponents["schemas"]["StaffSettings"];
 
 /** Controls the certifications required for staff activities. */
-export interface CertificationSettings {
-  basicCertificationEnabled: boolean;
-}
+export type CertificationSettings = WireComponents["schemas"]["CertificationSettings"];
 
 /** The organization ships that staff may select. */
-export interface ShipSettings {
-  ships: Ship[];
-}
+export type ShipSettings = WireComponents["schemas"]["ShipSettings"];
 
 /** The organization units and their operational systems. */
-export interface UnitSettings {
-  units: Unit[];
-}
+export type UnitSettings = WireComponents["schemas"]["UnitSettings"];
 
 /** Training registration configuration. */
-export interface TrainingSettings {
-  registrationCutoffWindowMinutes: number | string;
-}
+export type TrainingSettings = WireComponents["schemas"]["TrainingSettings"];
 
 /** Limits and requirements used while composing response teams. */
-export interface TeamSettings {
-  alertMaxSize: number | string;
-  beaconMaxSize: number | string;
-  trainingMaxSize: number | string;
-  enforceHardCap: boolean;
-  requiredCertifications: Record<string, CertificationType[]>;
-  enforceTeams: boolean;
-  autoAdjustOrderOnAlertCompletion: boolean;
-}
+export type TeamSettings = WireComponents["schemas"]["TeamSettings"];
 
 /** A message that may be shown to users for a bounded interval. */
-export interface MessageOfTheDay {
-  message: string;
-  dateRange: DateRange | null;
-}
+export type MessageOfTheDay = WireComponents["schemas"]["MessageOfTheDay"];
 
 /** The inclusive interval during which a message is displayed. */
-export interface DateRange {
-  startDate: string;
-  endDate: string;
-}
+export type DateRange = WireComponents["schemas"]["DateRange"];
 
 /** The hierarchy of alert locations. */
-export interface LocationSettings {
-  locations: SpaceLocation[];
-}
+export type LocationSettings = WireComponents["schemas"]["LocationSettings"];
 
 /**
  * The minimal representation of an existing location.
  *
  * Emergency payloads include this base form rather than the complete location tree.
  */
-export interface LocationBase {
-  id?: string;
-  name?: string;
-  type?: SpaceLocationType;
-}
+export type LocationBase = WireComponents["schemas"]["LocationBase"];
 
 /** A location at which an emergency may be submitted. */
-export interface SpaceLocation {
-  id: string;
-  name: string;
-  type: SpaceLocationType;
-  children: SpaceLocation[];
-  enabled: boolean;
-  visibleForAlertSubmissions: boolean;
-  alertLocation: boolean;
-  characteristics: LocationCharacteristic[];
-}
+export type SpaceLocation = WireComponents["schemas"]["Location"];
 
 /** The hierarchy used to classify locations. */
-export interface LocationCategorySettings {
-  locationCategories: LocationCategory[];
-}
+export type LocationCategorySettings = WireComponents["schemas"]["LocationCategorySettings"];
 
 /** A recursively nested location category. */
-export interface LocationCategory {
-  id: string;
-  name: string;
-  active: boolean;
-  children: LocationCategory[];
-}
+export type LocationCategory = WireComponents["schemas"]["LocationCategory"];
 
 /** An organization ship. */
-export interface Ship {
-  id: string;
-  name: string;
-  active: boolean;
-}
+export type Ship = WireComponents["schemas"]["Ship"];
 
 /** An organization unit and its linked systems. */
-export interface Unit {
-  unitName: string;
-  primarySystems: System[];
-  secondarySystems: System[];
-  discordCategoryId: string;
-  discordRoleId: string;
-  musterPointId: string;
-}
+export type Unit = WireComponents["schemas"]["Unit"];
 
 /** A Star Citizen system identified by its configured location. */
-export interface System {
-  locationId: string;
-  displayName: string;
-}
+export type System = WireComponents["schemas"]["System"];
 
 /** A staff certification type. */
 export enum CertificationType {

@@ -1,10 +1,7 @@
-import WritableDbItem from "./WritableDbItem";
-
+import type { WireComponents } from "../contracts/ApiContract";
 /** A promotional code and the client that redeemed it, when applicable. */
-export default interface PromotionalCode extends WritableDbItem {
-  type: CodeType;
-  redeemerId: string | null;
-}
+type PromotionalCode = WireComponents["schemas"]["RedeemableCode"];
+export default PromotionalCode;
 
 export enum CodeType {
   UNKNOWN,

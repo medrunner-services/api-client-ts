@@ -1,6 +1,7 @@
 import axios, { AxiosError, type AxiosRequestConfig } from "axios";
 import { Logger } from "ts-log";
 
+import { assertHttpResponse } from "../../../contracts/ApiContract";
 import { AsyncAction, HeaderProvider } from "../../../Func";
 import TokenGrant from "../../../models/TokenGrant";
 import AccessTokenProvider from "../../auth/AccessTokenProvider";
@@ -79,6 +80,7 @@ export default class TokenManager extends ApiEndpoint {
         withCredentials: this.config.cookieAuth,
       });
 
+      assertHttpResponse("POST", "/auth/exchange", result.status, result.data);
       this.log?.debug("getAccessToken: Successfully fetched new tokens");
       return result.data;
     } catch (error) {

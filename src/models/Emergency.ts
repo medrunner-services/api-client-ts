@@ -1,83 +1,17 @@
-import { CancellationReason } from "./CancellationReason";
-import { MissionStatus } from "./MissionStatus";
-import type { LocationBase } from "./OrgSettings";
-import { ResponseRating } from "./ResponseRating";
-import Team from "./Team";
-import { ThreatLevel } from "./ThreatLevel";
-import WritableDbItem from "./WritableDbItem";
-
-export default interface Emergency extends WritableDbItem {
-  /**
-   * The system in which the emergency was reported, or null when the API redacts it.
-   *
-   * The API supplies only the base location fields, not the public location-tree settings.
-   */
-  system: LocationBase | null;
-
-  /** Ordered hierarchy of location names, from system to the reported location. */
-  locationTreeNames: string[];
-
-  locationId: string | null;
-  threatLevel: ThreatLevel;
-  clientRsiHandle: string | null;
-  clientDiscordId: string | null;
-  clientId: string | null;
-  status: MissionStatus;
-  cancellationReason: CancellationReason;
-  refusalReason: string | null;
-  alertMessage: DiscordMessage | null;
-  clientMessage: DiscordMessage | null;
-  coordinationThread: DiscordMessage | null;
-  afterActionReportMessage: DiscordMessage | null;
-  respondingTeam: Team;
-  respondingTeams: RespondingTeam[];
-  acceptedOn: string | null;
-  completedOn: string | null;
-  rating: ResponseRating;
-  ratingRemarks: string | null;
-  origin: Origin;
-  clientData: ClientData | null;
-  missionName: string | null;
-  isComplete: boolean;
-  afterActionReport: AfterActionReport | null;
-}
+import type { WireComponents } from "../contracts/ApiContract";
+type Emergency = WireComponents["schemas"]["Emergency"];
+export default Emergency;
 
 /** A cached Discord message reference. */
-export interface DiscordMessage {
-  id: string;
-  channelId: string;
-}
+export type DiscordMessage = WireComponents["schemas"]["MessageCache"];
 
-export interface ClientData {
-  rsiHandle: string;
-  rsiProfileLink: string;
-  gotClientData: boolean;
-  reported: boolean;
-  userSid: string | null;
-}
+export type ClientData = WireComponents["schemas"]["ClientData"];
 
-export interface AfterActionReport {
-  servicesProvided: MissionServices;
-  suspectedTrap: boolean;
-  remarks: string | null;
-  submitterStaffId: string;
-  submittedOn: string | null;
-  editHistory: AfterActionReportEdit[];
-  hasBeenEdited: boolean;
-  resources: AfterActionResource[];
-}
+export type AfterActionReport = WireComponents["schemas"]["AfterActionReport"];
 
-export interface AfterActionReportEdit {
-  editorStaffId: string;
-  editTime: string;
-}
+export type AfterActionReportEdit = WireComponents["schemas"]["AfterActionReportEditRecord"];
 
-export interface AfterActionResource {
-  id: string;
-  submitterStaffId: string;
-  type: AfterActionResourceType;
-  url: string;
-}
+export type AfterActionResource = WireComponents["schemas"]["AfterActionReportResource"];
 
 export enum AfterActionResourceType {
   UNKNOWN = 0,
@@ -106,7 +40,4 @@ export enum SubmissionSource {
   BOT,
 }
 
-export interface RespondingTeam {
-  id: string;
-  teamName: string;
-}
+export type RespondingTeam = WireComponents["schemas"]["RespondingTeam"];

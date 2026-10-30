@@ -1,13 +1,5 @@
-import { ThreatLevel } from "../../../../models/ThreatLevel";
+import type { WireComponents } from "../../../../contracts/ApiContract";
 
-/** Request body for creating a new emergency. */
-export default interface CreateEmergencyRequest {
-  /** The location id of the emergency. */
-  locationId: string;
-
-  /** The threat level of the emergency. */
-  threatLevel: ThreatLevel;
-
-  /** The RSI handle of the client, or `null` when it is not supplied. */
-  rsiHandle: string | null;
-}
+/** Optional RSI handle defaults to the authenticated caller's account. */
+type CreateEmergencyRequest = WireComponents["schemas"]["NewEmergencyRequest"];
+export default CreateEmergencyRequest;

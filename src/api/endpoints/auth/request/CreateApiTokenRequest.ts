@@ -1,21 +1,7 @@
-import { TokenScope } from "../../../../models/ApiToken";
+import type { WireComponents } from "../../../../contracts/ApiContract";
 
-/**
- * Request body for creating an api token.
- * */
-export default interface CreateApiTokenRequest {
-  /**
-   * Human-readable name for the token
-   * */
-  name: string;
-
-  /**
-   * Optional expiration date for the token
-   * */
-  expirationDate?: Date;
-
-  /**
-   * List of scopes for the token
-   * */
-  scopes: TokenScope[];
-}
+/** Omit expirationDate, or set it to null, for a non-expiring API token. */
+type CreateApiTokenRequest = Omit<WireComponents["schemas"]["CreateApiTokenRequest"], "expirationDate"> & {
+  expirationDate?: Date | string | null;
+};
+export default CreateApiTokenRequest;

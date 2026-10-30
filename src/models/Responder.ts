@@ -1,9 +1,3 @@
-import { Class } from "./Class";
-
-export default interface Responder {
-  discordId: string;
-  id: string;
-  rsiHandle: string;
-  class: Class;
-  updated: string;
-}
+import type { WireComponents } from "../contracts/ApiContract";
+type Responder = WireComponents["schemas"]["Responder"];
+export default Responder;

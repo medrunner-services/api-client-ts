@@ -1,0 +1,1289 @@
+{
+  "Emergency": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updated": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "system": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type"
+        ]
+      },
+      "locationTreeNames": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "locationId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "threatLevel": {
+        "type": "integer"
+      },
+      "clientRsiHandle": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "clientDiscordId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "clientId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "status": {
+        "type": "integer"
+      },
+      "cancellationReason": {
+        "type": "integer"
+      },
+      "refusalReason": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "alertMessage": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "channelId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "channelId"
+        ]
+      },
+      "clientMessage": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "channelId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "channelId"
+        ]
+      },
+      "coordinationThread": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "channelId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "channelId"
+        ]
+      },
+      "afterActionReportMessage": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "channelId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "channelId"
+        ]
+      },
+      "respondingTeam": {
+        "type": "object",
+        "properties": {
+          "maxMembers": {
+            "type": "integer"
+          },
+          "staff": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "discordId": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "rsiHandle": {
+                  "type": "string"
+                },
+                "class": {
+                  "type": "integer"
+                },
+                "updated": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "discordId",
+                "id",
+                "rsiHandle",
+                "class",
+                "updated"
+              ]
+            }
+          },
+          "dispatchers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/properties/respondingTeam/properties/staff/items"
+            }
+          },
+          "allMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/properties/respondingTeam/properties/staff/items"
+            }
+          }
+        },
+        "required": [
+          "maxMembers",
+          "staff",
+          "dispatchers",
+          "allMembers"
+        ]
+      },
+      "respondingTeams": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "teamName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "teamName"
+          ]
+        }
+      },
+      "acceptedOn": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      },
+      "completedOn": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      },
+      "rating": {
+        "type": "integer"
+      },
+      "ratingRemarks": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "origin": {
+        "type": "integer"
+      },
+      "clientData": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "rsiHandle": {
+            "type": "string"
+          },
+          "rsiProfileLink": {
+            "type": "string"
+          },
+          "gotClientData": {
+            "type": "boolean"
+          },
+          "reported": {
+            "type": "boolean"
+          },
+          "userSid": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "rsiHandle",
+          "rsiProfileLink",
+          "gotClientData",
+          "reported",
+          "userSid"
+        ]
+      },
+      "missionName": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "isComplete": {
+        "type": "boolean"
+      },
+      "afterActionReport": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "servicesProvided": {
+            "type": "integer"
+          },
+          "suspectedTrap": {
+            "type": "boolean"
+          },
+          "remarks": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "submitterStaffId": {
+            "type": "string"
+          },
+          "submittedOn": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "editHistory": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "editorStaffId": {
+                  "type": "string"
+                },
+                "editTime": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "editorStaffId",
+                "editTime"
+              ]
+            }
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "submitterStaffId": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "submitterStaffId",
+                "url",
+                "type"
+              ]
+            }
+          },
+          "hasBeenEdited": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "servicesProvided",
+          "suspectedTrap",
+          "remarks",
+          "submitterStaffId",
+          "submittedOn",
+          "editHistory",
+          "resources",
+          "hasBeenEdited"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "created",
+      "updated",
+      "system",
+      "locationTreeNames",
+      "locationId",
+      "threatLevel",
+      "clientRsiHandle",
+      "clientDiscordId",
+      "clientId",
+      "status",
+      "cancellationReason",
+      "refusalReason",
+      "alertMessage",
+      "clientMessage",
+      "coordinationThread",
+      "afterActionReportMessage",
+      "respondingTeam",
+      "respondingTeams",
+      "acceptedOn",
+      "completedOn",
+      "rating",
+      "ratingRemarks",
+      "origin",
+      "clientData",
+      "missionName",
+      "isComplete",
+      "afterActionReport"
+    ]
+  },
+  "Team": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updated": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "emergency": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "missionName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "missionName"
+        ]
+      },
+      "members": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "discordId": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "rsiHandle": {
+              "type": "string"
+            },
+            "class": {
+              "type": "integer"
+            },
+            "joinTime": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "discordId",
+            "id",
+            "rsiHandle",
+            "class",
+            "joinTime"
+          ]
+        }
+      },
+      "waitList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string"
+            },
+            "rsiHandle": {
+              "type": "string"
+            },
+            "joinTime": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "userId",
+            "rsiHandle",
+            "joinTime"
+          ]
+        }
+      },
+      "status": {
+        "type": "integer"
+      },
+      "unit": {
+        "type": "string"
+      },
+      "teamId": {
+        "type": "integer"
+      },
+      "discordVoiceChannelId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "order": {
+        "type": "integer"
+      },
+      "teamName": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "created",
+      "updated",
+      "emergency",
+      "members",
+      "waitList",
+      "status",
+      "unit",
+      "teamId",
+      "discordVoiceChannelId",
+      "order",
+      "teamName"
+    ]
+  },
+  "Staff": {
+    "type": "object",
+    "properties": {
+      "certifications": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "certificationType": {
+              "type": "integer"
+            },
+            "acquiredOn": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "certificationType",
+            "acquiredOn"
+          ]
+        }
+      },
+      "rank": {
+        "type": "integer"
+      },
+      "staffStats": {
+        "type": "object",
+        "properties": {
+          "missions": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "integer"
+              },
+              "failed": {
+                "type": "integer"
+              },
+              "noContact": {
+                "type": "integer"
+              },
+              "refused": {
+                "type": "integer"
+              },
+              "aborted": {
+                "type": "integer"
+              },
+              "serverError": {
+                "type": "integer"
+              },
+              "canceled": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "success",
+              "failed",
+              "noContact",
+              "refused",
+              "aborted",
+              "serverError",
+              "canceled"
+            ]
+          },
+          "missionSuccessRate": {
+            "type": "number"
+          },
+          "dispatchedMissions": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "integer"
+              },
+              "failed": {
+                "type": "integer"
+              },
+              "noContact": {
+                "type": "integer"
+              },
+              "refused": {
+                "type": "integer"
+              },
+              "aborted": {
+                "type": "integer"
+              },
+              "serverError": {
+                "type": "integer"
+              },
+              "canceled": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "success",
+              "failed",
+              "noContact",
+              "refused",
+              "aborted",
+              "serverError",
+              "canceled"
+            ]
+          },
+          "dispatchSuccessRate": {
+            "type": "number"
+          },
+          "classStats": {
+            "type": "object",
+            "properties": {
+              "medic": {
+                "type": "integer"
+              },
+              "security": {
+                "type": "integer"
+              },
+              "pilot": {
+                "type": "integer"
+              },
+              "lead": {
+                "type": "integer"
+              },
+              "qrf": {
+                "type": "integer"
+              },
+              "dispatch": {
+                "type": "integer"
+              },
+              "dispatchLead": {
+                "type": "integer"
+              },
+              "dispatchTrainee": {
+                "type": "integer"
+              },
+              "observer": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "medic",
+              "security",
+              "pilot",
+              "lead",
+              "qrf",
+              "dispatch",
+              "dispatchLead",
+              "dispatchTrainee",
+              "observer"
+            ]
+          },
+          "level": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "missions",
+          "missionSuccessRate",
+          "dispatchedMissions",
+          "dispatchSuccessRate",
+          "classStats",
+          "level"
+        ]
+      },
+      "practiceStaffStats": {
+        "type": "object",
+        "properties": {
+          "missions": {
+            "$ref": "#/properties/staffStats/properties/missions"
+          },
+          "missionSuccessRate": {
+            "type": "number"
+          },
+          "dispatchedMissions": {
+            "$ref": "#/properties/staffStats/properties/dispatchedMissions"
+          },
+          "dispatchSuccessRate": {
+            "type": "number"
+          },
+          "classStats": {
+            "$ref": "#/properties/staffStats/properties/classStats"
+          },
+          "level": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "missions",
+          "missionSuccessRate",
+          "dispatchedMissions",
+          "dispatchSuccessRate",
+          "classStats",
+          "level"
+        ]
+      },
+      "practiceClientStats": {
+        "type": "object",
+        "properties": {
+          "missions": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "integer"
+              },
+              "failed": {
+                "type": "integer"
+              },
+              "noContact": {
+                "type": "integer"
+              },
+              "refused": {
+                "type": "integer"
+              },
+              "aborted": {
+                "type": "integer"
+              },
+              "serverError": {
+                "type": "integer"
+              },
+              "canceled": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "success",
+              "failed",
+              "noContact",
+              "refused",
+              "aborted",
+              "serverError",
+              "canceled"
+            ]
+          }
+        },
+        "required": [
+          "missions"
+        ]
+      },
+      "joinedMissions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "joinTime": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "id",
+            "joinTime"
+          ]
+        }
+      },
+      "activeClass": {
+        "type": "integer"
+      },
+      "staffProfile": {
+        "type": "object",
+        "properties": {
+          "preferredPronoun": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "preferredPronoun"
+        ]
+      },
+      "lastSuspension": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "enacted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiration": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "enacted",
+          "expiration"
+        ]
+      },
+      "activeTeam": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "departmentRoles": {
+        "type": "object",
+        "properties": {
+          "academy": {
+            "type": "integer"
+          },
+          "operations": {
+            "type": "integer"
+          },
+          "logistics": {
+            "type": "integer"
+          },
+          "hr": {
+            "type": "integer"
+          },
+          "moderation": {
+            "type": "integer"
+          },
+          "it": {
+            "type": "integer"
+          },
+          "media": {
+            "type": "integer"
+          },
+          "finance": {
+            "type": "integer"
+          },
+          "community": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "academy",
+          "operations",
+          "logistics",
+          "hr",
+          "moderation",
+          "it",
+          "media",
+          "finance",
+          "community"
+        ]
+      },
+      "requestedTeam": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "staffPortalPreferencesBlob": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "terminationReason": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "isDispatch": {
+        "type": "boolean"
+      },
+      "isSuspended": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updated": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "discordId": {
+        "type": "string"
+      },
+      "rsiHandle": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "hasCitizenId": {
+        "type": "boolean"
+      },
+      "roles": {
+        "type": "integer"
+      },
+      "personType": {
+        "type": "integer"
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "deactivationReason": {
+        "type": "integer"
+      },
+      "clientStats": {
+        "type": "object",
+        "properties": {
+          "missions": {
+            "$ref": "#/properties/practiceClientStats/properties/missions"
+          }
+        },
+        "required": [
+          "missions"
+        ]
+      },
+      "clientPortalPreferencesBlob": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "activeEmergency": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "allowAnonymousAlert": {
+        "type": "boolean"
+      },
+      "initialJoinDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "certifications",
+      "rank",
+      "staffStats",
+      "practiceStaffStats",
+      "practiceClientStats",
+      "joinedMissions",
+      "activeClass",
+      "staffProfile",
+      "lastSuspension",
+      "activeTeam",
+      "departmentRoles",
+      "requestedTeam",
+      "staffPortalPreferencesBlob",
+      "terminationReason",
+      "isDispatch",
+      "isSuspended",
+      "id",
+      "created",
+      "updated",
+      "discordId",
+      "rsiHandle",
+      "hasCitizenId",
+      "roles",
+      "personType",
+      "active",
+      "deactivationReason",
+      "clientStats",
+      "clientPortalPreferencesBlob",
+      "activeEmergency",
+      "allowAnonymousAlert",
+      "initialJoinDate"
+    ]
+  },
+  "Client": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updated": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "discordId": {
+        "type": "string"
+      },
+      "rsiHandle": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "hasCitizenId": {
+        "type": "boolean"
+      },
+      "roles": {
+        "type": "integer"
+      },
+      "personType": {
+        "type": "integer"
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "deactivationReason": {
+        "type": "integer"
+      },
+      "clientStats": {
+        "type": "object",
+        "properties": {
+          "missions": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "integer"
+              },
+              "failed": {
+                "type": "integer"
+              },
+              "noContact": {
+                "type": "integer"
+              },
+              "refused": {
+                "type": "integer"
+              },
+              "aborted": {
+                "type": "integer"
+              },
+              "serverError": {
+                "type": "integer"
+              },
+              "canceled": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "success",
+              "failed",
+              "noContact",
+              "refused",
+              "aborted",
+              "serverError",
+              "canceled"
+            ]
+          }
+        },
+        "required": [
+          "missions"
+        ]
+      },
+      "clientPortalPreferencesBlob": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "activeEmergency": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "allowAnonymousAlert": {
+        "type": "boolean"
+      },
+      "initialJoinDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "created",
+      "updated",
+      "discordId",
+      "rsiHandle",
+      "hasCitizenId",
+      "roles",
+      "personType",
+      "active",
+      "deactivationReason",
+      "clientStats",
+      "clientPortalPreferencesBlob",
+      "activeEmergency",
+      "allowAnonymousAlert",
+      "initialJoinDate"
+    ]
+  },
+  "ChatMessage": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updated": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "emergencyId": {
+        "type": "string"
+      },
+      "senderId": {
+        "type": "string"
+      },
+      "senderRsiHandle": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "contents": {
+        "type": "string"
+      },
+      "edited": {
+        "type": "boolean"
+      },
+      "deleted": {
+        "type": "boolean"
+      },
+      "senderClass": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "id",
+      "created",
+      "updated",
+      "emergencyId",
+      "senderId",
+      "senderRsiHandle",
+      "contents",
+      "edited",
+      "deleted",
+      "senderClass"
+    ]
+  },
+  "AuditLog": {
+    "type": "object",
+    "properties": {
+      "initiatorId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "initiatorDiscordId": {
+        "type": "string"
+      },
+      "action": {
+        "type": "string"
+      },
+      "actionType": {
+        "type": "integer"
+      },
+      "result": {
+        "type": "string"
+      },
+      "parameters": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            },
+            "type": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "value",
+            "type"
+          ]
+        }
+      },
+      "source": {
+        "type": "integer"
+      },
+      "eventTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "timeToLive": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "id": {
+        "type": "string"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "initiatorId",
+      "initiatorDiscordId",
+      "action",
+      "actionType",
+      "result",
+      "parameters",
+      "source",
+      "eventTime",
+      "timeToLive",
+      "id",
+      "created"
+    ]
+  },
+  "FannedContent": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id"
+    ]
+  },
+  "Deployment": {
+    "type": "object",
+    "properties": {
+      "clientType": {
+        "type": "integer"
+      },
+      "version": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "clientType",
+      "version"
+    ]
+  }
+}

@@ -1,20 +1,6 @@
-import EmergencyStats from "./EmergencyStats";
-import WritableDbItem from "./WritableDbItem";
-
-export default interface Person extends WritableDbItem {
-  discordId: string;
-  rsiHandle: string | null;
-  roles: UserRoles;
-  personType: PersonType;
-  active: boolean;
-  deactivationReason: AccountDeactivationReason;
-  clientStats: ClientStats;
-  activeEmergency: string | null;
-  clientPortalPreferencesBlob: string | null;
-  allowAnonymousAlert: boolean;
-  initialJoinDate: string | null;
-  hasCitizenId: boolean;
-}
+import type { WireComponents } from "../contracts/ApiContract";
+type Person = WireComponents["schemas"]["Person"];
+export default Person;
 
 export enum UserRoles {
   CLIENT = 1 << 0,
@@ -35,10 +21,6 @@ export enum AccountDeactivationReason {
   CLIENT_DRIVEN_DELETION,
 }
 
-export interface ClientStats {
-  missions: EmergencyStats;
-}
+export type ClientStats = WireComponents["schemas"]["ClientStats"];
 
-export interface BlockedStatus {
-  blocked: boolean;
-}
+export type BlockedStatus = WireComponents["schemas"]["BlockedResponse"];

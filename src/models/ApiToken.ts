@@ -1,41 +1,6 @@
-import WritableDbItem from "./WritableDbItem";
-
-export default interface ApiToken extends WritableDbItem {
-  /**
-   * The user who created the token
-   * */
-  userId: string;
-
-  /**
-   * Human-readable name for the token, assigned by the user
-   * */
-  name: string;
-
-  /**
-   * The date at which the token will expire
-   * */
-  expirationDate?: string;
-
-  /**
-   *  When the token was last used to generate a new access token, iso-8601 timestamp
-   * */
-  lastUsed?: string;
-
-  /**
-   *  Whether the token has expired
-   * */
-  expired: boolean;
-
-  /**
-   *  The version of the token
-   * */
-  version: TokenVersion;
-
-  /**
-   *  The scopes granted to the token
-   * */
-  scopes: TokenScope[];
-}
+import type { WireComponents } from "../contracts/ApiContract";
+type ApiToken = WireComponents["schemas"]["ApiToken"];
+export default ApiToken;
 
 export enum TokenVersion {
   UNKNOWN = -1,

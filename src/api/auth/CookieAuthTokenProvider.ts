@@ -91,8 +91,10 @@ export default class CookieAuthTokenProvider implements AccessTokenProvider {
       this.options.log?.debug(`getAccessToken: ${source} => Waiting for token fetch to complete`);
       const tokens = await this.tokenFetchPromise;
 
+      // Clear stale expiration metadata when the refreshed session has no refresh-token expiry.
+      this.expiryStore.clear();
       this.expiryStore.setAccessTokenExpiration(tokens.accessTokenExpiration);
-      if (tokens.refreshTokenExpiration !== undefined) {
+      if (tokens.refreshTokenExpiration != null) {
         this.expiryStore.setRefreshTokenExpiration(tokens.refreshTokenExpiration);
       }
 
