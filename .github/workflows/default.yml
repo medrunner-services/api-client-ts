@@ -1,0 +1,60 @@
+name: CI and publication
+
+on:
+  push:
+    branches: [main, release/stable]
+  pull_request:
+    branches: [main, release/stable]
+
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  test:
+    uses: medrunner-services/ci/.github/workflows/wf-test-node.yml@fca6ebfd245fe5917f2ed96e9a8a7e5927f261e1
+    permissions:
+      contents: read
+      packages: read
+    with:
+      node-version: 24.x
+      package-manager: npm
+      private-packages: false
+      test-if-present: true
+
+  release:
+    if: ${{ github.event_name == 'push' }}
+    needs: test
+    uses: medrunner-services/ci/.github/workflows/wf-release-semantic.yml@fca6ebfd245fe5917f2ed96e9a8a7e5927f261e1
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    with:
+      environment-name: release
+      release-ref-name: release/stable
+      default-branch: main
+      enable-backpropagation: false
+      backpropagation-approve: false
+      backpropagation-auto-merge: false
+
+  publish:
+    if: ${{ github.event_name == 'push' && needs.release.outputs.release-published == 'true' }}
+    needs: release
+    uses: medrunner-services/ci/.github/workflows/wf-publish-node.yml@fca6ebfd245fe5917f2ed96e9a8a7e5927f261e1
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    with:
+      environment-name: publish-npm
+      registry-url: https://registry.npmjs.org
+      package-manager: npm
+      private-packages: false
+      version: ${{ needs.release.outputs.new-version }}
+      release-tag: ${{ needs.release.outputs.new-tag }}
+      channel: ${{ needs.release.outputs.new-channel }}
