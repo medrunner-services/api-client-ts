@@ -1,9 +1,3 @@
-export default interface EmergencyStats {
-  success: number;
-  failed: number;
-  noContact: number;
-  refused: number;
-  aborted: number;
-  serverError: number;
-  canceled: number;
-}
+import type { WireComponents } from "../contracts/ApiContract";
+type EmergencyStats = WireComponents["schemas"]["EmergencyStats"];
+export default EmergencyStats;

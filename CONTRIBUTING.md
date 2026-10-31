@@ -16,16 +16,14 @@ If you want to directly contribute to the project by adding or fixing some code,
 
 - Checkout a topic branch from `main` with a name like `feature/adding-types` or `bug/docs-images-error`.
 
-- Make sure to run `npm run lint:fix` and `npm run prettier:fix` before committing your changes. You can even enable GitHub actions in your forked repository to run these checks automatically.
+- Make sure to run `pnpm run lint:fix` and `pnpm run prettier:fix` before committing your changes. You can even enable GitHub actions in your forked repository to run these checks automatically.
 
 - Create a pull request with your changes from your feature branch against the `main` branch.
 
 - If adding a new feature:
-
   - Provide a convincing reason to add this feature. Ideally, you should open a suggestion issue first and have it approved before working on it.
 
 - If fixing a bug:
-
   - Provide a detailed description of the bug in the PR. Live demo preferred.
 
 - It's OK to have multiple small commits as you work on the PR - all PRs will be squash merged.
@@ -40,7 +38,7 @@ After cloning the repo, run:
 
 ```sh
 # install the dependencies of the project
-$ npm install
+$ pnpm install
 ```
 
 ### Working on the api-client package
@@ -49,26 +47,7 @@ You can now start working on the project. To test if everything works correctly,
 
 ```sh
 # build the package and the documentation website
-$ npm run build
+$ pnpm run build
 ```
 
-To test if your changes to the package work correctly, you can use the [npm link](https://docs.npmjs.com/cli/v10/commands/npm-link) feature and link the package to a test project.
-
-### Working on the documentation website
-
-If you plan on contributing to the documentation, you can launch the documentation website dev server.
-
-```sh
-# launch the documentation website dev server
-$ npm run docs:dev
-```
-
-After executing the above command, visit http://localhost:5173 and try modifying the source code. You'll get live update.
-
-To test if your changes to the documentation website build correctly, you can build the website and then launch a preview server.
-
-```sh
-# launch the documentation website dev server
-$ npm run docs:build
-$ npm run docs:preview
-```
+To test if your changes to the package work correctly, you can use the [pnpm link](https://pnpm.io/cli/link) feature and link the package to a test project.

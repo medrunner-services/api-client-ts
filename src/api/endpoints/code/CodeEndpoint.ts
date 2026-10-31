@@ -3,6 +3,7 @@ import { Logger } from "ts-log";
 import { HeaderProvider } from "../../../Func";
 import PromotionalCode from "../../../models/PromotionalCode";
 import ApiResponse from "../../ApiResponse";
+import PaginatedResponse from "../../PaginatedResponse";
 import ApiEndpoint from "../ApiEndpoint";
 import TokenManager from "../auth/TokenManager";
 import DefaultApiConfig from "../DefaultApiConfig";
@@ -21,9 +22,18 @@ export default class CodeEndpoint extends ApiEndpoint {
 
   /**
    * Gets the redeemed codes for the current user.
+   *
+   * @param limit - The number of codes to get, max 100
+   * @param paginationToken - The string to use for pagination
    * */
-  public async getRedeemedCodes(): Promise<ApiResponse<PromotionalCode[]>> {
-    return await this.getRequest<PromotionalCode[]>("/redeemed");
+  public async getRedeemedCodes(
+    limit: number,
+    paginationToken?: string,
+  ): Promise<ApiResponse<PaginatedResponse<PromotionalCode>>> {
+    return await this.getRequest<PaginatedResponse<PromotionalCode>>("/redeemed", {
+      limit,
+      paginationToken,
+    });
   }
 
   /**

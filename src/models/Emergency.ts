@@ -1,67 +1,21 @@
-import { CancellationReason } from "./CancellationReason";
-import { MissionStatus } from "./MissionStatus";
-import { ResponseRating } from "./ResponseRating";
-import Team from "./Team";
-import { ThreatLevel } from "./ThreatLevel";
-import WritableDbItem from "./WritableDbItem";
+import type { WireComponents } from "../contracts/ApiContract";
+type Emergency = WireComponents["schemas"]["Emergency"];
+export default Emergency;
 
-export default interface Emergency extends WritableDbItem {
-  system: string;
-  subsystem: string;
-  tertiaryLocation?: string;
-  threatLevel: ThreatLevel;
-  clientRsiHandle: string;
-  clientDiscordId?: string;
-  clientId?: string;
-  subscriptionTier: string;
-  status: MissionStatus;
-  cancellationReason: CancellationReason;
-  refusalReason?: string;
-  alertMessage?: DiscordMessage;
-  clientMessage?: DiscordMessage;
-  coordinationThread?: DiscordMessage;
-  afterActionReportMessage?: DiscordMessage;
-  respondingTeam: Team;
-  respondingTeams: RespondingTeam[];
-  creationTimestamp: number;
-  acceptedTimestamp?: number;
-  completionTimestamp?: number;
-  rating: ResponseRating;
-  ratingRemarks?: string;
-  test: boolean;
-  origin: Origin;
-  clientData?: ClientData;
-  missionName?: string;
-  isComplete: boolean;
-  afterActionReport?: AfterActionReport;
-}
+/** A cached Discord message reference. */
+export type DiscordMessage = WireComponents["schemas"]["MessageCache"];
 
-export interface DiscordMessage {
-  id: string;
-  channelId: string;
-}
+export type ClientData = WireComponents["schemas"]["ClientData"];
 
-export interface ClientData {
-  rsiHandle: string;
-  rsiProfileLink: string;
-  gotClientData: boolean;
-  reported: boolean;
-  userSid?: string;
-}
+export type AfterActionReport = WireComponents["schemas"]["AfterActionReport"];
 
-export interface AfterActionReport {
-  servicesProvided: MissionServices;
-  suspectedTrap: boolean;
-  remarks?: string;
-  submitterStaffId: string;
-  submittedOn?: string;
-  editHistory: AfterActionReportEdit[];
-  hasBeenEdited: boolean;
-}
+export type AfterActionReportEdit = WireComponents["schemas"]["AfterActionReportEditRecord"];
 
-export interface AfterActionReportEdit {
-  editorStaffId: string;
-  editTime: string;
+export type AfterActionResource = WireComponents["schemas"]["AfterActionReportResource"];
+
+export enum AfterActionResourceType {
+  UNKNOWN = 0,
+  VIDEO = 1,
 }
 
 export enum MissionServices {
@@ -86,7 +40,4 @@ export enum SubmissionSource {
   BOT,
 }
 
-export interface RespondingTeam {
-  id: string;
-  teamName: string;
-}
+export type RespondingTeam = WireComponents["schemas"]["RespondingTeam"];

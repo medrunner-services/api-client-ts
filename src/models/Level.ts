@@ -30,4 +30,5 @@ export enum Level {
   Tier10Section1 = 1001,
   Tier10Section2,
   Tier10Section3,
+  NotSet = -1,
 }

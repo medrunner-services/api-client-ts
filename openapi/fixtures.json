@@ -1,0 +1,243 @@
+{
+  "AuditLog": {
+    "initiatorId": null,
+    "initiatorDiscordId": "audit-discord-fixture",
+    "action": "fixture-command",
+    "actionType": 1,
+    "result": "success",
+    "parameters": [
+      {
+        "name": "target",
+        "value": "fixture",
+        "type": 3
+      }
+    ],
+    "source": 1,
+    "eventTime": "2026-09-18T10:19:00Z",
+    "timeToLive": "2026-10-18T10:19:00Z",
+    "id": "audit-log-fixture",
+    "created": "2026-09-18T10:19:00Z"
+  },
+  "ChatMessage": {
+    "id": "chat-message-fixture",
+    "created": "2026-09-18T10:20:00Z",
+    "updated": "2026-09-18T10:20:10Z",
+    "emergencyId": "emergency-fixture",
+    "senderId": "staff-fixture",
+    "senderRsiHandle": "FixtureStaff",
+    "contents": "Synthetic coordination update.",
+    "edited": false,
+    "deleted": false,
+    "senderClass": 1
+  },
+  "Client": {
+    "id": "client-fixture",
+    "created": "2026-09-18T10:18:00Z",
+    "updated": "2026-09-18T10:18:10Z",
+    "discordId": "client-discord-fixture",
+    "rsiHandle": "FixtureClient",
+    "hasCitizenId": false,
+    "roles": 1,
+    "personType": 0,
+    "active": true,
+    "deactivationReason": 0,
+    "clientStats": {
+      "missions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      }
+    },
+    "clientPortalPreferencesBlob": null,
+    "activeEmergency": null,
+    "allowAnonymousAlert": true,
+    "initialJoinDate": null
+  },
+  "Emergency": {
+    "id": "emergency-fixture",
+    "created": "2026-09-18T10:15:00Z",
+    "updated": "2026-09-18T10:15:10Z",
+    "system": null,
+    "locationTreeNames": [
+      "Stanton",
+      "Area18"
+    ],
+    "locationId": null,
+    "threatLevel": 2,
+    "clientRsiHandle": null,
+    "clientDiscordId": null,
+    "clientId": null,
+    "status": 1,
+    "cancellationReason": 0,
+    "refusalReason": null,
+    "alertMessage": null,
+    "clientMessage": null,
+    "coordinationThread": null,
+    "afterActionReportMessage": null,
+    "respondingTeam": {
+      "maxMembers": 4,
+      "staff": [],
+      "dispatchers": [],
+      "allMembers": []
+    },
+    "respondingTeams": [],
+    "acceptedOn": null,
+    "completedOn": null,
+    "rating": 0,
+    "ratingRemarks": null,
+    "origin": 0,
+    "clientData": null,
+    "missionName": null,
+    "isComplete": false,
+    "afterActionReport": null
+  },
+  "Staff": {
+    "certifications": [],
+    "rank": 2,
+    "staffStats": {
+      "missions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      },
+      "missionSuccessRate": 0,
+      "dispatchedMissions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      },
+      "dispatchSuccessRate": 0,
+      "classStats": {
+        "medic": 0,
+        "security": 0,
+        "pilot": 0,
+        "lead": 0,
+        "qrf": 0,
+        "dispatch": 0,
+        "dispatchLead": 0,
+        "dispatchTrainee": 0,
+        "observer": 0
+      },
+      "level": 0
+    },
+    "practiceStaffStats": {
+      "missions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      },
+      "missionSuccessRate": 0,
+      "dispatchedMissions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      },
+      "dispatchSuccessRate": 0,
+      "classStats": {
+        "medic": 0,
+        "security": 0,
+        "pilot": 0,
+        "lead": 0,
+        "qrf": 0,
+        "dispatch": 0,
+        "dispatchLead": 0,
+        "dispatchTrainee": 0,
+        "observer": 0
+      },
+      "level": 0
+    },
+    "practiceClientStats": {
+      "missions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      }
+    },
+    "joinedMissions": [],
+    "activeClass": 1,
+    "staffProfile": {
+      "preferredPronoun": 0
+    },
+    "lastSuspension": null,
+    "activeTeam": null,
+    "departmentRoles": {
+      "academy": 0,
+      "operations": 0,
+      "logistics": 0,
+      "hr": 0,
+      "moderation": 0,
+      "it": 0,
+      "media": 0,
+      "finance": 0,
+      "community": 0
+    },
+    "requestedTeam": null,
+    "staffPortalPreferencesBlob": null,
+    "terminationReason": null,
+    "isDispatch": false,
+    "isSuspended": false,
+    "id": "staff-fixture",
+    "created": "2026-09-18T10:17:00Z",
+    "updated": "2026-09-18T10:17:10Z",
+    "discordId": "staff-discord-fixture",
+    "rsiHandle": "FixtureStaff",
+    "hasCitizenId": false,
+    "roles": 2,
+    "personType": 1,
+    "active": true,
+    "deactivationReason": 0,
+    "clientStats": {
+      "missions": {
+        "success": 0,
+        "failed": 0,
+        "noContact": 0,
+        "refused": 0,
+        "aborted": 0,
+        "serverError": 0,
+        "canceled": 0
+      }
+    },
+    "clientPortalPreferencesBlob": null,
+    "activeEmergency": null,
+    "allowAnonymousAlert": false,
+    "initialJoinDate": null
+  },
+  "Team": {
+    "id": "team-fixture",
+    "created": "2026-09-18T10:16:00Z",
+    "updated": "2026-09-18T10:16:10Z",
+    "emergency": null,
+    "members": [],
+    "waitList": [],
+    "status": 2,
+    "unit": "Medical",
+    "teamId": 1,
+    "discordVoiceChannelId": null,
+    "order": 0,
+    "teamName": "Medical 1"
+  }
+}

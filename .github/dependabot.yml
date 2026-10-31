@@ -7,3 +7,4 @@ updates:
     versioning-strategy: increase
     reviewers:
       - "ElliotThiebaut"
+    open-pull-requests-limit: 0

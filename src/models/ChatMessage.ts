@@ -1,33 +1,3 @@
-import DbItem from "./DbItem";
-
-export default interface ChatMessage extends DbItem {
-  /**
-   * The emergency associated with the chat message
-   * */
-  emergencyId: string;
-
-  /**
-   * The user id of the message sender
-   * */
-  senderId: string;
-
-  /**
-   * The timestamp at which the message was sent in Unix seconds
-   * */
-  messageSentTimestamp: number;
-
-  /**
-   * The contents of the message
-   * */
-  contents: string;
-
-  /**
-   * Whether the message has been edited
-   * */
-  edited: boolean;
-
-  /**
-   * Whether the message has been deleted
-   * */
-  deleted: boolean;
-}
+import type { WireComponents } from "../contracts/ApiContract";
+type ChatMessage = WireComponents["schemas"]["ChatMessage"];
+export default ChatMessage;
