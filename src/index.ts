@@ -25,6 +25,8 @@ export type {
 
 export * from "./Func";
 export * from "./api/ApiRequestFailureLogger";
+export { ApiFailureError, normalizeApiFailure } from "./api/ApiErrorDiagnostics";
+export type { RecruitmentFailureData, RecruitmentProblemDetails } from "./models/ProblemDetails";
 
 import ApiEndpoint from "./api/endpoints/ApiEndpoint";
 import AuthEndpoint from "./api/endpoints/auth/AuthEndpoint";

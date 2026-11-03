@@ -2,9 +2,9 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import qs from "qs";
 import { Logger } from "ts-log";
 
-import { ApiContractError, assertHttpRequest, assertHttpResponse } from "../../contracts/ApiContract";
+import { assertHttpRequest } from "../../contracts/ApiContract";
 import { HeaderProvider } from "../../Func";
-import ProblemDetails from "../../models/ProblemDetails";
+import { normalizeApiFailure, validateApiResponse } from "../ApiErrorDiagnostics";
 import { ApiRequestFailure, ApiRequestFailureLogger, ApiRequestMethod } from "../ApiRequestFailureLogger";
 import ApiResponse from "../ApiResponse";
 import ApiRequestTelemetry from "../telemetry/ApiRequestTelemetry";
@@ -159,7 +159,7 @@ export default abstract class ApiEndpoint {
       this.log?.debug(`sending ${requestType} request to ${requestUrl}`);
       try {
         const result = await request(requestUrl, await this.requestConfig(noAuthentication, queryParams));
-        assertHttpResponse(requestType, contractPath, result.status, result.data);
+        validateApiResponse(requestType, contractPath, result);
         telemetry.recordSuccess(result.status);
 
         return {
@@ -173,7 +173,7 @@ export default abstract class ApiEndpoint {
 
           try {
             const result = await request(requestUrl, await this.requestConfig(noAuthentication, queryParams));
-            assertHttpResponse(requestType, contractPath, result.status, result.data);
+            validateApiResponse(requestType, contractPath, result);
             telemetry.recordSuccess(result.status);
             return {
               success: true,
@@ -225,7 +225,7 @@ export default abstract class ApiEndpoint {
     error: unknown,
     telemetry: ApiRequestTelemetry,
   ): ApiResponse<T> {
-    const response = this.errorResponse<T>(error);
+    const response = normalizeApiFailure<T>(error);
     const failure = createApiRequestFailure(
       this.constructor.name,
       requestType,
@@ -242,7 +242,7 @@ export default abstract class ApiEndpoint {
 
     const message = `API request failed: ${requestType} ${requestUrl}; status=${response.statusCode ?? "unavailable"}; response=${
       failure.responseBody ?? "unavailable"
-    }${failure.responseBodyTruncated ? " [truncated]" : ""}`;
+    }${failure.responseBodyTruncated ? " [truncated]" : ""}${failure.requestId ? `; requestId=${failure.requestId}` : ""}${failure.traceId ? `; traceId=${failure.traceId}` : ""}`;
 
     if (response.statusCode === undefined || response.statusCode >= 500) {
       this.log?.error(message);
@@ -252,69 +252,6 @@ export default abstract class ApiEndpoint {
 
     return response;
   }
-
-  private errorResponse<T>(error: unknown): ApiResponse<T> {
-    if (error instanceof ApiContractError) return { success: false, errorMessage: error.message };
-    const errorData = axios.isAxiosError(error) ? error.response?.data : undefined;
-
-    return {
-      success: false,
-      errorMessage: serializeErrorBody(errorData),
-      statusCode: axios.isAxiosError(error) ? error.response?.status : undefined,
-      problemDetails: isProblemDetails(errorData) ? errorData : undefined,
-    };
-  }
-}
-
-/** Renders transport response content for an inspectable log message and the string API response contract. */
-function serializeErrorBody(errorData: unknown): string | undefined {
-  if (errorData === undefined) {
-    return undefined;
-  }
-
-  if (typeof errorData === "string") {
-    return errorData;
-  }
-
-  try {
-    return JSON.stringify(errorData);
-  } catch {
-    return String(errorData);
-  }
-}
-
-/** Identifies error bodies which can safely be exposed through the typed Problem Details contract. */
-function isProblemDetails(value: unknown): value is ProblemDetails {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) {
-    return false;
-  }
-
-  const details = value as Record<string, unknown>;
-  const hasProblemDetailsField = ["type", "title", "status", "detail", "instance"].some(field => field in details);
-
-  return (
-    hasProblemDetailsField &&
-    isNullableString(details.type) &&
-    isNullableString(details.title) &&
-    isProblemDetailsStatus(details.status) &&
-    isNullableString(details.detail) &&
-    isNullableString(details.instance)
-  );
-}
-
-/** Validates optional fields whose OpenAPI schema permits either a string or null. */
-function isNullableString(value: unknown): boolean {
-  return value === undefined || value === null || typeof value === "string";
-}
-
-/** Validates the API schema's optional integer-or-string status value. */
-function isProblemDetailsStatus(value: unknown): boolean {
-  return (
-    value === undefined ||
-    value === null ||
-    (typeof value === "number" && Number.isInteger(value)) ||
-    (typeof value === "string" && /^-?(?:0|[1-9]\d*)$/.test(value))
-  );
 }
 
 /** Converts a terminal response into a bounded, header-free structured logging record. */
@@ -334,8 +271,14 @@ function createApiRequestFailure(
     serverAddress: target?.hostname,
     path: target?.pathname,
     statusCode: response.statusCode,
+    ...(response.requestId ? { requestId: response.requestId } : {}),
+    ...(response.traceId ? { traceId: response.traceId } : {}),
+    ...(response.requestIdMismatch ? { requestIdMismatch: true } : {}),
     retryCount,
-    errorType: response.problemDetails?.type || (response.statusCode === undefined ? "transport" : "http.response"),
+    errorType:
+      response.failureKind === "contract"
+        ? "contract"
+        : response.problemDetails?.type || (response.statusCode === undefined ? "transport" : "http.response"),
     responseBody: responseBody.value,
     responseBodyTruncated: responseBody.truncated,
     problemDetails: response.problemDetails,

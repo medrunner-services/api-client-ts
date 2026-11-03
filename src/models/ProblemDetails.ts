@@ -1,8 +1,16 @@
-import type { WireComponents } from "../contracts/ApiContract";
+import type { WirePaths } from "../contracts/ApiContract";
 /**
  * Structured error details returned by the Medrunner API.
  *
  * The optional and nullable fields mirror the OpenAPI `ProblemDetails` schema exactly.
  */
-type ProblemDetails = WireComponents["schemas"]["ProblemDetails"];
+export type RecruitmentProblemDetails =
+  WirePaths["/Staff/recruit"]["post"]["responses"][409]["content"]["application/problem+json"];
+export type RecruitmentFailureData = NonNullable<RecruitmentProblemDetails["data"]>;
+// Partial keeps older servers' standard Problem Details responses compatible.
+type ProblemDetails = Partial<
+  WirePaths["/Auth/exchange"]["post"]["responses"][400]["content"]["application/problem+json"]
+> & {
+  data?: RecruitmentFailureData | null;
+};
 export default ProblemDetails;

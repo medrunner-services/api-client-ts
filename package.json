@@ -1,6 +1,6 @@
 {
   "name": "@medrunner/api-client",
-  "version": "0.7.0",
+  "version": "0.7.0-dev.3",
   "description": "Wrapper library for the Medrunner API",
   "packageManager": "pnpm@11.5.2",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "tag": "latest"
+    "tag": "preview"
   },
   "repository": {
     "type": "git",

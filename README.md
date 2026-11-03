@@ -94,19 +94,16 @@ Do not combine `discoveryDocumentUrl` with `discoveryAlgorithm` because an expli
 
 ## Creating a new package version
 
-Follow these steps to publish a new version of the package:
+```mermaid
+flowchart LR
+    Main["main + Conventional Commits"] --> Release["semantic-release: -dev.N / preview"]
+    Release --> Publish["Publish immutable release tag"]
+    Publish --> Stage["Qualify staging consumers"]
+    Stage --> Later["Later stable promotion"]
+```
 
-- Merge your changes into the `main` branch with a pull request
-- Create a new github release and a new tag at the same time in the UI
-  - In the case of a beta release:
-    - the tag name should be `v1.0.0-beta.1`, where the version number should match the package.json version and the beta number simply increments from beta releases of this same version.
-    - set the github release as a pre-release
-  - In the case of a stable release:
-    - the tag name should be `v1.0.0`, where the version number should match the package.json version.
-- The package will be published with the new version once the release is published.
-
-The package will not publish if the release information and package version do not match:
-
-- If the release tag has a different version than the package.json version, without taking into account the tags, the package will not be published.
-- If the release tag contains the tag `beta` but the github release is not marked as a pre-release, the package will not be published.
-- If the release is stable but the github release is marked as a pre-release, the package will not be published.
+The repository's `release.config.mjs` owns version and channel selection.
+A qualifying commit on `main` creates a `-dev.N` prerelease on `preview`; the shared publication workflow builds from the immutable release tag and uses its version/channel outputs.
+Use `release/rc` for release candidates and `release/stable` for a separately approved stable promotion.
+For coordinated error diagnostics, publish upstream prereleases first, regenerate downstream lockfiles from real registry metadata, and qualify staging before considering production.
+See [the diagnostics release notes](docs/error-diagnostics.md) for the compatible dev candidate set.

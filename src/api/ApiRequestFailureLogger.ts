@@ -10,6 +10,9 @@ export interface ApiRequestFailure {
   serverAddress?: string;
   path?: string;
   statusCode?: number;
+  requestId?: string;
+  traceId?: string;
+  requestIdMismatch?: boolean;
   retryCount: number;
   errorType: string;
   responseBody?: string;
