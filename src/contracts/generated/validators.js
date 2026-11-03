@@ -4,9 +4,9 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 
-// node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/formats.js
+// ../../../api-client-ts/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/formats.js
 var require_formats = __commonJS({
-  "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/formats.js"(exports) {
+  "../../../api-client-ts/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/formats.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.formatNames = exports.fastFormats = exports.fullFormats = void 0;
@@ -207,9 +207,9 @@ var require_formats = __commonJS({
   }
 });
 
-// node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/ucs2length.js
+// ../../../api-client-ts/node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/ucs2length.js
 var require_ucs2length = __commonJS({
-  "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/ucs2length.js"(exports) {
+  "../../../api-client-ts/node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/ucs2length.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function ucs2length(str) {
@@ -6682,6 +6682,7 @@ function validate268(data, { instancePath = "", parentData, parentDataProperty, 
   return errors === 0;
 }
 validate268.evaluated = { "props": { "ships": true }, "dynamicProps": false, "dynamicItems": false };
+var schema135 = { "required": ["unitName", "primarySystems", "secondarySystems", "discordCategoryId", "discordRoleId", "musterPointId"], "type": "object", "properties": { "unitName": { "type": "string" }, "primarySystems": { "type": "array", "items": { "$ref": "#/components/schemas/System" } }, "secondarySystems": { "type": "array", "items": { "$ref": "#/components/schemas/System" } }, "discordCategoryId": { "type": ["null", "string"] }, "discordRoleId": { "type": ["null", "string"] }, "musterPointId": { "type": ["null", "string"] } } };
 function validate274(data, { instancePath = "", parentData, parentDataProperty, rootData = data, dynamicAnchors = {} } = {}) {
   let vErrors = null;
   let errors = 0;
@@ -6816,9 +6817,10 @@ function validate273(data, { instancePath = "", parentData, parentDataProperty, 
             }
             if (valid0) {
               if (data.discordCategoryId !== void 0) {
+                let data5 = data.discordCategoryId;
                 const _errs9 = errors;
-                if (typeof data.discordCategoryId !== "string") {
-                  validate273.errors = [{ instancePath: instancePath + "/discordCategoryId", schemaPath: "#/properties/discordCategoryId/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+                if (data5 !== null && typeof data5 !== "string") {
+                  validate273.errors = [{ instancePath: instancePath + "/discordCategoryId", schemaPath: "#/properties/discordCategoryId/type", keyword: "type", params: { type: schema135.properties.discordCategoryId.type }, message: "must be null,string" }];
                   return false;
                 }
                 var valid0 = _errs9 === errors;
@@ -6827,9 +6829,10 @@ function validate273(data, { instancePath = "", parentData, parentDataProperty, 
               }
               if (valid0) {
                 if (data.discordRoleId !== void 0) {
+                  let data6 = data.discordRoleId;
                   const _errs11 = errors;
-                  if (typeof data.discordRoleId !== "string") {
-                    validate273.errors = [{ instancePath: instancePath + "/discordRoleId", schemaPath: "#/properties/discordRoleId/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+                  if (data6 !== null && typeof data6 !== "string") {
+                    validate273.errors = [{ instancePath: instancePath + "/discordRoleId", schemaPath: "#/properties/discordRoleId/type", keyword: "type", params: { type: schema135.properties.discordRoleId.type }, message: "must be null,string" }];
                     return false;
                   }
                   var valid0 = _errs11 === errors;
@@ -6838,9 +6841,10 @@ function validate273(data, { instancePath = "", parentData, parentDataProperty, 
                 }
                 if (valid0) {
                   if (data.musterPointId !== void 0) {
+                    let data7 = data.musterPointId;
                     const _errs13 = errors;
-                    if (typeof data.musterPointId !== "string") {
-                      validate273.errors = [{ instancePath: instancePath + "/musterPointId", schemaPath: "#/properties/musterPointId/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+                    if (data7 !== null && typeof data7 !== "string") {
+                      validate273.errors = [{ instancePath: instancePath + "/musterPointId", schemaPath: "#/properties/musterPointId/type", keyword: "type", params: { type: schema135.properties.musterPointId.type }, message: "must be null,string" }];
                       return false;
                     }
                     var valid0 = _errs13 === errors;

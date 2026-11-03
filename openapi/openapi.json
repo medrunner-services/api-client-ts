@@ -17853,13 +17853,22 @@
             }
           },
           "discordCategoryId": {
-            "type": "string"
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "discordRoleId": {
-            "type": "string"
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "musterPointId": {
-            "type": "string"
+            "type": [
+              "null",
+              "string"
+            ]
           }
         }
       },
