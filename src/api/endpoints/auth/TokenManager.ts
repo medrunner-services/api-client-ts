@@ -1,9 +1,9 @@
-import axios, { AxiosError, type AxiosRequestConfig } from "axios";
+import axios, { type AxiosRequestConfig } from "axios";
 import { Logger } from "ts-log";
 
-import { assertHttpResponse } from "../../../contracts/ApiContract";
 import { AsyncAction, HeaderProvider } from "../../../Func";
 import TokenGrant from "../../../models/TokenGrant";
+import { ApiFailureError, normalizeApiFailure, validateApiResponse } from "../../ApiErrorDiagnostics";
 import AccessTokenProvider from "../../auth/AccessTokenProvider";
 import CookieAuthTokenProvider from "../../auth/CookieAuthTokenProvider";
 import StaticRefreshTokenProvider, { TokenExchange } from "../../auth/StaticRefreshTokenProvider";
@@ -80,12 +80,11 @@ export default class TokenManager extends ApiEndpoint {
         withCredentials: this.config.cookieAuth,
       });
 
-      assertHttpResponse("POST", "/auth/exchange", result.status, result.data);
+      validateApiResponse("POST", "/auth/exchange", result);
       this.log?.debug("getAccessToken: Successfully fetched new tokens");
       return result.data;
     } catch (error) {
-      const statusCode = error instanceof AxiosError ? error.response?.status : undefined;
-      throw new Error(statusCode?.toString(), { cause: error });
+      throw new ApiFailureError(normalizeApiFailure<never>(error));
     }
   }
 }

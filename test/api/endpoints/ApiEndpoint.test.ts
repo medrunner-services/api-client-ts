@@ -295,6 +295,8 @@ describe("ApiEndpoint authenticated recovery", () => {
       status: 400,
       detail: "The supplied resource is invalid.",
       instance: "/test/public",
+      requestId: "server-attempt",
+      traceId: "server-trace",
     };
 
     mock.onGet(url).reply(400, problemDetails);
@@ -330,6 +332,11 @@ describe("ApiEndpoint authenticated recovery", () => {
     ]);
     expect(telemetry.spans[0].attributes).not.toHaveProperty("url.path");
     expect(telemetry.spans[0].attributes).not.toHaveProperty("medrunner.api.response.body");
+    expect(telemetry.spans[0].attributes).toMatchObject({ "medrunner.api.request_id": "server-attempt", "medrunner.api.trace_id": "server-trace" });
+    for (const measurement of telemetry.measurements) {
+      expect(measurement.attributes).not.toHaveProperty("medrunner.api.request_id");
+      expect(measurement.attributes).not.toHaveProperty("medrunner.api.trace_id");
+    }
     expect(telemetry.measurements).toEqual(
       expect.arrayContaining([
         expect.objectContaining({

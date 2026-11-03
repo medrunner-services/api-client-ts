@@ -61,9 +61,14 @@ export default class ApiRequestTelemetry {
 
   /** Records a sanitized terminal failure without capturing the raw Axios error object. */
   public recordFailure(failure: ApiRequestFailure): void {
-    const errorType = failure.statusCode === undefined ? "transport" : "http.response";
+    const errorType =
+      failure.errorType === "contract" ? "contract" : failure.statusCode === undefined ? "transport" : "http.response";
     const attributes = outcomeAttributes(this.request, failure.statusCode, failure.retryCount, errorType);
-    this.span.setAttributes(attributes);
+    this.span.setAttributes({
+      ...attributes,
+      ...(failure.requestId ? { "medrunner.api.request_id": failure.requestId } : {}),
+      ...(failure.traceId ? { "medrunner.api.trace_id": failure.traceId } : {}),
+    });
     this.span.setStatus({ code: SpanStatusCode.ERROR });
     this.span.addEvent("exception", {
       "exception.type": errorType,
