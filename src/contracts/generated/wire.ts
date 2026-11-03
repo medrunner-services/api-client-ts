@@ -10300,9 +10300,9 @@ export interface components {
             unitName: string;
             primarySystems: components["schemas"]["System"][];
             secondarySystems: components["schemas"]["System"][];
-            discordCategoryId: string;
-            discordRoleId: string;
-            musterPointId: string;
+            discordCategoryId: null | string;
+            discordRoleId: null | string;
+            musterPointId: null | string;
         };
         UnitRequest: {
             name: string;
