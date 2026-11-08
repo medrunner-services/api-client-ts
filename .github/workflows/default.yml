@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   test:
-    uses: medrunner-services/ci/.github/workflows/wf-test-node.yml@v1
+    uses: medrunner-services/ci/.github/workflows/wf-test-node.yml@ba7376798b2041f9916e9b26ea1eb781b3b3414e # v1.5.1
     permissions:
       contents: read
       packages: read
@@ -28,7 +28,7 @@ jobs:
   release:
     if: ${{ github.event_name == 'push' }}
     needs: test
-    uses: medrunner-services/ci/.github/workflows/wf-release-semantic.yml@v1
+    uses: medrunner-services/ci/.github/workflows/wf-release-semantic.yml@ba7376798b2041f9916e9b26ea1eb781b3b3414e # v1.5.1
     secrets:
       PR_CREATION_PAT: ${{ secrets.PR_CREATION_PAT }}
     permissions:
@@ -47,7 +47,7 @@ jobs:
   publish:
     if: ${{ github.event_name == 'push' && needs.release.outputs.release-published == 'true' }}
     needs: release
-    uses: medrunner-services/ci/.github/workflows/wf-publish-node.yml@v1
+    uses: medrunner-services/ci/.github/workflows/wf-publish-node.yml@ba7376798b2041f9916e9b26ea1eb781b3b3414e # v1.5.1
     permissions:
       contents: read
       packages: write
