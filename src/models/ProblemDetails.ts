@@ -12,5 +12,7 @@ type ProblemDetails = Partial<
   WirePaths["/Auth/exchange"]["post"]["responses"][400]["content"]["application/problem+json"]
 > & {
   data?: RecruitmentFailureData | null;
+  /** Additive machine-readable reason; unknown values remain available for generic fallback. */
+  reason?: string | null;
 };
 export default ProblemDetails;

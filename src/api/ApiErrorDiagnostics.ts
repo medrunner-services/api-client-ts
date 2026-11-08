@@ -128,6 +128,7 @@ function readProblemDetails(value: unknown, statusCode?: number): ProblemDetails
     ...(apiDiagnosticId(value.requestId) ? { requestId: apiDiagnosticId(value.requestId) } : {}),
     ...(apiDiagnosticId(value.traceId) ? { traceId: apiDiagnosticId(value.traceId) } : {}),
     ...(integer(value.errorCode) !== undefined ? { errorCode: integer(value.errorCode) } : {}),
+    ...(typeof value.reason === "string" && value.reason.length <= 128 ? { reason: value.reason } : {}),
     ...(value.data === null
       ? { data: null }
       : recruitmentData(value.data)

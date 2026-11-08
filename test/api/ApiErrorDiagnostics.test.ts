@@ -1,25 +1,31 @@
 import axios, { AxiosHeaders } from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Logger } from "ts-log";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ApiFailureError, normalizeApiFailure, validateApiResponse } from "../../src/api/ApiErrorDiagnostics";
+import type ApiResponse from "../../src/api/ApiResponse";
 import ApiEndpoint from "../../src/api/endpoints/ApiEndpoint";
-import DefaultApiConfig from "../../src/api/endpoints/DefaultApiConfig";
 import TokenManager from "../../src/api/endpoints/auth/TokenManager";
+import DefaultApiConfig from "../../src/api/endpoints/DefaultApiConfig";
 import { ApiContractError } from "../../src/contracts/ApiContract";
 
 class Endpoint extends ApiEndpoint {
   public constructor(config: DefaultApiConfig, log?: Logger) { super(config, new TokenManager(config), log); }
   protected endpoint(): string { return "test"; }
-  public call() { return this.getRequest("/resource"); }
+  public call(): Promise<ApiResponse<unknown>> { return this.getRequest("/resource"); }
 }
 
 describe("HTTP diagnostic identity", () => {
+  it.each(["staff_not_found", "team_not_found", "identity_ambiguous", "future_reason"])("retains additive identity reason %s", reason => {
+    const result = normalizeApiFailure(undefined, { status: 409, headers: {}, data: { title: "Conflict", status: 409, reason, requestId: "identity-attempt" } });
+    expect(result.problemDetails?.reason).toBe(reason);
+    expect(result.requestId).toBe("identity-attempt");
+  });
   let mock: MockAdapter;
   beforeEach(() => { mock = new MockAdapter(axios); });
   afterEach(() => { mock.restore(); });
-  const makeEndpoint = () => new Endpoint(new DefaultApiConfig({ baseUrl: "https://api.test", accessToken: "token" }));
+  const makeEndpoint = (): Endpoint => new Endpoint(new DefaultApiConfig({ baseUrl: "https://api.test", accessToken: "token" }));
 
   it.each([undefined, "unavailable", "<html>failure</html>", { title: 42 }, ["bad-body"]])(
     "retains header identity without claiming incompatible body %j is a problem", async body => {

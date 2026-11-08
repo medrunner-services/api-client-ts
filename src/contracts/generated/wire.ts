@@ -47,6 +47,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -72,6 +73,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -97,6 +99,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -122,6 +125,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -147,6 +151,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -172,6 +203,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -197,6 +229,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -222,6 +255,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -278,6 +312,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -303,6 +338,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -328,6 +364,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -353,6 +390,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -378,6 +416,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -403,6 +442,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -428,6 +468,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -453,6 +494,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -478,6 +520,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -542,6 +585,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -567,6 +611,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -592,6 +637,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -617,6 +663,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -642,6 +689,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -667,6 +741,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -692,6 +767,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -717,6 +793,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -781,6 +858,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -806,6 +884,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -831,6 +910,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -856,6 +936,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -881,6 +962,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -906,6 +1014,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -931,6 +1040,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -956,6 +1066,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1028,6 +1139,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1053,6 +1165,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1078,6 +1191,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1103,6 +1217,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1128,6 +1243,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1153,6 +1269,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1178,6 +1295,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1203,6 +1321,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1228,6 +1347,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1298,6 +1418,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1323,6 +1444,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1348,6 +1470,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1373,6 +1496,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1398,6 +1522,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1423,6 +1548,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1448,6 +1574,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1473,6 +1600,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1498,6 +1626,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1558,6 +1687,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1583,6 +1713,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1608,6 +1739,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1633,6 +1765,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1658,6 +1791,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1683,6 +1817,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1708,6 +1843,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1733,6 +1869,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1758,6 +1895,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1828,6 +1966,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1853,6 +1992,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1878,6 +2018,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1903,6 +2044,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1928,6 +2070,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1953,6 +2122,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -1978,6 +2148,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2003,6 +2174,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2069,6 +2241,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2094,6 +2267,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2119,6 +2293,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2144,6 +2319,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2169,6 +2345,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2194,6 +2397,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2219,6 +2423,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2244,6 +2449,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2314,6 +2520,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2339,6 +2546,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2364,6 +2572,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2389,6 +2598,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2414,6 +2624,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2439,6 +2676,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2464,6 +2702,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2489,6 +2728,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2559,6 +2799,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2584,6 +2825,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2609,6 +2851,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2634,6 +2877,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2659,6 +2903,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2684,6 +2929,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2709,6 +2955,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2734,6 +2981,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2759,6 +3007,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2829,6 +3078,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2854,6 +3104,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2879,6 +3130,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2904,6 +3156,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2929,6 +3182,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2954,6 +3208,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -2979,6 +3234,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3004,6 +3260,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3029,6 +3286,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3099,6 +3357,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3124,6 +3383,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3149,6 +3409,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3174,6 +3435,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3199,6 +3461,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3224,6 +3487,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3249,6 +3513,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3274,6 +3539,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3299,6 +3565,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3365,6 +3632,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3390,6 +3658,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3415,6 +3684,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3440,6 +3710,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3465,6 +3736,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3490,6 +3788,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3515,6 +3814,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3540,6 +3840,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3602,6 +3903,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3627,6 +3929,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3652,6 +3955,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3677,6 +3981,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3702,6 +4007,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3727,6 +4033,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3752,6 +4059,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3777,6 +4085,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3802,6 +4111,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3865,6 +4175,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3890,6 +4201,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3915,6 +4227,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3940,6 +4253,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3965,6 +4279,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -3990,6 +4305,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4015,6 +4331,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4040,6 +4357,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4065,6 +4383,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4125,6 +4444,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4150,6 +4470,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4175,6 +4496,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4200,6 +4522,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4225,6 +4548,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4250,6 +4574,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4275,6 +4600,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4300,6 +4626,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4325,6 +4652,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4387,6 +4715,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4412,6 +4741,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4437,6 +4767,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4462,6 +4793,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4487,6 +4819,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4512,6 +4871,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4537,6 +4897,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4562,6 +4923,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4624,6 +4986,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4649,6 +5012,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4674,6 +5038,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4699,6 +5064,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4724,6 +5090,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4749,6 +5116,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4774,6 +5142,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4799,6 +5168,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4824,6 +5194,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4890,6 +5261,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4915,6 +5287,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4940,6 +5313,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4965,6 +5339,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -4990,6 +5365,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5015,6 +5391,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5040,6 +5417,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5065,6 +5443,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5090,6 +5469,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5160,6 +5540,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5185,6 +5566,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5210,6 +5592,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5235,6 +5618,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5260,6 +5644,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5285,6 +5670,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5310,6 +5696,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5335,6 +5722,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5360,6 +5748,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5436,6 +5825,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5461,6 +5851,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5486,6 +5877,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5511,6 +5903,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5536,6 +5929,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5561,6 +5981,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5586,6 +6007,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5611,6 +6033,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5670,6 +6093,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5695,6 +6119,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5720,6 +6145,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5745,6 +6171,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5770,6 +6197,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5795,6 +6223,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5820,6 +6249,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5845,6 +6275,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5870,6 +6301,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5933,6 +6365,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5958,6 +6391,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -5983,6 +6417,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6008,6 +6443,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6033,6 +6469,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6058,6 +6521,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6083,6 +6547,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6108,6 +6573,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6174,6 +6640,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6199,6 +6666,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6224,6 +6692,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6249,6 +6718,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6274,6 +6744,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6299,6 +6796,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6324,6 +6822,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6349,6 +6848,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6417,6 +6917,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6442,6 +6943,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6467,6 +6969,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6492,6 +6995,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6517,6 +7021,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6542,6 +7073,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6567,6 +7099,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6592,6 +7125,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6661,6 +7195,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6686,6 +7221,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6711,6 +7247,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6736,6 +7273,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6761,6 +7299,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6786,6 +7351,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6811,6 +7377,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6836,6 +7403,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6900,6 +7468,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6925,6 +7494,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6950,6 +7520,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -6975,6 +7546,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7000,6 +7572,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7025,6 +7624,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7050,6 +7650,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7075,6 +7676,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7141,6 +7743,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7166,6 +7769,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7191,6 +7795,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7216,6 +7821,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7241,6 +7847,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7266,6 +7899,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7291,6 +7925,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7316,6 +7951,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7382,6 +8018,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7407,6 +8044,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7432,6 +8070,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7457,6 +8096,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7482,6 +8122,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7507,6 +8174,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7532,6 +8200,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7557,6 +8226,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7623,6 +8293,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7648,6 +8319,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7673,6 +8345,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7698,6 +8371,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7723,6 +8397,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7748,6 +8449,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7773,6 +8475,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7798,6 +8501,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7849,6 +8553,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7874,6 +8579,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7899,6 +8605,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7924,6 +8631,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7949,6 +8657,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7974,6 +8709,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -7999,6 +8735,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8024,6 +8761,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8088,6 +8826,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8113,6 +8852,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8138,6 +8878,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8163,6 +8904,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8188,6 +8930,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8213,6 +8982,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8238,6 +9008,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8263,6 +9034,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8335,6 +9107,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8360,6 +9133,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8385,6 +9159,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8410,6 +9185,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8435,6 +9211,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8467,6 +9244,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8492,6 +9270,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8517,6 +9296,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8542,6 +9322,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8612,6 +9393,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8637,6 +9419,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8662,6 +9445,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8687,6 +9471,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8712,6 +9497,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8737,6 +9549,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8762,6 +9575,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8787,6 +9601,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8857,6 +9672,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8882,6 +9698,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8907,6 +9724,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8932,6 +9750,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8957,6 +9776,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -8982,6 +9828,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9007,6 +9854,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9032,6 +9880,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9098,6 +9947,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9123,6 +9973,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9148,6 +9999,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9173,6 +10025,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9198,6 +10051,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9223,6 +10103,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9248,6 +10129,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9273,6 +10155,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9342,6 +10225,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9367,6 +10251,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9392,6 +10277,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9417,6 +10303,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9442,6 +10329,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9467,6 +10381,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9492,6 +10407,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9517,6 +10433,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9590,6 +10507,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9615,6 +10533,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9640,6 +10559,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9665,6 +10585,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9690,6 +10611,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9715,6 +10663,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9740,6 +10689,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9765,6 +10715,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9837,6 +10788,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9862,6 +10814,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9887,6 +10840,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9912,6 +10866,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9937,6 +10892,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9962,6 +10944,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -9987,6 +10970,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10012,6 +10996,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10084,6 +11069,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10109,6 +11095,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10134,6 +11121,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10159,6 +11147,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10184,6 +11173,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10209,6 +11225,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10234,6 +11251,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10259,6 +11277,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10331,6 +11350,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10356,6 +11376,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10381,6 +11402,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10406,6 +11428,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10431,6 +11454,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10456,6 +11506,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10481,6 +11532,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10506,6 +11558,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10578,6 +11631,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10603,6 +11657,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10628,6 +11683,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10653,6 +11709,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10678,6 +11735,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10703,6 +11761,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10728,6 +11787,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10753,6 +11813,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10778,6 +11839,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10850,6 +11912,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10875,6 +11938,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10900,6 +11964,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10925,6 +11990,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10950,6 +12016,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -10975,6 +12042,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11000,6 +12068,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11025,6 +12094,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11050,6 +12120,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11122,6 +12193,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11147,6 +12219,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11172,6 +12245,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11197,6 +12271,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11222,6 +12297,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11247,6 +12349,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11272,6 +12375,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11297,6 +12401,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11363,6 +12468,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11388,6 +12494,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11413,6 +12520,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11438,6 +12546,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11463,6 +12572,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11488,6 +12624,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11513,6 +12650,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11538,6 +12676,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11600,6 +12739,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11625,6 +12765,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11650,6 +12791,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11675,6 +12817,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11700,6 +12843,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11725,6 +12895,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11750,6 +12921,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11775,6 +12947,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11839,6 +13012,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11864,6 +13038,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11889,6 +13064,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11914,6 +13090,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11939,6 +13116,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11964,6 +13142,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -11989,6 +13168,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12014,6 +13194,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12039,6 +13220,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12104,6 +13286,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12129,6 +13312,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12154,6 +13338,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12179,6 +13364,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12204,6 +13390,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12229,6 +13442,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12254,6 +13468,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12279,6 +13494,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12348,6 +13564,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12373,6 +13590,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12398,6 +13616,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12423,6 +13642,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12448,6 +13668,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12473,6 +13720,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12498,6 +13746,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12523,6 +13772,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12595,6 +13845,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12620,6 +13871,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12645,6 +13897,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12670,6 +13923,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12695,6 +13949,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12720,6 +14001,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12745,6 +14027,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12770,6 +14053,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12832,6 +14116,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12857,6 +14142,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12882,6 +14168,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12907,6 +14194,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12932,6 +14220,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12957,6 +14272,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -12982,6 +14298,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13007,6 +14324,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13071,6 +14389,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13096,6 +14415,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13121,6 +14441,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13146,6 +14467,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13171,6 +14493,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13196,6 +14545,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13221,6 +14571,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13246,6 +14597,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13317,6 +14669,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13342,6 +14695,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13367,6 +14721,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13392,6 +14747,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13417,6 +14773,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13442,6 +14825,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13467,6 +14851,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13492,6 +14877,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13562,6 +14948,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13587,6 +14974,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13612,6 +15000,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13637,6 +15026,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13662,6 +15052,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13687,6 +15104,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13712,6 +15130,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13737,6 +15156,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13807,6 +15227,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13832,6 +15253,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13857,6 +15279,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13882,6 +15305,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13907,6 +15331,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13932,6 +15383,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13957,6 +15409,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -13982,6 +15435,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14052,6 +15506,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14077,6 +15532,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14102,6 +15558,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14127,6 +15584,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14152,6 +15610,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14177,6 +15662,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14202,6 +15688,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14227,6 +15714,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14297,6 +15785,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14322,6 +15811,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14347,6 +15837,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14372,6 +15863,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14397,6 +15889,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14422,6 +15941,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14447,6 +15967,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14472,6 +15993,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14542,6 +16064,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14567,6 +16090,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14592,6 +16116,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14617,6 +16142,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14642,6 +16168,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14667,6 +16220,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14692,6 +16246,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14717,6 +16272,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14787,6 +16343,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14812,6 +16369,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14837,6 +16395,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14862,6 +16421,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14887,6 +16447,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14912,6 +16499,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14937,6 +16525,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -14962,6 +16551,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15032,6 +16622,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15057,6 +16648,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15082,6 +16674,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15107,6 +16700,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15132,6 +16726,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15157,6 +16778,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15182,6 +16804,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15207,6 +16830,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15277,6 +16901,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15302,6 +16927,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15327,6 +16953,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15352,6 +16979,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15377,6 +17005,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15402,6 +17057,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15427,6 +17083,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15452,6 +17109,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15522,6 +17180,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15547,6 +17206,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15572,6 +17232,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15597,6 +17258,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15622,6 +17284,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15647,6 +17336,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15672,6 +17362,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15697,6 +17388,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15767,6 +17459,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15792,6 +17485,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15817,6 +17511,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15842,6 +17537,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15867,6 +17563,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15892,6 +17615,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15917,6 +17641,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -15942,6 +17667,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16012,6 +17738,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16037,6 +17764,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16062,6 +17790,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16087,6 +17816,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16112,6 +17842,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16137,6 +17894,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16162,6 +17920,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16187,6 +17946,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16257,6 +18017,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16282,6 +18043,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16307,6 +18069,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16332,6 +18095,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16357,6 +18121,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16382,6 +18173,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16407,6 +18199,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16432,6 +18225,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16502,6 +18296,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16527,6 +18322,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16552,6 +18348,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16577,6 +18374,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16602,6 +18400,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16627,6 +18452,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16652,6 +18478,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16677,6 +18504,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16747,6 +18575,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16772,6 +18601,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16797,6 +18627,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16822,6 +18653,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16847,6 +18679,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16872,6 +18731,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16897,6 +18757,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16922,6 +18783,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -16992,6 +18854,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17017,6 +18880,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17042,6 +18906,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17067,6 +18932,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17092,6 +18958,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17117,6 +19010,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17142,6 +19036,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17167,6 +19062,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17237,6 +19133,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17262,6 +19159,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17287,6 +19185,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17312,6 +19211,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17337,6 +19237,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17362,6 +19289,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17387,6 +19315,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17412,6 +19341,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17482,6 +19412,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17507,6 +19438,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17532,6 +19464,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17557,6 +19490,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17582,6 +19516,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17607,6 +19568,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17632,6 +19594,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17657,6 +19620,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17727,6 +19691,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17752,6 +19717,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17777,6 +19743,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17802,6 +19769,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17827,6 +19795,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17852,6 +19847,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17877,6 +19873,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17902,6 +19899,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17972,6 +19970,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -17997,6 +19996,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18022,6 +20022,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18047,6 +20048,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18072,6 +20074,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18097,6 +20126,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18122,6 +20152,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18147,6 +20178,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18212,6 +20244,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18237,6 +20270,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18262,6 +20296,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18287,6 +20322,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18312,6 +20348,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18337,6 +20400,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18362,6 +20426,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18387,6 +20452,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18453,6 +20519,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18478,6 +20545,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18503,6 +20571,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18528,6 +20597,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18553,6 +20623,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18578,6 +20675,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18603,6 +20701,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18628,6 +20727,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18695,6 +20795,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18720,6 +20821,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18745,6 +20847,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18770,6 +20873,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18795,6 +20899,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18820,6 +20951,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18845,6 +20977,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18870,6 +21003,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18942,6 +21076,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18967,6 +21102,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -18992,6 +21128,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19017,6 +21154,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19042,6 +21180,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19067,6 +21232,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19092,6 +21258,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19117,6 +21284,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19188,6 +21356,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19213,6 +21382,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19238,6 +21408,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19263,6 +21434,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19288,6 +21460,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19313,6 +21512,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19338,6 +21538,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19363,6 +21564,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19435,6 +21637,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19460,6 +21663,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19485,6 +21689,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19510,6 +21715,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19535,6 +21741,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19560,6 +21793,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19585,6 +21819,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19610,6 +21845,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19682,6 +21918,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19707,6 +21944,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19732,6 +21970,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19757,6 +21996,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19782,6 +22022,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19807,6 +22074,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19832,6 +22100,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19857,6 +22126,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19882,6 +22152,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19952,6 +22223,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -19977,6 +22249,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20002,6 +22275,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20027,6 +22301,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20052,6 +22327,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20077,6 +22379,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20102,6 +22405,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20127,6 +22431,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20152,6 +22457,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20222,6 +22528,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20247,6 +22554,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20272,6 +22580,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20297,6 +22606,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20322,6 +22632,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20347,6 +22684,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20372,6 +22710,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20397,6 +22736,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20461,6 +22801,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20486,6 +22827,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20511,6 +22853,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20536,6 +22879,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20561,6 +22905,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20586,6 +22957,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20611,6 +22983,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20636,6 +23009,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20661,6 +23035,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20739,6 +23114,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20764,6 +23140,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20789,6 +23166,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20814,6 +23192,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20839,6 +23218,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20864,6 +23270,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20889,6 +23296,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20914,6 +23322,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -20978,6 +23387,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21003,6 +23413,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21028,6 +23439,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21053,6 +23465,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21078,6 +23491,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21103,6 +23517,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21128,6 +23543,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21153,6 +23569,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21178,6 +23595,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21246,6 +23664,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21271,6 +23690,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21296,6 +23716,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21321,6 +23742,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21346,6 +23768,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21371,6 +23794,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21396,6 +23820,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21421,6 +23846,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21446,6 +23872,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21508,6 +23935,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21533,6 +23961,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21558,6 +23987,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21583,6 +24013,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21608,6 +24039,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21633,6 +24065,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21658,6 +24091,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21683,6 +24117,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21708,6 +24143,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21776,6 +24212,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21801,6 +24238,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21826,6 +24264,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21851,6 +24290,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21876,6 +24316,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21901,6 +24368,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21926,6 +24394,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -21951,6 +24420,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22019,6 +24489,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22044,6 +24515,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22069,6 +24541,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22094,6 +24567,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22119,6 +24593,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22144,6 +24645,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22169,6 +24671,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22194,6 +24697,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22260,6 +24764,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22285,6 +24790,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22310,6 +24816,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22335,6 +24842,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22360,6 +24868,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22385,6 +24920,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22410,6 +24946,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22435,6 +24972,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22460,6 +24998,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22522,6 +25061,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22547,6 +25087,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22572,6 +25113,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22597,6 +25139,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22622,6 +25165,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22647,6 +25217,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22672,6 +25243,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22697,6 +25269,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22765,6 +25338,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22790,6 +25364,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22815,6 +25390,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22840,6 +25416,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22865,6 +25442,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22890,6 +25494,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22915,6 +25520,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -22940,6 +25546,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23009,6 +25616,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23034,6 +25642,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23059,6 +25668,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23084,6 +25694,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23109,6 +25720,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23134,6 +25772,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23159,6 +25798,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23184,6 +25824,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23252,6 +25893,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23277,6 +25919,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23302,6 +25945,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23327,6 +25971,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23352,6 +25997,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23377,6 +26049,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23402,6 +26075,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23427,6 +26101,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23498,6 +26173,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23523,6 +26199,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23548,6 +26225,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23573,6 +26251,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23598,6 +26277,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23623,6 +26329,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23648,6 +26355,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23673,6 +26381,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23746,6 +26455,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23771,6 +26481,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23796,6 +26507,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23821,6 +26533,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23846,6 +26559,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23871,6 +26611,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23896,6 +26637,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23921,6 +26663,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -23989,6 +26732,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24014,6 +26758,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24039,6 +26784,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24064,6 +26810,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24089,6 +26836,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24114,6 +26888,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24139,6 +26914,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24164,6 +26940,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24235,6 +27012,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24260,6 +27038,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24285,6 +27064,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24310,6 +27090,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24335,6 +27116,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24360,6 +27168,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24385,6 +27194,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24410,6 +27220,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24435,6 +27246,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24498,6 +27310,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24523,6 +27336,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24548,6 +27362,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24573,6 +27388,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24598,6 +27414,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24623,6 +27466,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24648,6 +27492,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24673,6 +27518,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24737,6 +27583,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24762,6 +27609,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24787,6 +27635,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24812,6 +27661,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24837,6 +27687,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24862,6 +27739,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24887,6 +27765,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24912,6 +27791,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -24978,6 +27858,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25003,6 +27884,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25028,6 +27910,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25053,6 +27936,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25078,6 +27962,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25103,6 +28014,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25128,6 +28040,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25153,6 +28066,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25217,6 +28131,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25242,6 +28157,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25267,6 +28183,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25292,6 +28209,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25317,6 +28235,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25342,6 +28287,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25367,6 +28313,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25392,6 +28339,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25439,6 +28387,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25464,6 +28413,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25489,6 +28439,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25514,6 +28465,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25539,6 +28491,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25564,6 +28543,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25589,6 +28569,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25614,6 +28595,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25675,6 +28657,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25700,6 +28683,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25725,6 +28709,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25750,6 +28735,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25775,6 +28761,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25800,6 +28813,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25825,6 +28839,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25850,6 +28865,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25917,6 +28933,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25942,6 +28959,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25967,6 +28985,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -25992,6 +29011,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26017,6 +29037,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26042,6 +29089,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26067,6 +29115,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26092,6 +29141,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26164,6 +29214,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26189,6 +29240,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26214,6 +29266,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26239,6 +29292,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26264,6 +29318,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26289,6 +29344,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26314,6 +29370,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26339,6 +29396,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26364,6 +29422,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26425,6 +29484,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26450,6 +29510,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26475,6 +29536,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26500,6 +29562,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26525,6 +29588,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26550,6 +29640,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26575,6 +29666,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26600,6 +29692,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26663,6 +29756,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26688,6 +29782,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26713,6 +29808,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26738,6 +29834,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26763,6 +29860,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26788,6 +29912,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26813,6 +29938,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26838,6 +29964,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26905,6 +30032,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26930,6 +30058,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26955,6 +30084,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -26980,6 +30110,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27005,6 +30136,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27030,6 +30188,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27055,6 +30214,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27080,6 +30240,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27145,6 +30306,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27170,6 +30332,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27195,6 +30358,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27220,6 +30384,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27245,6 +30410,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27270,6 +30462,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27295,6 +30488,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27320,6 +30514,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27377,6 +30572,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27402,6 +30598,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27427,6 +30624,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27452,6 +30650,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27477,6 +30676,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27502,6 +30702,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27527,6 +30728,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27552,6 +30754,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27577,6 +30780,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27625,6 +30829,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27650,6 +30855,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27675,6 +30881,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27700,6 +30907,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27725,6 +30933,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27750,6 +30959,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27775,6 +30985,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27800,6 +31011,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27825,6 +31037,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27891,6 +31104,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27916,6 +31130,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27941,6 +31156,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27966,6 +31182,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -27991,6 +31208,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28016,6 +31260,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28041,6 +31286,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28066,6 +31312,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28138,6 +31385,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28163,6 +31411,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28188,6 +31437,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28213,6 +31463,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28238,6 +31489,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28263,6 +31541,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28288,6 +31567,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28313,6 +31593,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28377,6 +31658,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28402,6 +31684,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28427,6 +31710,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28452,6 +31736,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28477,6 +31762,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28502,6 +31814,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28527,6 +31840,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28552,6 +31866,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28603,6 +31918,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28628,6 +31944,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28653,6 +31970,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28678,6 +31996,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28703,6 +32022,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28728,6 +32074,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28753,6 +32100,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28778,6 +32126,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28842,6 +32191,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28867,6 +32217,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28892,6 +32243,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28917,6 +32269,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28942,6 +32295,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28967,6 +32347,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -28992,6 +32373,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29017,6 +32399,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29085,6 +32468,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29110,6 +32494,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29135,6 +32520,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29160,6 +32546,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29185,6 +32572,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29210,6 +32624,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29235,6 +32650,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29260,6 +32676,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29316,6 +32733,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29341,6 +32759,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29366,6 +32785,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29391,6 +32811,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29416,6 +32837,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29441,6 +32863,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29466,6 +32889,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29491,6 +32915,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29516,6 +32941,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29580,6 +33006,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29605,6 +33032,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29630,6 +33058,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29655,6 +33084,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29680,6 +33110,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29705,6 +33162,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29730,6 +33188,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29755,6 +33214,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29822,6 +33282,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29847,6 +33308,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29872,6 +33334,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29897,6 +33360,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29922,6 +33386,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29947,6 +33438,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29972,6 +33464,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -29997,6 +33490,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30053,6 +33547,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30078,6 +33573,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30103,6 +33599,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30128,6 +33625,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30153,6 +33651,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30178,6 +33677,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30203,6 +33703,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30228,6 +33729,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30253,6 +33755,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30324,6 +33827,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30349,6 +33853,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30374,6 +33879,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30399,6 +33905,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30424,6 +33931,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30449,6 +33957,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30474,6 +33983,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30499,6 +34009,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30524,6 +34035,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30596,6 +34108,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30621,6 +34134,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30646,6 +34160,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30671,6 +34186,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30696,6 +34212,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30721,6 +34238,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30746,6 +34264,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30771,6 +34290,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30796,6 +34316,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30861,6 +34382,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30886,6 +34408,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30911,6 +34434,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30936,6 +34460,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30961,6 +34486,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -30986,6 +34538,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31011,6 +34564,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31036,6 +34590,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31101,6 +34656,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31126,6 +34682,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31151,6 +34708,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31176,6 +34734,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31201,6 +34760,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31226,6 +34812,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31251,6 +34838,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31276,6 +34864,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31343,6 +34932,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31368,6 +34958,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31393,6 +34984,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31418,6 +35010,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31443,6 +35036,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31468,6 +35088,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31493,6 +35114,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31518,6 +35140,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31586,6 +35209,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31611,6 +35235,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31636,6 +35261,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31661,6 +35287,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31686,6 +35313,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31711,6 +35365,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31736,6 +35391,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31761,6 +35417,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31826,6 +35483,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31851,6 +35509,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31876,6 +35535,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31901,6 +35561,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31926,6 +35587,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31951,6 +35613,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -31976,6 +35639,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32001,6 +35665,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32026,6 +35691,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32090,6 +35756,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32115,6 +35782,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32140,6 +35808,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32165,6 +35834,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32190,6 +35860,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32215,6 +35912,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32240,6 +35938,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32265,6 +35964,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32321,6 +36021,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32346,6 +36047,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32371,6 +36073,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32396,6 +36099,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32421,6 +36125,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32446,6 +36177,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32471,6 +36203,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32496,6 +36229,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32521,6 +36255,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32584,6 +36319,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32609,6 +36345,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32634,6 +36371,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32659,6 +36397,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32684,6 +36423,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32709,6 +36475,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32734,6 +36501,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32759,6 +36527,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32828,6 +36597,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32853,6 +36623,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32878,6 +36649,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32903,6 +36675,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32928,6 +36701,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32953,6 +36753,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -32978,6 +36779,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33003,6 +36805,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33073,6 +36876,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33098,6 +36902,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33123,6 +36928,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33148,6 +36954,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33173,6 +36980,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33198,6 +37032,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33223,6 +37058,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33248,6 +37084,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33310,6 +37147,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33335,6 +37173,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33360,6 +37199,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33385,6 +37225,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33410,6 +37251,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33435,6 +37303,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33460,6 +37329,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33485,6 +37355,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33557,6 +37428,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33582,6 +37454,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33607,6 +37480,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33632,6 +37506,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33657,6 +37532,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33682,6 +37584,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33707,6 +37610,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33732,6 +37636,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33798,6 +37703,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33823,6 +37729,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33848,6 +37755,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33873,6 +37781,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33898,6 +37807,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33923,6 +37859,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33948,6 +37885,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -33973,6 +37911,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34039,6 +37978,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34064,6 +38004,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34089,6 +38030,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34114,6 +38056,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34139,6 +38082,33 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
+                            errors?: null | {
+                                [key: string]: string[];
+                            };
+                        };
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        /** @description Server-assigned ID of this HTTP attempt. */
+                        "X-Request-ID"?: string;
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": {
+                            type?: null | string;
+                            title?: null | string;
+                            /** Format: int32 */
+                            status?: null | number;
+                            detail?: null | string;
+                            instance?: null | string;
+                            requestId: string;
+                            traceId?: null | string;
+                            /** Format: int32 */
+                            errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34164,6 +38134,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34189,6 +38160,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34214,6 +38186,7 @@ export interface paths {
                             traceId?: null | string;
                             /** Format: int32 */
                             errorCode?: null | number | string;
+                            reason?: null | string;
                             errors?: null | {
                                 [key: string]: string[];
                             };
@@ -34332,8 +38305,8 @@ export interface components {
             lastEditedBy: null | components["schemas"]["UserInfo"];
         };
         BlockOrgRequest: {
-            orgSid: string;
             reason: string;
+            orgSid: string;
         };
         BlockReport: {
             id: string;
@@ -34725,8 +38698,8 @@ export interface components {
             contents: string;
         };
         NewStaffRequest: {
-            rsiHandle: string;
             discordId: string;
+            rsiHandle: string;
         };
         OrgSettings: {
             public: components["schemas"]["PublicSettings"];
