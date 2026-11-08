@@ -65,7 +65,7 @@
     "@types/qs": "6.15.1",
     "@typescript-eslint/eslint-plugin": "8.60.1",
     "@typescript-eslint/parser": "8.60.1",
-    "ajv": "8.17.1",
+    "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "axios-mock-adapter": "2.1.0",
     "esbuild": "0.25.12",
