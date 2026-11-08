@@ -4570,14 +4570,14 @@ function validate184(data, { instancePath = "", parentData, parentDataProperty, 
   if (errors === 0) {
     if (data && typeof data == "object" && !Array.isArray(data)) {
       let missing0;
-      if (data.rsiHandle === void 0 && (missing0 = "rsiHandle") || data.discordId === void 0 && (missing0 = "discordId")) {
+      if (data.discordId === void 0 && (missing0 = "discordId") || data.rsiHandle === void 0 && (missing0 = "rsiHandle")) {
         validate184.errors = [{ instancePath, schemaPath: "#/required", keyword: "required", params: { missingProperty: missing0 }, message: "must have required property '" + missing0 + "'" }];
         return false;
       } else {
-        if (data.rsiHandle !== void 0) {
+        if (data.discordId !== void 0) {
           const _errs1 = errors;
-          if (typeof data.rsiHandle !== "string") {
-            validate184.errors = [{ instancePath: instancePath + "/rsiHandle", schemaPath: "#/properties/rsiHandle/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+          if (typeof data.discordId !== "string") {
+            validate184.errors = [{ instancePath: instancePath + "/discordId", schemaPath: "#/properties/discordId/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
             return false;
           }
           var valid0 = _errs1 === errors;
@@ -4585,10 +4585,10 @@ function validate184(data, { instancePath = "", parentData, parentDataProperty, 
           var valid0 = true;
         }
         if (valid0) {
-          if (data.discordId !== void 0) {
+          if (data.rsiHandle !== void 0) {
             const _errs3 = errors;
-            if (typeof data.discordId !== "string") {
-              validate184.errors = [{ instancePath: instancePath + "/discordId", schemaPath: "#/properties/discordId/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+            if (typeof data.rsiHandle !== "string") {
+              validate184.errors = [{ instancePath: instancePath + "/rsiHandle", schemaPath: "#/properties/rsiHandle/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
               return false;
             }
             var valid0 = _errs3 === errors;
@@ -4605,7 +4605,7 @@ function validate184(data, { instancePath = "", parentData, parentDataProperty, 
   validate184.errors = vErrors;
   return errors === 0;
 }
-validate184.evaluated = { "props": { "rsiHandle": true, "discordId": true }, "dynamicProps": false, "dynamicItems": false };
+validate184.evaluated = { "props": { "discordId": true, "rsiHandle": true }, "dynamicProps": false, "dynamicItems": false };
 function validate183(data, { instancePath = "", parentData, parentDataProperty, rootData = data, dynamicAnchors = {} } = {}) {
   ;
   let vErrors = null;
@@ -4624,7 +4624,7 @@ function validate183(data, { instancePath = "", parentData, parentDataProperty, 
   validate183.errors = vErrors;
   return errors === 0;
 }
-validate183.evaluated = { "props": { "rsiHandle": true, "discordId": true }, "dynamicProps": false, "dynamicItems": false };
+validate183.evaluated = { "props": { "discordId": true, "rsiHandle": true }, "dynamicProps": false, "dynamicItems": false };
 var contract21 = validate186;
 function validate187(data, { instancePath = "", parentData, parentDataProperty, rootData = data, dynamicAnchors = {} } = {}) {
   let vErrors = null;
@@ -17504,14 +17504,14 @@ function validate584(data, { instancePath = "", parentData, parentDataProperty, 
   if (errors === 0) {
     if (data && typeof data == "object" && !Array.isArray(data)) {
       let missing0;
-      if (data.orgSid === void 0 && (missing0 = "orgSid") || data.reason === void 0 && (missing0 = "reason")) {
+      if (data.reason === void 0 && (missing0 = "reason") || data.orgSid === void 0 && (missing0 = "orgSid")) {
         validate584.errors = [{ instancePath, schemaPath: "#/required", keyword: "required", params: { missingProperty: missing0 }, message: "must have required property '" + missing0 + "'" }];
         return false;
       } else {
-        if (data.orgSid !== void 0) {
+        if (data.reason !== void 0) {
           const _errs1 = errors;
-          if (typeof data.orgSid !== "string") {
-            validate584.errors = [{ instancePath: instancePath + "/orgSid", schemaPath: "#/properties/orgSid/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+          if (typeof data.reason !== "string") {
+            validate584.errors = [{ instancePath: instancePath + "/reason", schemaPath: "#/properties/reason/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
             return false;
           }
           var valid0 = _errs1 === errors;
@@ -17519,10 +17519,10 @@ function validate584(data, { instancePath = "", parentData, parentDataProperty, 
           var valid0 = true;
         }
         if (valid0) {
-          if (data.reason !== void 0) {
+          if (data.orgSid !== void 0) {
             const _errs3 = errors;
-            if (typeof data.reason !== "string") {
-              validate584.errors = [{ instancePath: instancePath + "/reason", schemaPath: "#/properties/reason/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+            if (typeof data.orgSid !== "string") {
+              validate584.errors = [{ instancePath: instancePath + "/orgSid", schemaPath: "#/properties/orgSid/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
               return false;
             }
             var valid0 = _errs3 === errors;
@@ -17539,7 +17539,7 @@ function validate584(data, { instancePath = "", parentData, parentDataProperty, 
   validate584.errors = vErrors;
   return errors === 0;
 }
-validate584.evaluated = { "props": { "orgSid": true, "reason": true }, "dynamicProps": false, "dynamicItems": false };
+validate584.evaluated = { "props": { "reason": true, "orgSid": true }, "dynamicProps": false, "dynamicItems": false };
 function validate583(data, { instancePath = "", parentData, parentDataProperty, rootData = data, dynamicAnchors = {} } = {}) {
   ;
   let vErrors = null;
@@ -17558,7 +17558,7 @@ function validate583(data, { instancePath = "", parentData, parentDataProperty, 
   validate583.errors = vErrors;
   return errors === 0;
 }
-validate583.evaluated = { "props": { "orgSid": true, "reason": true }, "dynamicProps": false, "dynamicItems": false };
+validate583.evaluated = { "props": { "reason": true, "orgSid": true }, "dynamicProps": false, "dynamicItems": false };
 var contract93 = validate586;
 var schema278 = { "required": ["accessToken", "refreshToken", "accessTokenExpiration", "refreshTokenExpiration"], "type": "object", "properties": { "accessToken": { "type": "string" }, "refreshToken": { "type": "string" }, "accessTokenExpiration": { "type": "string", "format": "date-time" }, "refreshTokenExpiration": { "type": ["null", "string"], "format": "date-time" } } };
 function validate587(data, { instancePath = "", parentData, parentDataProperty, rootData = data, dynamicAnchors = {} } = {}) {
