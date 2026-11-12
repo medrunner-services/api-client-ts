@@ -74,7 +74,7 @@
     "eslint-plugin-tsdoc": "0.5.2",
     "json-schema-to-typescript": "15.0.4",
     "openapi-typescript": "7.13.0",
-    "prettier": "3.8.3",
+    "prettier": "3.10.1",
     "tslib": "2.8.1",
     "tsup": "8.5.1",
     "typescript": "6.0.3",
