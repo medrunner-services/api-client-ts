@@ -24,8 +24,8 @@ importers:
         specifier: 6.16.1
         version: 6.16.1
       ts-log:
-        specifier: 3.0.2
-        version: 3.0.2
+        specifier: 3.0.3
+        version: 3.0.3
     devDependencies:
       '@eslint/eslintrc':
         specifier: 3.3.5
@@ -1809,8 +1809,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  ts-log@3.0.2:
-    resolution: {integrity: sha512-esq6hx2lM66sQV1YcFkIYTqrWWabmqBqobKHyn1CswdI5FgfQhkmiKiRWVGBNlIbdjBxEIkNvMIwLKKPgRYZLQ==}
+  ts-log@3.0.3:
+    resolution: {integrity: sha512-4uxVlS/cbNFeSmZbXgBCq+MRkbck1iW7B2Vqd+gziasf//uZP/HFI2IcoHlyYWFgFRl+5G5iqHe4RvY/h/qUxw==}
     engines: {node: '>=20', npm: '>=10'}
 
   tslib@2.8.1:
@@ -3526,7 +3526,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-log@3.0.2: {}
+  ts-log@3.0.3: {}
 
   tslib@2.8.1: {}
 
